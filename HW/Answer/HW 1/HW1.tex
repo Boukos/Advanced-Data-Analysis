@@ -1,501 +1,377 @@
-\documentclass[letterpaper,11pt]{article}
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{hyperref}
-\usepackage{framed}
-\usepackage{tocloft}
-\usepackage{bibentry}
-\usepackage{amsmath}
-\usepackage{scrextend}
-\usepackage{listings}
-\usepackage{color}
-\usepackage{fancyhdr}
-\usepackage{graphicx}
-
-%THIS PORTION IS FOR ADDING PAGE NUMBER
-\pagestyle{fancy}
-\cfoot{}
-\rfoot{\thepage}
-\renewcommand{\headrulewidth}{0pt}
-%THIS PORTION IS FOR ADDING PAGE NUMBER..
 
 
 
-\urlstyle{same}
-\definecolor{mygrey}{gray}{.85}
-\definecolor{mygreylink}{gray}{.30}
-\textheight=9.0in
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
+  \documentclass[letterpaper,11pt]{article}
+  \usepackage{latexsym}
+  \usepackage[empty]{fullpage}
+  \usepackage[usenames,dvipsnames]{color}
+  \usepackage{verbatim}
+  \usepackage{hyperref}
+  \usepackage{framed}
+  \usepackage{tocloft}
+  \usepackage{bibentry}
+  \usepackage{amsmath}
+  \usepackage{scrextend}
+  \usepackage{listings}
+  \usepackage{color}
+  \usepackage{fancyhdr}
+  \usepackage{graphicx}
+  \usepackage{pgfplots}
+
+  %THIS PORTION IS FOR ADDING PAGE NUMBER
+  \pagestyle{fancy}
+  \cfoot{}
+  \rfoot{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  %THIS PORTION IS FOR ADDING PAGE NUMBER.
 
 
-%The following part is for inserting codes in LaTeX:
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
-
-\lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{magenta},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
-    basicstyle=\footnotesize,
-    breakatwhitespace=false,
-    breaklines=true,
-    captionpos=b,
-    keepspaces=true,
-    numbers=left,
-    numbersep=5pt,
-    showspaces=false,
-    showstringspaces=false,
-    showtabs=false,
-    tabsize=2
-}
-\lstset{style=mystyle}
-%For inserting codes in LaTeX.
+  \urlstyle{same}
+  \definecolor{mygrey}{gray}{.85}
+  \definecolor{mygreylink}{gray}{.30}
+  \textheight=9.0in
+  \raggedbottom
+  \raggedright
+  \setlength{\tabcolsep}{0in}
 
 
+  %The following part is for inserting codes in LaTeX:
+  \definecolor{codegreen}{rgb}{0,0.6,0}
+  \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+  \definecolor{codepurple}{rgb}{0.58,0,0.82}
+  \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+  \lstdefinestyle{mystyle}{
+      backgroundcolor=\color{backcolour},
+      commentstyle=\color{codegreen},
+      keywordstyle=\color{magenta},
+      numberstyle=\tiny\color{codegray},
+      stringstyle=\color{codepurple},
+      basicstyle=\footnotesize,
+      breakatwhitespace=false,
+      breaklines=true,
+      captionpos=b,
+      keepspaces=true,
+      numbers=left,
+      numbersep=5pt,
+      showspaces=false,
+      showstringspaces=false,
+      showtabs=false,
+      tabsize=2
+  }
+  \lstset{style=mystyle}
+  %For inserting codes in LaTeX
+
+  \begin{document}
+
+  \begin{center}
+  	\textbf{\Huge{Advanced Data Analysis HW1}}
+  \end{center}
+
+  \begin{center}
+  	\textsl{Ao Liu, al3472}
+  \end{center}
 
 
+  \bigbreak
+  \bigbreak
+  \bigbreak
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%   1   %%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-\begin{document}
-
-\begin{center}
-	\textbf{\LARGE{ADA HW1}}
-\end{center}
-
-\begin{center}
-	\textsl{Ao Liu, al3472}
-\end{center}
-
-
+    \begin{addmargin}[-2em]{0em} \large{\textbf{1. }}\end{addmargin}
+    \begin{addmargin}[-1.1em]{0em} \textbf{Let $\eta$ denote the median of a random variable X. Consider testing $H_0: \eta = 0$ against $H_a: \eta \neq 0$ using $X_1,X_2,...,X_{25}$, a random sample of size $n = 25$ from the distribution of $X$}\par \end{addmargin}
 \bigbreak
-\bigbreak
-\bigbreak
-
-\begin{addmargin}[-2em]{0em} \large{\textbf{1. }}\large{\textsl{}} \end{addmargin}
+\begin{addmargin}[-0.5em]{0em}
+\textbf{Answer: }\end{addmargin}
 
 
+  \begin{addmargin}[-1.1em]{0em} \textbf{(a)  Let $S$ denote the sign statistic. Determine the level of the test that rejects $H_0$ if $S\geq16$.}\par \end{addmargin}
 
-  \begin{addmargin}[-1.1em]{0em} \textbf{Let $eta$ denote the median of a random variable X. Consider testing $H_0: \eta = 0$ against $H_a: \eta \neq 0$ using $X_1,X_2,...,X_{25}$, a random sample of size $n = 25$ from the distribution of $X$}\par \end{addmargin}
-
-
-\begin{addmargin}[-1.1em]{0em} \textbf{(a)  Let $S$ denote the sign statistic. Determine the level of the test that rejects $H_0$ is $S\geq16$.}\par \end{addmargin}
-
-
-\begin{lstlisting}
-y<-c(10,10,12,11,9)
-length(y)
-\end{lstlisting}
-[1] 5
-\begin{lstlisting}
-mean(y)
-\end{lstlisting}
-[1] 10.4
-\begin{lstlisting}
-var(y)
-\end{lstlisting}
-[1] 1.3
-
-so we get:
-
-$$p(\sigma^2\vert y) \sim \text{Inv-} \chi^2(4,1.3)$$
-
-$$p(\mu\vert\sigma^2,y)\sim N(10.4,\frac{\sigma^2}{5})$$
-
-
-Thus, the joint posterior distribution is:
-$$P(\mu,\sigma^2\vert y)\propto p(\sigma^2\vert y) p(\mu\vert\sigma^2,y)$$
-\begin{addmargin}[-1.1em]{0em} \textbf{(b)}\par \end{addmargin}
-If we treat the measurement as rounded, then the true
-measurement are regarded as missing values. Let $y_i$ be the
-true value of the 5 measurements, $i=1,2,3,4,5$. Then, according to the observed rounded measurements, we have:
-$$9.5<y_1\leq 10.5$$
-$$9.5<y_2\leq 10.5$$
-$$11.5<y_3\leq 12.5$$
-$$10.5<y_4\leq 11.5$$
-$$8.5<y_5\leq 9.5,$$
-
-
-the distribution for $y_i$ should be $$\int_{y_i-5}^{y_i+5}N(t\vert\mu,\sigma^2)dt$$
-
-Assume a noninformative prior distribution for the parameters:
-$$p(\mu,\sigma)\propto (\sigma^2)^{-1}$$
-
-thus, the posterior distribution for the parameters is:
-$$p(\mu,\sigma^2\vert y_1,...,y_5)\propto\frac{1}{\sigma^2}\prod_{i=1}^{5}\int_{y_i-5}^{y_i+5}N(t\vert\mu,\sigma^2)dt$$
-
-%\textbf{for some special reason that I cannot understand}, we do the log transformation to posterior distribution:
-%$$log(p(\mu,\sigma^2\vert y_1,...,y_5))\propto-2log\sigma+\sum_{i=1}^{5}log(\int_{y_i-5}^{y_i+5}N(t\vert\mu,\sigma^2)dt)$$
-
-\begin{addmargin}[-1.1em]{0em} \textbf{(c)}\par \end{addmargin}
-
-Firstly we draw the contour plot for the incorrect model:
-
-\begin{lstlisting}
-#input here
-\end{lstlisting}
-
-Then we draw the plot for the correct model:
-
-\begin{lstlisting}
-    post.a <- function(mu,sd,y){
-    ldens <- 0
-    for (i in 1:length(y)) ldens <- ldens +
-        log(dnorm(y[i],mu,sd))
-    ldens}
-  post.b <- function(mu,sd,y){
-    ldens <- 0
-    for (i in 1:length(y)) ldens <- ldens +
-        log(pnorm(y[i]+0.5,mu,sd) - pnorm(y[i]-0.5,mu,sd))
-    ldens}
-  summ <- function(x){c(mean(x),sqrt(var(x)),
-                        quantile(x, c(.025,.25,.5,.75,.975)))}
-  nsim <- 2000
-  y <- c(10,10,12,11,9)
-  n <- length(y)
-  ybar <- mean(y)
-  s2 <- sum((y-mean(y))^2)/(n-1)
-  mugrid <- seq(3,18,length=200)
-  logsdgrid <- seq(-2,4,length=200)
-  contours <- c(0.0001,.001,.01,seq(.05,.95,.05))
-  logdens <- outer (mugrid, exp(logsdgrid), post.a, y)
-  dens <- exp(logdens - max(logdens))
-  contour (mugrid, logsdgrid, dens, levels=contours,
-           xlab="mu", ylab="log(sigma)", labex=0, cex=2)
-  mtext ("Posterior density, ignoring rounding", 3)
-  sd <- sqrt((n-1)*s2/rchisq(nsim,4))
-  mu <- rnorm(nsim,ybar,sd/sqrt(n))
-  print (rbind (summ(mu),summ(sd)))
-\end{lstlisting}
-
-\begin{center}
-  \makebox[\linewidth]{\includegraphics[width=\textwidth]{4640HW51}}
-\end{center}
-
-
-\begin{lstlisting}
-mu<-seq(3,18,length=200)
-lgsigma<-seq(-2,4,length=200)
-matrix<-matrix(0,nrow=length(mu),ncol=length(lgsigma))
-up<-c(10.5,10.5,12.5,11.5,9.5)
-low<-c(9.5,9.5,11.5,10.5,8.5)
-
-for (i in 1:length(mu)){
-  for (j in 1:length(lgsigma)){
-    matrix[i,j]<--2*lgsigma[j]+sum(log(pnorm(up,mu[i],exp(lgsigma[j]))-
-                                         pnorm(low,mu[i],exp(lgsigma[j]))))
-    }
-}
-contours <- c(0.000002,0.00001,.0001,.001,.01,seq(.05,.95,.05))
-matrix<-matrix-max(matrix)
-contour(mu,lgsigma,exp(matrix),levels=contours,
-        xlab="mu", ylab="log(sigma)", labex=0, cex=2)
-mtext ("Posterior density, not ignoring rounding", 3)
-\end{lstlisting}
-
-\begin{center}
-  \makebox[\linewidth]{\includegraphics[width=\textwidth]{4640HW52}}
-\end{center}
-
-According to the plot shown above, the contour plots look
-similar, there's almost no difference in terms of the means, the difference lies in the variance, where the correct posterior distribution has a lower variance, the wrong posterior has a higher variance.
-
+Let the sign test $S = \sum_{i=1}^{25}I(X_i\geq0)$, then $S\sim Bin(25,\frac{1}{2})$
+If under certain level the test will reject $H_0$ if $S\geq16$, then according to symmetry, the test will also reject $H_0$ if $S\leq9$.\par
+So the level of the test is:\par
+$$p(S\geq16 or S\leq9)=0.2295$$
 \bigbreak
 
-\begin{addmargin}[-1.1em]{0em} \textbf{(d)}\par \end{addmargin}
 
-Given $\mu$ and $\sigma$, the conditional distribution of $z_i$ is $N(\mu,\sigma^2)$, truncated to fall in the range $(y_i-0.5,y_i+0.5)$. For each of our posterior draws of $(\mu,\sigma)$, we draw a vector $(z_i,...,z_5)$ from independent truncated normal distributions using the inverse-cdf method.
-According to the calculation, the posterior mean of $(z_1-z_2)^2$  = 0.16
-\newpage
-
-\begin{addmargin}[-2em]{0em} \large{\textbf{2. }}\large{\textsl{Chapter 8 Exercise 5, BDA3, Gelman et al.}} \end{addmargin}
-
-
-
-\begin{addmargin}[-1.1em]{0em} \textbf{(a)}\par \end{addmargin}
-
-The table of units by measurements is sketched as follows:
-
-
-\begin{center}
-\begin{tabular}{ |c|c|c|c|c|c| }
- \hline
- \multicolumn{6}{|c|}{table of units by measurements} \\
- \hline
-block & number & trt1 & trt2 & trt3 & trt4 \\
- \hline
- 1&1 & & & & \\
-  1&2 & & & & \\
-   1&3 & & & & \\
-    1&4 & & & & \\
-     1&5 & & & & \\
-      \hline
-      2&1 & & & & \\
-       2&2 & & & & \\
-        2&3 & & & & \\
-         2&4 & & & & \\
-          2&5 & & & & \\
-           \hline
-           3&1 & & & & \\
-            3&2 & & & & \\
-             3&3 & & & & \\
-              3&4 & & & & \\
-               3&5 & & & & \\
-                \hline
-                4&1 & & & & \\
-                 4&2 & & & & \\
-                  4&3 & & & & \\
-                   4&4 & & & & \\
-                    4&5 & & & & \\
-                      \hline
-                     5&1 & & & & \\
-                      5&2 & & & & \\
-                       5&3 & & & & \\
-                        5&4 & & & & \\
-                         5&5 & & & & \\
-
- \hline
-\end{tabular}
-\end{center}
-
-
-\begin{enumerate}
-  \item There are 4 trials in each block, but only one treatment observed for each trial, so $y_{obs}$ is the 20 data shown in table 8.6
-\item The missing data is the outcomes of the other 3 treatments in each unit
-\item $x_i$ is unit $i$'s block membership, $x_i\in$ \{1,2,3,4,5\}
-\item I is a $20\times 4$ matrix, with each column representing a treatment, each of its elements could be described as:
-$$I_i^k,i=1,2,...,20,k=\text{A,B,C,D}$$
-which must satisfy:
-$$I_i^k = 0 \text{ or } 1, I_i^\text{A}+I_i^\text{B}+I_i^\text{C}+I_i^\text{D}=1$$
-what's more, for each $j$=1,2,3,4,5 and each k $\in$ \{A,B,C,D\}:
-$$\sum_{i:x_i=j}I_i^k=1$$
-\item The total number of measurements N = 80
-\item There are 20 observed measurement and 60 unobserved measurements in this problem
-
-\end{enumerate}
-
-
-\begin{addmargin}[-1.1em]{0em} \textbf{(b)}\par \end{addmargin}
-
-%what is this x?
-$$p(I\vert x)=\begin{cases}
-	(\frac{1}{4!})^5&\text{for }I \text{ satisfying the conditions}\\
-	0 &\text{o.w.}
-\end{cases}$$
-I is ignorable, known and strongly ignorable. The propensity scores are an adequate summary.
+\begin{addmargin}[-1.1em]{0em}
+\textbf{(b)}\par\end{addmargin}
+  \textbf{Determine the power of the teat in
+  (a) if $X$ has $N(0.5,1)$ distribution?} \par
 \bigbreak
-\begin{addmargin}[-1.1em]{0em} \textbf{(c)}\par \end{addmargin}
 
-We use the \textbf{Randomized Complete Block} Model (RCB):
-\begin{enumerate}
-  \item There are 4 treatments to compare
-  \item 5 different blocks (groups of similar units)
-  \item 4 units in each block (20 units)
-  \item within each block, randomly assign one unit to each treatment
-  \item let $y_i^k$ be the outcome for unit in block i that got treatment k.
-\end{enumerate}
-
-$$y_{i}^k=\mu+\beta_i+\tau^k+e_{ik},\text{  }e_{ij}\sim \text{i.i.d } N(0,\sigma^2)$$
-Thus,
-
-$$\text{E}(y_{i}^k)=\mu+\beta_i+\tau^k$$
-
-Let $\beta=\begin{pmatrix}
-	\beta_1\\
-	\beta_2\\
-	\beta_3\\
-	\beta_4\\
-	\beta_5
-\end{pmatrix}$ be the vector of block effect
-
-$$p(\beta)\propto\begin{cases}
-	1 &\beta_1+...+\beta_5=0\\
-	0 &else
-\end{cases}$$
-
-\begin{addmargin}[-1.1em]{0em} \textbf{(d)}\par \end{addmargin}
-
-If we average over the block effect, then the vector $\beta$ is 0,
-$$E(y^{k})=\mu+\tau^k,\text{ } k\in \{\text{A,B,C,D}\}$$
+\begin{addmargin}[-0.5em]{0em}
+\textbf{Answer: }\end{addmargin}
 
 
-\newpage
+If $X\sim N(0.5,1)$, then $P(X\geq0)=0.6915$, so $S\sim Bin(25,0.6915)$.
+So the power of the test is:
+$$1-p(9<S<16\vert H_\alpha)=0.7842$$
 
-\begin{addmargin}[-2em]{0em} \large{\textbf{3. }}\large{\textsl{Chapter 8 Exercise 7, BDA3, Gelman et al.}} \end{addmargin}
-
-\begin{addmargin}[-1.1em]{0em} \textbf{(a)}\par \end{addmargin}
-
-We can write the posterior distribution of $\mu , \sigma$ as:
-$$\sigma^2\vert y^{obs} \sim \text{Inv-} \chi^2(n-1,s^2)$$
-$$\mu\vert\sigma^2 , y^{obs} \sim N(\bar{y}^{obs},\frac{\sigma^2}{n})$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%   2   %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-where $\bar{y}^{obs}$ and $s^2$ are the sample mean and variance of the $n$ data points $y_i^{obs}$.
+  \begin{addmargin}[-2em]{0em} \large{\textbf{2. }}\end{addmargin}
 
-The predictive distribution of the mean of the missing data is,
-$$\bar{y}^{mis}\vert\mu ,\sigma^2,y^{obs}\sim N(\mu ,\frac{\sigma^2}{N-n})$$.
+  \begin{addmargin}[-1.1em]{0em} \textbf{The data in in the talble below gives the pretest and posttest scores on the MLA listening test in Spanish for 20 high school teachers who attended an intensive course in Spanish.}\par\end{addmargin}
+  \bigbreak
 
-averaging over $\mu$ yields:
-$$\bar{y}^{mis}\vert\sigma^2,y^{obs}\sim N(\bar{y}^{obs},(\frac{1}{n}+\frac{1}{N-n}))\sigma^2)$$.
+  \begin{center}
+  \begin{tabular}{ p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}  }
+     \\
+    \centering subject & pretest & posttest & subject & pretest & posttest\\
+   \hline
+  \centering 1 &30 &20 &11 &30 &32\\
+  \centering 2 &28 &30 &12 &29 &22\\
+  \centering 3 &31 &32 &13 &31 &34\\
+  \centering 4 &26 &30 &14 &29 &32\\
+  \centering 5 &20 &16 &15 &34 &32\\
+  \centering 6 &30 &25 &16 &20 &27\\
+  \centering 7 &34 &31 &17 &26 &28\\
+  \centering 8 &15 &18 &18 &25 &29\\
+  \centering 9 &28 &33 &19 &31 &32\\
+  \centering 10 &20 &25 &20 &29 &32\\
+  \end{tabular}
+  \end{center}
 
-Since $\sigma^2$ has an inverse-$\chi^2$ posterior distribution, averaging over it yields a $t$ distribution:
-$$\bar{y}^{mis}\vert y^{obs}\sim t_{n-1}(\bar{y}^{obs},(\frac{1}{n}+\frac{1}{N-n})s^2)$$
+  \begin{addmargin}[-1.1em]{0em} \textbf{Assume that the differences between these scores (pretest scores −posttest) constitute a
+random sample from a distribution $F$ with mean $mu$ and variance $\sigma^2$}\par\end{addmargin}
+  \bigbreak
 
-The complete-data mean is $\bar{y} = \frac{n}{N}\bar{y}^{obs} + \frac{N-n}{N}\bar{y}^{mis}$, which is a linear transformation of $\bar{y}^{mis}$ and so it has a $t$ posterior distribution also:
-\begin{align}
-\bar{y}\vert y^{obs} &\sim t_{n-1}(\bar{y}^{obs},s^2(\frac{1}{n}+\frac{1}{N-n})\frac{(N-n)^2}{N^2})\nonumber\\
-&=t_{n-1}(\bar{y}^{obs},s^2\frac{(N-n)}{nN})\nonumber\\
-&=t_{n-1}(\bar{y}^{obs},s^2(\frac{1}{n}-\frac{1}{N})\nonumber
-\end{align}
-
-%%%%%%%%%%%%%%%%%%    4
-%%%%%%%%%%%%%%%%%%%
-
-\newpage
-
-\begin{addmargin}[-2em]{0em} \large{\textbf{4. }}\large{\textsl{Chapter 8 Exercise 11, BDA3, Gelman et al.}} \end{addmargin}
-
-\begin{addmargin}[-1.1em]{0em} \textbf{(a)}\par \end{addmargin}
-Let $y$ be the number of fishes that are caught tagged during the second time, and N be the total number of fishes.
-According to the question, the fisherman kept on catching fishes until he catches 20 tagged fishes, thus, $y$ follows:
-$$p(y\vert N) = \frac{\begin{pmatrix}
-100\\
-19
-\end{pmatrix}\begin{pmatrix}
-N-100\\
-70
-\end{pmatrix}}{\begin{pmatrix}
-N\\
-89
-\end{pmatrix}}\times\frac{81}{N-89}$$
-
-Let N follow a uninformative uniform distribution, thus, the posterior distribution for $N$ is:
-\begin{align}
-	p(N\vert y) &\propto p(y\vert N)p(N)\nonumber\\
-&\propto p(y\vert N)\nonumber\\
-&=p(y\vert N)\nonumber\\
-&= \frac{\begin{pmatrix}
-100\\
-19
-\end{pmatrix}\begin{pmatrix}
-N-100\\
-70
-\end{pmatrix}}{\begin{pmatrix}
-N\\
-89
-\end{pmatrix}}\times\frac{81}{N-89}\nonumber
-\end{align}
+  \begin{addmargin}[-1.1em]{0em}
+  \textbf{(a)}\par\end{addmargin}
+    \textbf{Use a t-test and $\alpha = 0.05$ to test $H_0:\mu = 0$ against $H_\alpha: \mu = 0$. What is the p-value of the test? What assumption you need to make. Use a graphical technique to check this assumption.}\par
+  \bigbreak
+  \begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }\end{addmargin}
 
 
+  %insert code snippets:
+  \begin{lstlisting}
+  pre <- c(30,28,31,26,20,30,34,15,28,20,30,29,31,29,34,20,26,25,31,29)
+  post <- c(20,30,32,30,16,25,31,18,33,25,32,22,34,32,32,27,28,29,32,32)
+  score <- pre-post
+  t.test(score,mu=0)
+  \end{lstlisting}
 
-\begin{addmargin}[-1.1em]{0em} \textbf{(b)}\par \end{addmargin}
-
-Since the fisherman tagged 100 fishes at the first time and during the second time he caught 70 fished with no tag, which means there are at least 170 fishes in the pond. Thus, to check if the posterior distribution is proper, we can focus on the summation of the posterior distribution.
+  and we get the following result:
 
 \begin{lstlisting}
-pny = function(n){
-  choose(100,19)*choose(n-100,70)/choose(n,89)*81/(n-89)
-}
-sum(pny(c(170:1000)))
+One Sample t-test
+
+data:  score
+t = -0.7054, df = 19, p-value = 0.4891
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ -2.77699  1.37699
+sample estimates:
+mean of x
+     -0.7
 \end{lstlisting}
-[1] 5.260337
 
-
-$$\sum_{N=170}^{1000}p(y\vert N) = 5.260337$$
-
-
-so it's easy to conlude that:
-$$\sum_{N=170}^{\infty}p(y\vert N) < \infty$$
-Thus, we arrive at the conclusion that the posterior distribution is proper.
-
-\begin{addmargin}[-1.1em]{0em} \textbf{(c)}\par \end{addmargin}
-We give the following definition:
-$$\tilde{y} = \begin{cases}
-1, & \text{if the next fish is tagged}\\
-0, & \text{otherwise}\\
-\end{cases}$$
-Thus, the probability that the next fish caught by the fisherman is tagged is:
-\begin{align}
-	p(\tilde{y}=1\vert y) &= \sum_{N=170}^{\infty}p(\tilde{y}=1\vert N)p(N\vert y)\nonumber\\
-	&= \sum_{N=170}^{\infty}\frac{80}{N-90}p(N\vert y)\nonumber
-\end{align}
-
-
-\begin{addmargin}[-1.1em]{0em} \textbf{(d)}\par \end{addmargin}
-
-Now the condition has been changed to: of all the 90 fish caught, 15 fish caught are tagged, 70 are untagged the other 5 are uncertain.
-Now we define the following notation:
- $$\begin{cases}
-y_{mis}: &\text{the tagged fish among the 5 uncertain fish}\\
-y_{obs}: & \text{the 15 tagged fish}\\
-\end{cases}$$
-
-
-then we know that
-$$y_{mis}\sim \text{Binomial}(5,\frac{15}{85})$$
-\begin{align}
-	p(N\vert y_{obs}) &= \sum_{k=0}^{5}p(N\vert y_{obs},y_{min}=k)p(y_{mis}=k\vert y)\nonumber\\
-	&= \sum_{k=0}^{5}p(N\vert  5+k \text{ tagged}, 75-k\text{ untagged})\begin{pmatrix}
-	5\\
-k
-\end{pmatrix}(\frac{15}{85})^k(\frac{70}{85})^{5-k}\nonumber
-\end{align}
-Then we plot the posterior distribution of $N$:
+The p-value of the test is 0.4891\par
+In order to make the t-test result more plausible, we have to make an assumption that the underlying dietribution is not extremely skewed. To check our assumption, we make a qq plot of the given data:\par
 
 \begin{lstlisting}
-pny = function(n,n1,n2){
-  choose(100,n1-1)*choose(n-100,n2)/choose(n,n1+n2-1)*(101-n1)/(n-n1-n2+1)
-}
-n = seq(175,1000)
-result = rep(0,length(n))
-k = c(0:5)
-for (i in 1:length(n)){
-  result[i] = sum(pny(n[i],15+k,75-k)*dbinom(k,5,15/85))
-}
-plot(result~n,type="l",ylab="posterior distribution")
-title("Posterior Distribution of N")
+  qqnorm(y)
+  qqline(y, col = 1)
 \end{lstlisting}
 
+
+The following is a way to insert pics:
 \begin{center}
-  \makebox[\linewidth]{\includegraphics[width=\textwidth]{4640HW53}}
+  \makebox[\linewidth]{\includegraphics[width=\textwidth]{ADAHW1.jpg}}
 \end{center}
 
-%%%%%%%%%%%%%%%%%%    5
-%%%%%%%%%%%%%%%%%%%
-\newpage
-\begin{addmargin}[-2em]{0em} \large{\textbf{5. }}\large{\textsl{Chapter 10 Exercise 4, BDA3, Gelman et al.}} \end{addmargin}
+As we can see from the figure, our assumption is met.
 
 
+  \bigbreak
+  \begin{addmargin}[-1.1em]{0em}
+  \textbf{(b)}\par\end{addmargin}
+    \textbf{Obtain a $95\%$ confidence interval for the mean in (a) }\par
+  \bigbreak
+  \begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }\end{addmargin}
 
-\begin{addmargin}[-1.1em]{0em} \textbf{(a)}\par \end{addmargin}
+From the result that we get from (a), the $95\%$ confidence interval is:
+$$(-2.77699, 1.37699)$$
+
+  \bigbreak
+  \begin{addmargin}[-1.1em]{0em}
+  \textbf{(c)}\par\end{addmargin}
+    \textbf{If the median of $F$ is $\eta$,use the sign test and $\alpha$=0.05 to test $H_0: \eta=0$ against $H_\alpha: \eta\neq 0$. What is the p-value of this test?}\par
+  \bigbreak
+  \begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }\end{addmargin}
+The values of "score" are:
+\begin{lstlisting}
+[1] 10 -2 -1 -4  4  5  3 -3 -5 -5 -2  7 -3 -3  2 -7 -2 -4 -1 -3
+\end{lstlisting}
+It turns out there are 6 positive socres in the sample. \par
+So we do the following sign test:
+
+  \begin{lstlisting}
+    Exact binomial test
+
+    data:  6 and 20
+    number of successes = 6, number of trials = 20, p-value = 0.1153
+    alternative hypothesis: true probability of success is not equal to 0.5
+    95 percent confidence interval:
+     0.1189316 0.5427892
+    sample estimates:
+    probability of success
+                       0.3
+
+  \end{lstlisting}
+The p-value of this test is 0.1153
+
+  \bigbreak
+  \begin{addmargin}[-1.1em]{0em}
+  \textbf{(d)}\par\end{addmargin}
+    \textbf{Obtain a $95\%$ confidence interval for $\eta$ and compare use answer the answer in (b)}\par
+  \bigbreak
+  \begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }\end{addmargin}
+
+According to the result in (c), the $95\%$ confidence interval for $\eta$ is:
+$$(0.1189316, 0.5427892)$$
+
+Compared with the confidence interval that we get in the t test above, this one is smaller, more accurate.
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%   3   %%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \bigbreak
+  \begin{addmargin}[-2em]{0em} \large{\textbf{3. }}\end{addmargin}
+
+  \begin{addmargin}[-1.1em]{0em} \textbf{Twelve one week old infants were randomly assigned into two groups of six infant each. One group participated in an experimental active-exercise to learn to walk and the other was used as a control group. The following are the ages at which these infants first walked alone}\par\end{addmargin}
+
+  \bigbreak
+  \begin{center}
+  \begin{tabular}{ p{6cm}p{6cm} }
+     \\
+    \centering Active-exercise group & No-exercise group\\
+   \hline
+  \centering 9.00 &11.50\\
+  \centering 9.50 &12.00\\
+  \centering 9.75 &9.00\\
+  \centering 10.00 &11.50\\
+  \centering 13.00 &13.25\\
+  \centering 9.50 &13.00\\
+
+  \end{tabular}
+  \end{center}
+
+Call the no-exercise group Y sample and the active-exercise group X sample. Compare the two groups using two tests (one parametric and one nonparametric) (take α = 0.05). State all the assumptions that you make in carrying out these tests.
+
+\bigbreak
+
+  \textbf{Answer: }\end{addmargin}
+  \bigbreak
 
 
-Suppose that $\theta$ is drawn from the density proportional to $g(\theta)$, and $U$ is a random Uniform(0,1) draw. Then we can express the cumulative distribution function of draws accepted by rejection sampling as
+  (1) Non Parametric Test:\par
+  (Wilcoxon) Mann-Whitney two sample procedure:\par
+  We assume that the populations have the same shape and differ only in location.
 
-\begin{align}
-p(\theta\leq\theta^{*}\vert\theta\text{ is accepted}) &= \frac{p(\theta\leq\theta^{*}\text{and }U\leq\frac{p(\theta\vert y)}{Mg(\theta)})}{p(U\leq\frac{p(\theta\vert y)}{Mg(\theta)})}\nonumber\\
-&=\frac{\int_{-\infty}^{\theta^{*}}\int_0^{\frac{p(\theta\vert y)}{Mg(\theta)}}g(\theta)dud\theta}{\int_{-\infty}^{\infty}\int_0^{\frac{p(\theta\vert y)}{Mg(\theta)}}g(\theta)dud\theta}\nonumber\\
-&=\frac{\frac{1}{M}\int_{-\infty}^{\theta^{*}}p(\theta\vert y)d\theta}{\frac{1}{M}}\nonumber
-\end{align}
 
-Which is the cumulative density function for $p(\theta\vert y)$.
-A similar argument works in higher dimensions.
+\begin{lstlisting}
+  active <- c(9.00,9.50,9.75,10.00,13.00,9.50)
+  no <- c(11.50,12,9,11.50,13.25,13)
+  wilcox.test(active,no,correct = FALSE)
+\end{lstlisting}
 
-\begin{addmargin}[-1.1em]{0em} \textbf{(b)}\par \end{addmargin}
-The above proof requires that
-\begin{enumerate}
-  \item $g(\theta) > 0$ whereever $p(\theta) > 0$
-  \item $\frac{p(\theta)}{Mg(\theta)}\leq 1$ always
-\end{enumerate}
-If $\frac{p}{g}$ is unbounded, then one or both of the requirements above will be violated.
+\begin{lstlisting}
+  Wilcoxon rank sum test with continuity correction
+
+data:  active and no
+W = 9, p-value = 0.1705
+alternative hypothesis: true location shift is not equal to 0
+
+Warning message:
+In wilcox.test.default(active, no) : cannot compute exact p-value with ties
+\end{lstlisting}
+\bigbreak
+
+Since p-value is 0.1705, we cannot reject the Null Hypothesis.
+\bigbreak
+
+(2) Parametric Test:
+We use ANOVA F-Test to check whether the two population have the same mean.\par
+Assume every population of interest has unknown population mean and variance.
+
+\begin{lstlisting}
+level <- c(rep("active", 6), rep("no", 6))
+age <- c(9, 9.5, 9.75, 10, 13, 9.5, 11.5, 12, 9, 11.5, 13.25, 13)
+data <- data.frame(level, age)
+summary(aov(age ~ level))
+\end{lstlisting}
+
+\begin{lstlisting}
+Df Sum Sq Mean Sq F value Pr(>F)
+level        1  7.521   7.521   3.415 0.0943 .
+Residuals   10 22.021   2.202
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[Finished in 0.497s]
+\end{lstlisting}
+
+So $SSB = 7.521$, $SSE = 22.021$,
+$MSB = 7.521$, $MSE = 2.2021$, $F=3.415$
+
+If we take $\alpha = 0.05$, we have
+
+
+\begin{lstlisting}
+>qf(.95, df1=1, df2=10)
+[1] 4.964603
+\end{lstlisting}
+
+$F(1-0.05,1,10) = 4.965$
+
+Since $3.415>4.965$, we cannot reject $H_0$
+\bigbreak
+Also, p-value = $0.0943>0.05$, we cannot reject $H_0$
 
 
 \end{document}
+
+  %The following is a way to insert pics:
+  %\begin{center}
+    %\makebox[\linewidth]{\includegraphics[width=\textwidth]{4640HW6.jpg}}
+  %\end{center}
+
+
+
+  %insert a complicated tab...
+
+  %\begin{center}
+  %\begin{tabular}{ p{12cm}p{1cm}p{1cm}p{1cm}  }
+  %& \multicolumn{3}{c}{Posterior Quantiles} \\
+  %\centering{Quantity of Interest} & 25\% & 50\% & 75\% \\
+  %\hline
+  %geometric mean for Blue Earth (no basement), exp($\beta_2)$ &4.1& 5.0& 6.5\\
+  %geometric mean for Blue Earth County (basement), exp($\beta_1+\beta_2)$ &6.1 &7.1 &8.2\\
+  %geometric mean for Clay County (no basement), exp($\beta_3)$& 3.8& 4.7 &5.8\\
+  %geometric mean for Clay County (basement), exp($\beta_1+\beta_3)$ &5.6& 6.5& 7.6\\
+  %geometric mean for Goodhue County (no basement), exp($\beta_4)$ & 3.9 &4.9& 6.2\\
+  %geometric mean for Goodhue County (basement), exp($\beta_1+\beta_4)$ &5.8& 6.8& 7.9\\
+  %factor for basement vs. no basement, exp($\beta_1$)&1.1& 1.4 &1.7\\
+  %geometric sd of predictions, exp($\sigma$)&2.1 &2.2& 2.4\\
+  %\end{tabular}
+  %\end{center}
+
+
+
+  %%%insert code snippets:
+  %\begin{lstlisting}
+  %INSERT CODE HERE
+  %\end{lstlisting}
