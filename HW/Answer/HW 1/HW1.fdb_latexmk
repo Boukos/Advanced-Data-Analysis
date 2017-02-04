@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1486101171 "HW1.tex" "HW1.pdf" "HW1" 1486101176
+["pdflatex"] 1486241544 "HW1.tex" "HW1.pdf" "HW1" 1486241547
   "./ADAHW1.jpg" 1486090596 70371 9a352f4c759480b604b9111e9d5a83ca ""
-  "./HW1.out" 1486101174 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "./HW1.out" 1486241546 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -202,11 +202,11 @@
   "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1449107833 3849859 db2c9e103f4a4dba66de81402aba83d2 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
   "ADAHW1.jpg" 1486090596 70371 9a352f4c759480b604b9111e9d5a83ca ""
-  "HW1.aux" 1486101175 662 b2b94621371df8d9296b8bf5bec1b851 ""
-  "HW1.out" 1486101174 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "HW1.tex" 1486101171 11566 20750239ae344c703b9feea667a59927 ""
+  "HW1.aux" 1486241546 662 b2b94621371df8d9296b8bf5bec1b851 ""
+  "HW1.out" 1486241546 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "HW1.tex" 1486241543 11662 01e3ffd84c876a3a6bae366061ace59e ""
   (generated)
-  "HW1.out"
   "HW1.aux"
-  "HW1.log"
   "HW1.pdf"
+  "HW1.out"
+  "HW1.log"
