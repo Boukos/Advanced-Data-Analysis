@@ -84,12 +84,14 @@
 
     \begin{addmargin}[-2em]{0em} \large{\textbf{1. }}\end{addmargin}
     \begin{addmargin}[-1.1em]{0em} \textbf{Let $\eta$ denote the median of a random variable X. Consider testing $H_0: \eta = 0$ against $H_a: \eta \neq 0$ using $X_1,X_2,...,X_{25}$, a random sample of size $n = 25$ from the distribution of $X$}\par \end{addmargin}
-\bigbreak
-\begin{addmargin}[-0.5em]{0em}
-\textbf{Answer: }\end{addmargin}
 
 
   \begin{addmargin}[-1.1em]{0em} \textbf{(a)  Let $S$ denote the sign statistic. Determine the level of the test that rejects $H_0$ if $S\geq16$.}\par \end{addmargin}
+
+
+    \bigbreak
+    \begin{addmargin}[-0.5em]{0em}
+    \textbf{Answer: }\end{addmargin}
 
 Let the sign test $S = \sum_{i=1}^{25}I(X_i\geq0)$, then $S\sim Bin(25,\frac{1}{2})$
 If under certain level the test will reject $H_0$ if $S\geq16$, then according to symmetry, the test will also reject $H_0$ if $S\leq9$.\par
@@ -304,7 +306,7 @@ In wilcox.test.default(active, no) : cannot compute exact p-value with ties
 Since p-value is 0.1705, we cannot reject the Null Hypothesis.
 \bigbreak
 
-(2) Parametric Test: 
+(2) Parametric Test:
 We use ANOVA F-Test to check whether the two population have the same mean.\par
 Assume every population of interest has unknown population mean and variance.
 
@@ -344,35 +346,39 @@ Also, p-value = $0.0943>0.05$, we cannot reject $H_0$
 
 
 \end{document}
-
-  %The following is a way to insert pics:
-  %\begin{center}
-    %\makebox[\linewidth]{\includegraphics[width=\textwidth]{4640HW6.jpg}}
-  %\end{center}
-
-
-
-  %insert a complicated tab...
-
-  %\begin{center}
-  %\begin{tabular}{ p{12cm}p{1cm}p{1cm}p{1cm}  }
-  %& \multicolumn{3}{c}{Posterior Quantiles} \\
-  %\centering{Quantity of Interest} & 25\% & 50\% & 75\% \\
-  %\hline
-  %geometric mean for Blue Earth (no basement), exp($\beta_2)$ &4.1& 5.0& 6.5\\
-  %geometric mean for Blue Earth County (basement), exp($\beta_1+\beta_2)$ &6.1 &7.1 &8.2\\
-  %geometric mean for Clay County (no basement), exp($\beta_3)$& 3.8& 4.7 &5.8\\
-  %geometric mean for Clay County (basement), exp($\beta_1+\beta_3)$ &5.6& 6.5& 7.6\\
-  %geometric mean for Goodhue County (no basement), exp($\beta_4)$ & 3.9 &4.9& 6.2\\
-  %geometric mean for Goodhue County (basement), exp($\beta_1+\beta_4)$ &5.8& 6.8& 7.9\\
-  %factor for basement vs. no basement, exp($\beta_1$)&1.1& 1.4 &1.7\\
-  %geometric sd of predictions, exp($\sigma$)&2.1 &2.2& 2.4\\
-  %\end{tabular}
-  %\end{center}
+%Insert pics:
+%%%%%%%%%%%%%
+%\begin{center}
+  %\makebox[\linewidth]{\includegraphics[width=\textwidth]{4640HW6.jpg}}
+%\end{center}
 
 
 
-  %%%insert code snippets:
-  %\begin{lstlisting}
-  %INSERT CODE HERE
-  %\end{lstlisting}
+%insert a complicated tab...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{center}
+%\begin{tabular}{ p{12cm}p{1cm}p{1cm}p{1cm}  }
+%& \multicolumn{3}{c}{Posterior Quantiles} \\
+%\centering{Quantity of Interest} & 25\% & 50\% & 75\% \\
+%\hline
+%geometric mean for Blue Earth (no basement), exp($\beta_2)$ &4.1& 5.0& 6.5\\
+%geometric mean for Blue Earth County (basement), exp($\beta_1+\beta_2)$ &6.1 &7.1 &8.2\\
+%geometric mean for Clay County (no basement), exp($\beta_3)$& 3.8& 4.7 &5.8\\
+%geometric mean for Clay County (basement), exp($\beta_1+\beta_3)$ &5.6& 6.5& 7.6\\
+%geometric mean for Goodhue County (no basement), exp($\beta_4)$ & 3.9 &4.9& 6.2\\
+%geometric mean for Goodhue County (basement), exp($\beta_1+\beta_4)$ &5.8& 6.8& 7.9\\
+%factor for basement vs. no basement, exp($\beta_1$)&1.1& 1.4 &1.7\\
+%geometric sd of predictions, exp($\sigma$)&2.1 &2.2& 2.4\\
+%\end{tabular}
+%\end{center}
+
+
+
+%%%insert code snippets:
+%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{lstlisting}
+%INSERT CODE HERE
+%\end{lstlisting}
+
+%Insert equations with alignment:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
