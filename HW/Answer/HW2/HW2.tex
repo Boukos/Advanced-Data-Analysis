@@ -84,7 +84,7 @@
 
 \begin{addmargin}[-2em]{0em}
 \large{\textbf{1. }}\end{addmargin}
-\begin{addmargin}[-1.1em]{0em} \textbf{Suppose you have three different feeds that may affect the size of eggs that chickens lay. You randomly assign 10 chickens to each one of the three feeds and record the size of the eggs (maximum length, in centimeters) that the chickens lay the following week. The null hypothesis is that all the chicken feeds have the same effect on the length of the major axis. The alternative is that the feed has so me causal effect. A partial output is}\par \end{addmargin}
+\begin{addmargin}[-1.1em]{0em} \textbf{Suppose you have three different feeds that may affect the size of eggs that chickens lay. You randomly assign 10 chickens to each one of the three feeds and record the size of the eggs (maximum length, in centimeters) that the chickens lay the following week. The null hypothesis is that all the chicken feeds have the same effect on the length of the major axis. The alternative is that the feed has some causal effect. A partial output is}\par \end{addmargin}
 
 
 \begin{center}
@@ -103,26 +103,31 @@
 \begin{addmargin}[-0.5em]{0em}
 \textbf{Answer: }\end{addmargin}
 
-\begin{addmargin}[-1.1em]{0em}
-\textbf{(b)}\par\end{addmargin}
-  \textbf{Test the null hypothesis is that all the chicken feeds have the same effect on the length of the major axis against the alternative is that the feed has some causal effect. Use $\alpha = 0.05$.
-} \par
-
 \begin{center}
-\begin{tabular}{ p{5cm}p{1cm}p{1cm}p{1cm}p{1cm}}
+\begin{tabular}{ p{2cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}}
 \centering Source & df & SS & MS & F\\
-\centering Propper(A) & 4.5  & {} & {} &\\
-\centering Corn(B) & {} & 15.75 & {} & {}\\
-\centering Interaction (A*B) & {} & {} & {} & {}\\
-\centering error & {} & 1.67 & {} & {}\\
-\centering total & {} & 22.00 & {} & {}\\
+\centering feed & 2 & 23.43 & 11.715 & 67.731\\
+\centering error & 27 & 4.67 & 0.1730 & {}\\
+\centering total & 29 & 28.10 & {} & {}\\
 \end{tabular}
 \end{center}
 
+\begin{addmargin}[-1.1em]{0em}
+\textbf{(b)}\par\end{addmargin}
+  \textbf{Test the null hypothesis that all the chicken feeds have the same effect on the length of the major axis against the alternative that the feed has some causal effect. Use $\alpha = 0.05$.
+}\par
 \bigbreak
 
 \begin{addmargin}[-0.5em]{0em}
 \textbf{Answer: }\end{addmargin}
+
+\begin{lstlisting}
+>qf(.95, df1=2, df2=27)
+[1] 3.354131
+\end{lstlisting}
+
+Since $F = 67.731 > f(0.95, 2, 29) = 3.354131$, we reject the null hypothesis that all the chicken feeds have the same effect.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,6 +138,18 @@
   \begin{addmargin}[-2em]{0em} \large{\textbf{2. }}\end{addmargin}
 
   \begin{addmargin}[-1.1em]{0em} \textbf{Suppose you want to compare the types of popcorn popper and the brand of popcorn with respect to their yield (in terms of cups of popped corn). Factor A is the type of popper: oil-based versus air-based. Factor B is the brand of popcorn: gourmet versus national brand versus generic. For each combination of popper type and brand, you took three separate measurements. The ANOVA table is}\par\end{addmargin}
+
+    \begin{center}
+    \begin{tabular}{ p{5cm}p{1cm}p{1cm}p{1cm}p{1cm}}
+    \centering Source & df & SS & MS & F\\
+    \centering Propper(A) & {} & 4.5 & {} &\\
+    \centering Corn(B) & {} & 15.75 & {} & {}\\
+    \centering Interaction (A*B) & {} & {} & {} & {}\\
+    \centering error & {} & 1.67 & {} & {}\\
+    \centering total & {} & 22.00 & {} & {}\\
+    \end{tabular}
+    \end{center}
+
   \bigbreak
 
   \begin{addmargin}[-1.1em]{0em}
@@ -141,6 +158,17 @@
   \bigbreak
   \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }\end{addmargin}
+
+  \begin{center}
+  \begin{tabular}{ p{5cm}p{1cm}p{1.5cm}p{1.5cm}p{1.5cm}}
+  \centering Source & df & SS & MS & F\\
+  \centering Propper(A) & 1 & 4.5 & 4.5 & 32.374\\
+  \centering Corn(B) & 2 & 15.75 & 7.875 & 56.655\\
+  \centering Interaction (A*B) & 2 & 0.08 & 0.04 & 0.2878\\
+  \centering error & 12 & 1.67 & 0.139 & {}\\
+  \centering total & 17 & 22.00 & 1.294 & {}\\
+  \end{tabular}
+  \end{center}
 
 
   \bigbreak
@@ -152,15 +180,29 @@
   \textbf{Answer: }\end{addmargin}
 
 
+\begin{lstlisting}
+>qf(.95, df1=2, df2=12)
+[1] 3.885294
+\end{lstlisting}
+Since $F = 32.374 > F(0.95,1,12) = 3.885294$, we rejuct the null hypothesis that there is no interaciton.
+
   \bigbreak
   \begin{addmargin}[-1.1em]{0em}
   \textbf{(c)}\par\end{addmargin}
     \textbf{It is decided to fit a model without an interaction and the partial results are}\par
-  \bigbreak
+
+    \begin{center}
+    \begin{tabular}{ p{5cm}p{1cm}p{1cm}p{1cm}p{1cm}}
+    \centering Source & df & SS & MS & F\\
+    \centering Propper(A) & {} & 4.5 & {} &\\
+    \centering Corn(B) & {} & 15.75 & {} & {}\\
+    \centering error & {} & 1.67 & {} & {}\\
+    \centering total & {} & 22.00 & {} & {}\\
+    \end{tabular}
+    \end{center}
+
   \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }\end{addmargin}
-
-
 
   \bigbreak
   \begin{addmargin}[-1.1em]{0em}
@@ -170,7 +212,15 @@
   \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }\end{addmargin}
 
-
+  \begin{center}
+  \begin{tabular}{ p{5cm}p{1cm}p{1.5cm}p{1.5cm}p{1.5cm}}
+  \centering Source & df & SS & MS & F\\
+  \centering Propper(A) & 1 & 4.5 & 4.5 & 37.72\\
+  \centering Corn(B) & 2 & 15.75 & 7.875 & 66.01\\
+  \centering error & 14 & 1.67 & 0.1193 & {}\\
+  \centering total & 17 & 22.00 & {} & {}\\
+  \end{tabular}
+  \end{center}
 
   \bigbreak
   \begin{addmargin}[-1.1em]{0em}
@@ -180,6 +230,11 @@
   \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }\end{addmargin}
 
+  \begin{lstlisting}
+  >qf(.95, df1=1, df2=14)
+  [1] 4.60011
+  \end{lstlisting}
+  Since $F = 37.72 > F(0.95,1,14) = 4.6001$, we reject the null hypothesis that there is no popper effect
 
 
     \bigbreak
@@ -192,6 +247,11 @@
     \textbf{Answer: }\end{addmargin}
 
 
+\begin{lstlisting}
+>qf(.95, df1=2, df2=14)
+[1] 3.738892
+\end{lstlisting}
+Since $F = 66.01 > F(0.95,2,14) = 3.738892$, we reject the null hypothesis that there is a corn effect
 
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
