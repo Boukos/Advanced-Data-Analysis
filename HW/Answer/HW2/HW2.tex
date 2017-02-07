@@ -1,22 +1,22 @@
 
-
-
-  \documentclass[letterpaper,11pt]{article}
-  \usepackage{latexsym}
-  \usepackage[empty]{fullpage}
-  \usepackage[usenames,dvipsnames]{color}
-  \usepackage{verbatim}
-  \usepackage{hyperref}
-  \usepackage{framed}
-  \usepackage{tocloft}
-  \usepackage{bibentry}
-  \usepackage{amsmath}
-  \usepackage{scrextend}
-  \usepackage{listings}
-  \usepackage{color}
-  \usepackage{fancyhdr}
-  \usepackage{graphicx}
-  \usepackage{pgfplots}
+\documentclass[letterpaper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{bibentry}
+\usepackage{amsmath}
+\usepackage{scrextend}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+% Adjust margins
+\usepackage[left=1in,top=0.7in,right=1in,bottom=0.6in]{geometry}
 
   %THIS PORTION IS FOR ADDING PAGE NUMBER
   \pagestyle{fancy}
@@ -274,6 +274,21 @@ Since $F = 66.01 > F(0.95,2,14) = 3.738892$, we reject the null hypothesis that 
     \begin{addmargin}[-0.5em]{0em}
     \textbf{Answer:}\end{addmargin}
 
+\begin{lstlisting}
+data <- read.csv("HW2DATA.csv")
+fertilizer <- c(rep("A",12),rep("B",12))
+wheat <- data[,2]
+response <- data[,3]
+interaction.plot(fertilizer,wheat,response)
+\end{lstlisting}
+
+we get the following interaction plot:
+
+\begin{center}
+\makebox[\linewidth]{\includegraphics[width=\textwidth]{HW21.jpg}}
+\end{center}
+
+The four lines are parallel to each other, suggesting that the there is no interaction between fertilizer type and wheat type.
 
     \bigbreak
     \begin{addmargin}[-1.1em]{0em}
@@ -284,23 +299,110 @@ Since $F = 66.01 > F(0.95,2,14) = 3.738892$, we reject the null hypothesis that 
     \textbf{Answer: }\end{addmargin}
 
 
+\begin{lstlisting}
+summary(aov(response~fertilizer*wheat))
+\end{lstlisting}
+  we get the following result:
 
+\begin{lstlisting}
+                 Df Sum Sq Mean Sq F value   Pr(>F)
+fertilizer        1  18.90  18.904   48.63 3.14e-06 ***
+wheat             3  92.02  30.674   78.90 8.37e-10 ***
+fertilizer:wheat  3   0.22   0.074    0.19    0.902
+Residuals        16   6.22   0.389
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{lstlisting}
+
+Since the p-value for "fertilizer:wheat" is $0.902>\alpha = 0.05$, then we cannot reject $H_0$.
+
+\bigbreak
+\begin{addmargin}[-1.1em]{0em}
+\textbf{(c)}\par\end{addmargin}
+\textbf{Fit a model without an interaction and test $H_0$: No fertilizer effect against $H_1$ : there is a fertilizer effect. Use $\alpha = 0.05$ if you reject H0, use Tukey’s method to do pairwise comparisons of the different fertilizer types.}\par
     \bigbreak
-    \begin{addmargin}[-1.1em]{0em}
-    \textbf{(c)}\par\end{addmargin}
-      \textbf{Fit a model without an interaction and test $H_0$: No fertilizer effect against $H_1$ : there is a fertilizer effect. Use $\alpha = 0.05$ if you reject H0, use Tukey’s method to do pairwise comparisons of the different fertilizer types.}\par
+    \begin{addmargin}[-0.5em]{0em}
+    \textbf{Answer: }\end{addmargin}
+We fit a model without interaction:
+\begin{lstlisting}
+summary(aov(response~fertilizer+wheat))
+\end{lstlisting}
+
+\begin{lstlisting}
+      Df Sum Sq Mean Sq F value   Pr(>F)
+fertilizer   1  18.90  18.904   55.76 4.59e-07 ***
+wheat        3  92.02  30.674   90.48 1.97e-11 ***
+Residuals   19   6.44   0.339
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{lstlisting}
+
+Since p-value for fertilizer if $4.59e-07<\alpha = 0.05$, we reject $H_0$.\par
+Now we use Tukey's method to do pairwise comparisons of the different fertilizer types:
+
+\begin{lstlisting}
+fit <- aov(response~fertilizer)
+tk<-TukeyHSD(fit,"fertilizer")
+tk
+plot(tk)
+\end{lstlisting}
+
+\begin{center}
+\makebox[\linewidth]{\includegraphics[width=\textwidth]{HW22.jpg}}
+\end{center}
+
+\begin{lstlisting}
+          Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = response ~ fertilizer)
+
+fertilizer
+     diff         lwr      upr     p adj
+B-A 1.775 -0.01614443 3.566144 0.0519242
+        \end{lstlisting}
+Since the p-value is $0.0519242>\alpha=0.05$, we cannot reject that there's no difference between the two fertilizer types.\par
+
+\bigbreak
+\begin{addmargin}[-1.1em]{0em}
+\textbf{(d)}\par\end{addmargin}
+\end{addmargin}
+\textbf{Test $H_0$ : No wheat effect against $H_1$ : there is a effect. Use $\alpha = 0.05$ if you reject H0, use Tukey’s method to do pairwise comparisons of the different wheat types.}\par
     \bigbreak
     \begin{addmargin}[-0.5em]{0em}
     \textbf{Answer: }\end{addmargin}
 
+According to the model we fit in (c), the p-value for wheat type is $4.59e-07<\alpha = 0.05$, so we reject the hypothesis that there's no wheat efffect.\par
+ then we use the Tukey's method to do the pairwise comparisons of different wheat types:
+\begin{lstlisting}
+fit <- aov(response~wheat)
+tk<-TukeyHSD(fit,"wheat")
+tk
+plot(tk)
+\end{lstlisting}
 
-    \bigbreak
-    \begin{addmargin}[-1.1em]{0em}
-    \textbf{(d)}\par\end{addmargin}
-      \textbf{Test $H_0$ : No wheat effect against $H_1$ : there is a effect effect. Use $\alpha = 0.05$ if you reject H0, use Tukey’s method to do pairwise comparisons of the different wheat types.}\par
-    \bigbreak
-    \begin{addmargin}[-0.5em]{0em}
-    \textbf{Answer: }\end{addmargin}
+\begin{lstlisting}
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = response ~ wheat)
+
+wheat
+         diff        lwr       upr     p adj
+"N"-"M"  4.30  2.4808709 6.1191291 0.0000107
+"O"-"M"  5.15  3.3308709 6.9691291 0.0000008
+"P"-"M"  3.50  1.6808709 5.3191291 0.0001557
+"O"-"N"  0.85 -0.9691291 2.6691291 0.5687888
+"P"-"N" -0.80 -2.6191291 1.0191291 0.6152451
+"P"-"O" -1.65 -3.4691291 0.1691291 0.0839841
+\end{lstlisting}
+
+we get the following plot:
+
+\begin{center} \makebox[\linewidth]{\includegraphics[width=\textwidth]{HW23.jpg}}
+\end{center}
+
+According to the plot and the p-value of the test, we arrive at a conclusion that there is no significant difference between wheat type P, N and O, but there is a significant difference between wheat type M and these three wheat types.
 
 
 

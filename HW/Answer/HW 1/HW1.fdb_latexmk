@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1486311988 "HW1.tex" "HW1.pdf" "HW1" 1486311991
+["pdflatex"] 1486311988 "HW1.tex" "HW1.pdf" "HW1" 1486477432
   "./ADAHW1.jpg" 1486090596 70371 9a352f4c759480b604b9111e9d5a83ca ""
   "./HW1.out" 1486311990 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
@@ -206,7 +206,7 @@
   "HW1.out" 1486311990 0 d41d8cd98f00b204e9800998ecf8427e ""
   "HW1.tex" 1486311988 11736 27f4c2ed3b4bd43137783536f07c5f23 ""
   (generated)
+  "HW1.out"
   "HW1.pdf"
   "HW1.aux"
-  "HW1.out"
   "HW1.log"
