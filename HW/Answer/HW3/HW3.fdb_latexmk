@@ -1,9 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1486914523 "HW2.tex" "HW2.pdf" "HW2" 1486914530
-  "./HW2.out" 1486914528 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "./HW21.jpg" 1486481816 73679 678df3b927f9494686263079c8288070 ""
-  "./HW22.jpg" 1486483364 68426 034db23e9d133a173cab87edf08a5689 ""
-  "./HW23.jpg" 1486485417 55951 5bb5bd3e7119aae4b9a4fe977b377364 ""
+["pdflatex"] 1487451059 "HW3.tex" "HW3.pdf" "HW3" 1487451133
+  "./HW3.out" 1487451077 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -202,14 +199,11 @@
   "/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1432479641 1764542 91654ba72bdb667e84ea24f076ae16d8 ""
   "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1449107833 3849859 db2c9e103f4a4dba66de81402aba83d2 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "HW2.aux" 1486914529 662 b2b94621371df8d9296b8bf5bec1b851 ""
-  "HW2.out" 1486914528 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "HW2.tex" 1486914522 14365 278181c634297ba28219313f77eee121 ""
-  "HW21.jpg" 1486481816 73679 678df3b927f9494686263079c8288070 ""
-  "HW22.jpg" 1486483364 68426 034db23e9d133a173cab87edf08a5689 ""
-  "HW23.jpg" 1486485417 55951 5bb5bd3e7119aae4b9a4fe977b377364 ""
+  "HW3.aux" 1487451077 662 b2b94621371df8d9296b8bf5bec1b851 ""
+  "HW3.out" 1487451077 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "HW3.tex" 1487451084 14053 7c2ea8dc255ea1438a10ed9fab3f2020 ""
   (generated)
-  "HW2.out"
-  "HW2.pdf"
-  "HW2.log"
-  "HW2.aux"
+  "HW3.out"
+  "HW3.log"
+  "HW3.aux"
+  "HW3.pdf"
