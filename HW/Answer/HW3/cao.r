@@ -5,6 +5,7 @@ R2=0.572
 F=(n-p-1)/p*R2/(1-R2)
 Fqf(.95, df1=p, df2=n-p-1)
 
+
 #Q2
 #what the heck is this
 read.csv("/Users/lleiou/Google Drive/😳 Courses/4th term/Advanced-Data-Analysis/HW/Answer/HW3/CompUSys.csv")
@@ -45,6 +46,8 @@ summary(lm(y~factor(x1)+x2))
 
 
 
+
+
 ###############################################
 #this is just a replica of the example in class
 x=c(127,115,127,150,156,182,156,132,137,113,137,117,137,153,117,126,170,182,162,184,143,159,108,175,108,179,111,187,111,115,194,168)
@@ -53,7 +56,6 @@ z = c(1235,1080,845,1522,1047,1979,1822,1253,1297,946,1713,1024,1147,1092,1152,1
 
 summary(lm(z~y+x))
 
-aov(lm(z~y+x))
 
 
 #the following is just a test whether I can plot in atom. (and it proves to be okay)
