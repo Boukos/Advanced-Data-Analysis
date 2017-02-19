@@ -101,7 +101,8 @@ $$F=\frac{n-p-1}{p}\frac{R^2}{1-R^2}$$
 F &= \frac{SSR/dfR}{SSE/dfE} \nonumber\\
   &= \frac{SSR}{SST-SSR}\times\frac{n-p-1}{p} \nonumber\\
   &= \frac{1}{\frac{SST}{SSR}-1}\times\frac{n-p-1}{p}\nonumber\\
-  &= \frac{1}{1/R^2-1}\times\frac{n-p-1}{p}\nonumber
+  &= \frac{1}{1/R^2-1}\times\frac{n-p-1}{p}\nonumber\\
+  &= \frac{n-p-1}{p}\frac{R^2}{1-R^2}\nonumber
 \end{align}
 
 
@@ -119,14 +120,14 @@ F &= \frac{SSR/dfR}{SSE/dfE} \nonumber\\
 > R2=0.572
 > F=(n-p-1)/p*R2/(1-R2)
 > F
-> qf(.95, df1=p, df2=n-p-1)
+> qf(.95,df1=p,df2=n-p-1)
 \end{lstlisting}
 
 \begin{lstlisting}
   7.12772585779782
   3.23887151745358
 \end{lstlisting}
-Since F statistic is greater than $F(0.95,3,16)$, then we cannot reject the Null hypothesis that the parameters are all 0.
+Since F statistic is greater than $F(0.95,3,16)$, then we cannot reject the Null Hypothesis that the parameters are all 0.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%   2   %%%%%%%%%%%%%%%%
@@ -252,7 +253,7 @@ Since there are two intervals in this method, we divide $\alpha$ by 4:
 \begin{addmargin}[-1.1em]{0em}
 \textbf{(f)}\par\end{addmargin}
 \textbf{Test}\par
-$$$H_0$ : E(Y|X=x)=\beta_0+\beta_1x $$
+$$H_0 : E(Y|X=x)=\beta_0+\beta_1x $$
 $$H_a : Not H_0$$
 \textbf{Using $\alpha$ = 0.05.}\par
 
@@ -271,6 +272,7 @@ Res.Df RSS	    Df	Sum of Sq	F	        Pr(>F)
 9	     191.7017	NA	NA	      NA	      NA
 4	     100.0000	5	  91.70166	0.7336133	0.6353456
 \end{lstlisting}
+Since the p-value is 0.6353456, we cannot reject the Null Hypothesis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%   3   %%%%%%%%%%%%%%%%
@@ -279,7 +281,7 @@ Res.Df RSS	    Df	Sum of Sq	F	        Pr(>F)
   \bigbreak
   \begin{addmargin}[-2em]{0em} \large{\textbf{3. }}\end{addmargin}
 
-  \begin{addmargin}[-1.1em]{0em} \textbf{International Oil Inc. Is attempting to a develop a reasonably priced minimum unleaded gasoline that will deliver higher gasoline mileage than can be achieved by its current premium unleaded gaso- lines. As part of its development process, International Oil Inc. wishes to study the effect of one qualitative variable, x1, premium gasoline un- leaded type (A, B, C) and one quantitative variable x2 amount of gaso- line additive VST (0, 1, 2, 3 units) on the gasoline mileage y obtained by an automobile called Encore. For testing purposes a sample of 22 Encores is randomly selected and driven under normal driving condi- tions. The combination of x1 and x2 used in the experiment along with the corresponding values of y are in file mileage.csv. Define μ[A,x], μ[A,x] and μ[B,x] to be the mean unleaded gasoline mileage by Encore when using AST amount x and premium unleaded gasoline types A, B and C, respectively. Consider the model
+  \begin{addmargin}[-1.1em]{0em} \textbf{International Oil Inc. Is attempting to a develop a reasonably priced minimum unleaded gasoline that will deliver higher gasoline mileage than can be achieved by its current premium unleaded gaso- lines. As part of its development process, International Oil Inc. wishes to study the effect of one qualitative variable, x1, premium gasoline un- leaded type (A, B, C) and one quantitative variable x2 amount of gaso- line additive VST (0, 1, 2, 3 units) on the gasoline mileage y obtained by an automobile called Encore. For testing purposes a sample of 22 Encores is randomly selected and driven under normal driving condi- tions. The combination of x1 and x2 used in the experiment along with the corresponding values of y are in file mileage.csv. Define μ[A,x], μ[B,x] and μ[C,x] to be the mean unleaded gasoline mileage by Encore when using AST amount x and premium unleaded gasoline types A, B and C, respectively. Consider the model
 }\par\end{addmargin}
 
 
@@ -337,12 +339,12 @@ The estimation for $\beta_3$ is -0.4192, meaning that when the type is the same,
 \bigbreak
 \begin{addmargin}[-1.1em]{0em}
 \textbf{(b)}\par\end{addmargin}
-\textbf{Test$H_0$ :$\beta_1$ =$\beta_2$ =0 against $H_a$: Not $H_0$ using $\alpha$ = 0.05.}\par
+\textbf{Test $H_0$ :$\beta_1$ =$\beta_2$ =0 against $H_a$: Not $H_0$ using $\alpha$ = 0.05.}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
 \textbf{Answer: }\end{addmargin}
 
-According to the result in (a), the F-statistic we got is 0.6264 on 3 and 18 DF, and p-value is 0.6072. Since p-value is greater than 0.05, we cannot reject the null hypothesis.
+According to the result in (a), the F-statistic we got is 0.6264 on 3 and 18 DF, and p-value is 0.6072. Since p-value is greater than 0.05, we cannot reject the Null Hypothesis.
 \bigbreak
 
 \end{document}
@@ -383,7 +385,6 @@ According to the result in (a), the F-statistic we got is 0.6264 on 3 and 18 DF,
 %     &= RIGHT2 \nonumber\\
 %     &= RIGHT3 \nonumber
 %\end{align}
-
 
 
 %ssh-add ~/.ssh/id_rsa
