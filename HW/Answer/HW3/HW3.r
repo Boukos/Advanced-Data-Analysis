@@ -38,13 +38,12 @@ data
 y = data[,1]
 x1 = data[,2]
 x2 = data[,3]
-lm(y~factor(x1)+x2)
+full = lm(y~factor(x1)+x2)
 
 summary(lm(y~factor(x1)+x2))
+reduced = lm(y~x2)
 
-
-
-
+anova(reduced,full)
 
 
 
