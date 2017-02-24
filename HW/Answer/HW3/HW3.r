@@ -20,10 +20,10 @@ confint(lm(y~x),x=6)
 predict(lm(y~x),newdata=data.frame(x=6),interval="confidence")
 predict(lm(y~x),newdata=data.frame(x=6),interval="prediction")
 
-predict(lm(y~x),newdata=data.frame(x=6),interval="confidence",level=1-0.05/4)
+predict(lm(y~x),newdata=data.frame(x=6),interval="confidence",level=1-0.05/2)
 
 
-predict(lm(y~x),newdata=data.frame(x=7),interval="confidence",level=1-0.05/4)
+predict(lm(y~x),newdata=data.frame(x=7),interval="confidence",level=1-0.05/2)
 
 
 reduced = lm(y~x)

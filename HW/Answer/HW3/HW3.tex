@@ -234,20 +234,20 @@ Interpretation: We are 95\% confident that the number of minutes it takes to ser
   \bigbreak
   \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }\end{addmargin}
-Since there are two intervals in this method, we divide $\alpha$ by 4:
+Since there are two intervals in this method, we divide $\alpha$ by 2:
 \begin{lstlisting}
-  > predict(lm(y~x),newdata=data.frame(x=6),interval="confidence",level=1-0.05/4)
-  > predict(lm(y~x),newdata=data.frame(x=7),interval="confidence",level=1-0.05/4)
+  > predict(lm(y~x),newdata=data.frame(x=6),interval="confidence",level=1-0.05/2)
+  > predict(lm(y~x),newdata=data.frame(x=7),interval="confidence",level=1-0.05/2)
 \end{lstlisting}
 
 \begin{lstlisting}
        fit	     lwr	    upr
-  1	159.0773	152.2858	165.8689
+  1	159.0773	153.2156	164.9391
        fit	     lwr	    upr
-  1	183.6796	174.8148	192.5443
+  1	183.6796	176.0285	191.3306
 \end{lstlisting}
 
- The joint confidence intervals for the mean amounts of time it will take to serve 6 microcomputers is [152.285, 165.8689] and [174.8148, 192.5443] for serving 7 microcomputers.
+ The joint confidence intervals for the mean amounts of time it will take to serve 6 microcomputers is [153.2156, 164.9391] and [176.0285, 191.3306] for serving 7 microcomputers.
 
 \bigbreak
 \begin{addmargin}[-1.1em]{0em}
@@ -344,7 +344,26 @@ The estimation for $\beta_3$ is -0.4192, meaning that when the type is the same,
 \begin{addmargin}[-0.5em]{0em}
 \textbf{Answer: }\end{addmargin}
 
-According to the result in (a), the F-statistic we got is 0.6264 on 3 and 18 DF, and p-value is 0.6072. Since p-value is greater than 0.05, we cannot reject the Null Hypothesis.
+To solve this question, we create a reduced model:
+$$Y_i =\beta_0 +\beta_3x_2 + \epsilon_i$$
+and a full model:
+$$Y_i =\beta_0 +\beta_1D_{1i} +\beta_2D_{2i} +\beta_3x_2 + \epsilon_i$$
+so the we will reject the Null Hypothesis if the two models are different:
+
+\begin{lstlisting}
+> full = lm(y~factor(x1)+x2)
+> reduced = lm(y~x2)
+> summary(reduced, full)
+\end{lstlisting}
+
+\begin{lstlisting}
+  Res.Df	RSS	      Df	Sum of Sq	F	        Pr(>F)
+  20	    125.1361	NA	NA	      NA	      NA
+  18	    115.4223	2	  9.713798	0.7574291 0.4832412
+\end{lstlisting}
+
+Since the p-value for this test is greater than 0.05, we cannot reject the Null Hypothesis.
+
 \bigbreak
 
 \end{document}
