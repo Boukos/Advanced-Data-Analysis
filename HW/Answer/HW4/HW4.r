@@ -1,21 +1,64 @@
 #Q1
-
+#(b)
 data = read.table("/Users/lleiou/Google Drive/😳 Courses/4th term/Advanced-Data-Analysis/HW/Question/HW4/DATACIGARETTE.txt", header = TRUE)
-
-
 mat.data <- data.matrix(data[,2:8])
-
 mat.data
-
-
 cor((mat.data))
+#scatter plot matrix:
 pairs(data[,2:8])
 
+#(c)
 results = lm(Sales ~ Age+HS+Income+Black+Female+Price , data=data)
+# install.packages('car')
+results
+library(car)
+vif(results)
+
+#(d)
+r = rstudent(results)
+data[abs(r)>3,]
+
+#(e)
 lev = hat(model.matrix(results))
 lev
+# length(lev)
+# 51
+data[lev>12/51]
+data[which(lev>12/51),1]
 
-data
+#(f)
+cook = cooks.distance(results)
+cook
+
+#(g)
+#(gd)
+results = lm(ln(Sales) ~ Age+HS+Income+Black+Female+Price , data=data)
+results
+r = rstudent(results)
+data[abs(r)>3,]
+
+
+#(ge)
+lev = hat(model.matrix(results))
+lev
+# length(lev)
+# 51
+data[which(lev>12/51),1]
+
+#(gf)
+cook = cooks.distance(results)
+cook
+
+# just wonder why the results doesn't change anything after taking the log(Sales)
+
+data[ ,'Sales']
+log(data[,'Sales'])
+
+
+
+
+
+
 
 
 
@@ -39,6 +82,11 @@ reduced = lm(y~x)
 full = lm(y~factor(x))
 anova(reduced,full)
 
+
+
+cook = cooks.distance(results)
+data[cook>1,]
+cook
 
 
 #Q3

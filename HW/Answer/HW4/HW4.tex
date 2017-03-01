@@ -112,7 +112,7 @@ I expect there's a negative correlation between sales of cigarettes and Price, t
 > mat.data <- data.matrix(data[,2:8])
 > cor((mat.data))
 \end{lstlisting}
-
+so the pairwise correlation coefficient matrix is:
 \begin{lstlisting}
          Age	      HS	      Income	    Black	     Female	    Price	    Sales
   Age	1.00000000	-0.09891626	0.25658098	-0.04033021	0.55303189	0.24775673	0.22655492
@@ -129,9 +129,7 @@ I expect there's a negative correlation between sales of cigarettes and Price, t
 > pairs(data[,2:8])
 \end{lstlisting}
 
-
-
-
+The corresponding scatter plot is:
 \begin{center} \makebox[\linewidth]{\includegraphics[width=\textwidth]{HW4.jpg}}
 \end{center}
 
@@ -145,13 +143,39 @@ I expect there's a negative correlation between sales of cigarettes and Price, t
 \begin{addmargin}[-0.5em]{0em}
 \textbf{Answer: }\end{addmargin}
 
+\begin{lstlisting}
+> results = lm(Sales ~ Age+HS+Income+Black+Female+Price , data=data)
+# install.packages('car')
+> library(car)
+> vif(results)
+\end{lstlisting}
+The VIF for 6 variables are:
+\begin{lstlisting}
+  Age       HS   Income    Black   Female    Price
+2.300617 2.676465 2.325164 2.392152 2.406417 1.142181
+\end{lstlisting}
 
+\begin{addmargin}[-1.1em]{0em}
 \textbf{(d)}\par\end{addmargin}
   \textbf{Argue that no pure strategy is strictly dominated in this game.}\par
   %by putting the "\par" into the \textbf, error msg will occur...
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
 \textbf{Answer: }\end{addmargin}
+
+Yes, there are outlying Sales observations in the regression model relating Sales to the six predictors.\par
+\begin{lstlisting}
+> r = rstudent(results)
+> data[abs(r)>3,]
+\end{lstlisting}
+
+\begin{lstlisting}
+  State	Age	HS	Income	Black	Female	Price	Sales
+29	NV	27.8	65.2	4563	5.7	49.3	44.0	189.5
+30	NH	28.0	57.6	3737	0.3	51.1	34.1	265.7
+\end{lstlisting}
+
+As we can see from the result, NV and NH are the two states that have outlying Sales observations in the regression model relating Sales to the six predictors.
 
 
 \begin{addmargin}[-1.1em]{0em}
@@ -166,13 +190,108 @@ I expect there's a negative correlation between sales of cigarettes and Price, t
 \begin{lstlisting}
 > results = lm(Sales ~ Age+HS+Income+Black+Female+Price , data=data)
 > lev = hat(model.matrix(results))
+> lev
 \end{lstlisting}
 
 \begin{lstlisting}
   0.148834504030601 0.580160351053579 0.0496985364502016 0.13709423363853 0.0601062187168606 0.130138939805311 0.174671432351856 0.109964259157845 0.719712840922186 0.2984807799694 0.0992462576906176 0.216903455841289 0.092060813754798 0.078138923121058 0.0863031077553889 0.0600834204236368 0.0600531614367214 0.229271714316211 0.147216983914844 0.0592277100717082 0.082438148474407 0.111768500306865 0.0788600537461464 0.0595424855799236 0.220268293959589 0.0538126742130819 0.07535749988127 0.0713061951148198 0.171156408722539 0.0663450574293963 0.112543589203342 0.205163482615724 0.125210794051503 0.189612219012305 0.0977942068782977 0.0427023659576899 0.0747312407280888 0.194824611487451 0.110848283936785 0.107728709447137 0.157387827636549 0.0702636797470909 0.0861059621640753 0.073209300335295 0.310573704010913 0.0646432821046025 0.121378178796484 0.06441386857486 0.139413729014416 0.0386706972156815 0.0845573052310269
 \end{lstlisting}
 
+According to the common rule we will flag any observation whose leverage value satisfies
+$$h_{ii} > \frac{2p}{n} = \frac{12}{51}$$
 
+\begin{lstlisting}
+> data[which(lev>12/51),1]
+> lev[lev>12/51]
+\end{lstlisting}
+
+\begin{lstlisting}
+AK DC FL UT
+0.580160351053579 0.719712840922186 0.2984807799694 0.310573704010913
+\end{lstlisting}
+
+Thus, according to the rule above, we get 4 states who have high leverage: AK, DC, FL, UT.
+
+\begin{addmargin}[-1.1em]{0em}
+\textbf{(f)}\par\end{addmargin}
+  \textbf{Combining parts (c) and (d), what has this example proved?}\par
+  %by putting the "\par" into the \textbf, error msg will occur...
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+\textbf{Answer: }\end{addmargin}
+
+Typically, points with Cook's distance greater than 1 are classified as being influential, so we calculate Cook's distance for every state's data:
+\begin{lstlisting}
+> cook = cooks.distance(results)
+> cook
+\end{lstlisting}
+Then we get the 51 Cook's distance:
+\begin{lstlisting}
+0.000872312260768373 0.11046568368098 0.000231406438616766 0.00533644985289951 0.00087184813943891 0.00487422897991362 0.000903689085754166 0.0247623942663158 0.272772360871267 0.00031718427842994 0.00228486844474409 0.149108047215374 0.00577305260600313 0.000515725336002152 0.000235292422912618 0.0022195814166927 0.0011742764662855 0.0293108038740074 0.0091907941594545 0.0046197884422297 0.00853949173434342 5.43666855436729e-05 0.000993543307494363 0.000416583654710988 0.00357717450931961 0.00181158830548335 0.00222167629931825 0.0106704252779454 0.226884733564416 0.243073931655456 0.00865807771956428 0.00862556323250348 0.0128750489379433 0.0514726373485391 0.000694147592466878 0.000198786969647856 0.000926126973805015 0.000632210801320141 0.00231792501997608 3.5406858359337e-07 0.00559710600247828 0.0021868920733631 0.000167678660476866 0.000276633855805063 0.0861896935150744 0.00441253690931487 0.0144781318896138 0.00554156138259945 0.00241683043673791 0.000216940322227759 6.00182901861485e-05
+\end{lstlisting}
+No one is greater than 1, so there's no influential points according to the rule of Cook's distance.
+
+
+\begin{addmargin}[-1.1em]{0em}
+\textbf{(g)}\par\end{addmargin}
+  \textbf{Combining parts (c) and (d), what has this example proved?}\par
+  %by putting the "\par" into the \textbf, error msg will occur...
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+\textbf{Answer: }\end{addmargin}
+
+\begin{lstlisting}
+> results = lm(log(Sales) ~ Age+HS+Income+Black+Female+Price, data=data)
+> r = rstudent(results)
+> data[abs(r)>3,]
+\end{lstlisting}
+
+\begin{lstlisting}
+  State	Age	HS	Income	Black	Female	Price	Sales
+29	NV	27.8	65.2	4563	5.7	49.3	44.0	189.5
+30	NH	28.0	57.6	3737	0.3	51.1	34.1	265.7
+\end{lstlisting}
+
+As we can see from the result, NV and NH are the two states that have outlying Sales observations in the regression model relating Sales to the six predictors.
+
+
+
+
+\begin{lstlisting}
+> lev = hat(model.matrix(results))
+> lev
+\end{lstlisting}
+
+\begin{lstlisting}
+  0.148834504030601 0.580160351053579 0.0496985364502016 0.13709423363853 0.0601062187168606 0.130138939805311 0.174671432351856 0.109964259157845 0.719712840922186 0.2984807799694 0.0992462576906176 0.216903455841289 0.092060813754798 0.078138923121058 0.0863031077553889 0.0600834204236368 0.0600531614367214 0.229271714316211 0.147216983914844 0.0592277100717082 0.082438148474407 0.111768500306865 0.0788600537461464 0.0595424855799236 0.220268293959589 0.0538126742130819 0.07535749988127 0.0713061951148198 0.171156408722539 0.0663450574293963 0.112543589203342 0.205163482615724 0.125210794051503 0.189612219012305 0.0977942068782977 0.0427023659576899 0.0747312407280888 0.194824611487451 0.110848283936785 0.107728709447137 0.157387827636549 0.0702636797470909 0.0861059621640753 0.073209300335295 0.310573704010913 0.0646432821046025 0.121378178796484 0.06441386857486 0.139413729014416 0.0386706972156815 0.0845573052310269
+\end{lstlisting}
+
+According to the common rule we will flag any observation whose leverage value satisfies
+$$h_{ii} > \frac{2p}{n} = \frac{12}{51}$$
+
+\begin{lstlisting}
+> data[which(lev>12/51),1]
+> lev[lev>12/51]
+\end{lstlisting}
+
+\begin{lstlisting}
+AK DC FL UT
+0.580160351053579 0.719712840922186 0.2984807799694 0.310573704010913
+\end{lstlisting}
+
+Thus, according to the rule above, we get 4 states who have high leverage: AK, DC, FL, UT.
+
+
+Typically, points with Cook's distance greater than 1 are classified as being influential, so we calculate Cook's distance for every state's data:
+\begin{lstlisting}
+> cook = cooks.distance(results)
+> cook
+\end{lstlisting}
+Then we get the 51 Cook's distance:
+\begin{lstlisting}
+0.00359045513224516 0.240240855616072 0.00121318532616218 0.00940000348486041 0.000293993996183841 0.000845445364141786 0.00157627217231795 0.0336654337125128 0.14134926250704 4.17359595508581e-08 0.00203727701223271 0.270758042867878 0.00458499785548776 0.000451889520957869 9.31888737750166e-06 0.00184184619189831 0.000560973161470141 0.0319246707978281 0.0204097590400288 0.00921415105332014 0.00810736995024783 7.12278615229615e-05 0.00254520116778151 0.0002981214100366 0.00317957208142376 0.00184483532854467 0.00116873114507587 0.0108404640748746 0.242062092944229 0.161220045757967 0.0123781360184546 0.0103388197355609 0.0176912765990876 0.0540788613509783 0.00205060932036119 4.12952664005199e-05 0.000879330434682632 0.0030802159952135 0.00441873438600284 8.57636871488496e-05 0.005679380081201 0.00398597075671328 0.000654080555535082 0.00040384707347726 0.238154414273449 0.00956732233083818 0.0132426216290245 0.00700748304948474 0.00221365370129141 0.000195642965139178 0.00154531793916012
+\end{lstlisting}
+No one is greater than 1, so there's no influential points according to the rule of Cook's distance.
 
 
 
@@ -188,6 +307,10 @@ I expect there's a negative correlation between sales of cigarettes and Price, t
   \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }\end{addmargin}
 
+
+
+
+
 \begin{addmargin}[-1.1em]{0em}
 \textbf{(b)}\par\end{addmargin}
   \textbf{Is every strategy that is part of a pure strategy Nash equilibrium rationalizable?
@@ -199,127 +322,6 @@ I expect there's a negative correlation between sales of cigarettes and Price, t
 
 
 
-\begin{addmargin}[-1.1em]{0em}
-\textbf{(c)}\par\end{addmargin}
- \textbf{Write down a 2 player game in matrix form in which each player has three pure strategies, only two of which are rationalizable, and there is a unique pure strategy Nash equilibrium.
-}\par
-
-\bigbreak
-\begin{addmargin}[-0.5em]{0em}
-\textbf{Answer: }\end{addmargin}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%   3   %%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{addmargin}[-2em]{0em} \large{\textbf{3. }}\end{addmargin}
-
-\textbf{Players 1 and 2 are bargaining over \$10. Each player $i$ names an amount, $s_i$, between 0 and 10 for herself. These numbers do not have to be in whole dollar units. The choices are made simultaneously. Each player’s payoff is equal to her own monetary payoff . We will consider this game under two different rules. In both cases, if $s_1 + s_2 \leq 10$ then the players get the amounts that they named (and the remainder, if any, is destroyed).}
-
-
-
-\begin{addmargin}[-1.1em]{0em} \textbf{(a)}\par\end{addmargin}
-
-\textbf{In the first case, if $s_1 +s_2 > 10$ then both players get 0 and the money is destroyed. What are all the pure strategy Nash Equilibria of this game?}\par
-\bigbreak
-\begin{addmargin}[-0.5em]{0em}
-\textbf{Answer: }\end{addmargin}
-
-
-\begin{addmargin}[-1.1em]{0em}
-\textbf{(b)}\par\end{addmargin}
-\textbf{In the second case, if $s_1 + s_2 > 10$ and the amounts named are different, then the person who names the smaller amount gets that amount and the other person gets the remaining money (out of 10). If $s_1 + s_2 > 10$ and $s_1 = s_2$, then both players get 5. What are all the pure strategy Nash Equilibria of this game?
-}\par
-
-\bigbreak
-\begin{addmargin}[-0.5em]{0em}
-\textbf{Answer: }\end{addmargin}
-
-
-\begin{addmargin}[-1.1em]{0em}
-\textbf{(c)}\par\end{addmargin}
-
-\textbf{Now suppose these two games are played with the extra rule that the named amounts have to be in whole dollar units. Does this change the set of pure strategy Nash Equilibria in either case?
-}\par
-\bigbreak
-\begin{addmargin}[-0.5em]{0em}
-\textbf{Answer: }\end{addmargin}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%   4   %%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\begin{addmargin}[-2em]{0em} \large{\textbf{4. }}\end{addmargin}
-\textbf{Consider the following two-player game}
-
-
-
-
-\begin{addmargin}[-1.1em]{0em}
-\textbf{(a)}\par\end{addmargin}
-\textbf{Find all pure strategy Nash Equilibria.}
-\bigbreak
-\begin{addmargin}[-0.5em]{0em}
-\textbf{Answer: }\end{addmargin}
-
-
-\begin{addmargin}[-1.1em]{0em}
-\textbf{(b)}\par\end{addmargin}
-\textbf{Are there other Nash equilibria, i.e. mixed strategy equilibria? If yes, list them.
-}\par
-\bigbreak
-\begin{addmargin}[-0.5em]{0em}
-\textbf{Answer: }\end{addmargin}
-
-
-\bigbreak
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%   5   %%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{addmargin}[-2em]{0em} \large{\textbf{5. }}\end{addmargin}
-
-\textbf{A crime is observed by a group of $n > 1$ people. Each person would like the police to be informed but prefers that someone else make the phone call. Specifically, suppose that each person attaches the value $v$ to the police being informed by someone and bears a personal cost $c$ if she makes the phone call. Assume $v > c > 0$.
-}
-
-\begin{addmargin}[-1.1em]{0em}
-\textbf{(a)}\par\end{addmargin}
-  \textbf{Set this situation up as a simultaneous-move game: for each player, define the strategy space and the payoff function as a function of all players’ strategies.
-}\par
-        \bigbreak
-        \begin{addmargin}[-0.5em]{0em}
-        \textbf{Answer: }\end{addmargin}
-
-
-
-\begin{addmargin}[-1.1em]{0em}
-\textbf{(b)}\par\end{addmargin}
-        \textbf{Is there a symmetric pure strategy Nash Equilibrium, i.e., one in which all players use the same strategy? How about asymmetric pure strategy Nash equilibria (i.e., ones in which different players can use different pure strategies)?}\par
-       \bigbreak
-       \begin{addmargin}[-0.5em]{0em}
-       \textbf{Answer: }\end{addmargin}
-
-
-
-\begin{addmargin}[-1.1em]{0em}
-\textbf{(c)}\par\end{addmargin}
-\textbf{Find a symmetric mixed strategy Nash equilibrium, i.e. one in which each person calls with the same probability. This can be done in a few steps:}\par
-\bigbreak
-\textbf{1. Let $p$ be the probability that each person calls in a mixed strategy equilibrium. From player $i$\’s perspective, what\’s the probability that no one else calls? What’s the probability that at least one other person calls?}\par
-\bigbreak
-\textbf{2. In a symmetric mixed strategy equilibrium, what must be true about a player’s expected payoff from calling and keeping silent? Write this down mathematically using the two probabilities derived in part 5(c)1.}
-\bigbreak
-\textbf{3. Based on the condition you derived in part 5(c)2, express p as a function of $c$ and $v$.}\par
-\bigbreak
-\textbf{4. In the symmetric mixed strategy equilibrium, how does p change as the size of the group increases? What about the probability that at least one person calls? What about the expected payoff of each person? Explain intuitively why the probability that crime is reported (by at least one person) increases/decreases with group size; do the same for the expected payoff of each group member.}
-
-
-\begin{addmargin}[-0.5em]{0em}
-\textbf{Answer: }\end{addmargin}
 
 
 \end{document}
