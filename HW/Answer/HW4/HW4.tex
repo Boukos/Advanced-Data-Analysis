@@ -19,8 +19,8 @@
 \cfoot{}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0pt}
-%THIS PORTION IS FOR ADDING PAGE NUMBER
 
+%THIS PORTION IS FOR ADDING PAGE NUMBER
 \urlstyle{same}
 \definecolor{mygrey}{gray}{.85}
 \definecolor{mygreylink}{gray}{.30}
@@ -28,7 +28,6 @@
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
-
 
 %The following part is for inserting codes in LaTeX:
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -52,11 +51,10 @@
     showspaces=false,
     showstringspaces=false,
     showtabs=false,
-    tabsize=2
-}
+    tabsize=2}
 \lstset{style=mystyle}
-%For inserting codes in LaTeX
 
+%For inserting codes in LaTeX
 \begin{document}
 
 \begin{center}
@@ -76,19 +74,18 @@
 %%%%%%%%%%%%%%   1   %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{addmargin}[-2em]{0em}
+  \large{\textbf{1. }}
+\end{addmargin}
 
-\begin{addmargin}[-2em]{0em} \large{\textbf{1. }}\end{addmargin}
-\textbf{Consider the 3 player game shown below, in which player3’s strategy set is ${M1,M2,M3,M4}$. Each cell only lists one payoff, which represents all three players’ payoffs from that strategy profile. E.g., all three players’ payoff is 8 from $(A, C, M_1)$.}
-\bigbreak
-
-\textbf{Let $p \in [0, 1]$ denote the probability of playing $A$ in a mixed strategy for player 1 (so $1 - p$ is the probability of playing B), and $q \in [0, 1]$ denote that of playing $C$ in a mixed strategy for player 2 (so $1 - q$ is the probability of playing D). We can denote a mixed strategy profile for players 1 and 2 by a pair $(p, q)$.}
-
-\begin{addmargin}[-1.1em]{0em} \textbf{(a)}\par\end{addmargin}
-  \textbf{Compute the expected payoff for player 3 when she plays some $M_j$ given any mixed strategy profile for the opponents, i.e., give algebraic expressions for $v_3(M_j,p,q)$ for each $j \in {1,2,3,4}$.}\par
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(a)}\par
+\end{addmargin}
+\textbf{}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
-\textbf{Answer: }\end{addmargin}
-
+  \textbf{Answer: }
+\end{addmargin}
 
 I expect there's a positive correlation between sales of cigarettes and Age, because the people with higher ages tend to smoke more cigarettes, the proportion of people smoking within young people is relatively small.\par
 I expect there's a negative correlation between sales of cigarettes and HS, because people with higher education are more aware of the harm of smoking and are tend to somke less.\par
@@ -99,13 +96,13 @@ I expect there's a negative correlation between sales of cigarettes and Price, t
 
 
 \begin{addmargin}[-1.1em]{0em}
-\textbf{(b)}\par\end{addmargin}
-  \textbf{What three inequalities must hold if $M_2$ is a best response to the mixed strategy profile $(p,q)$?}\par
+  \textbf{(b)}\par
+\end{addmargin}
+\textbf{}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
-\textbf{Answer: }\end{addmargin}
-
-
+  \textbf{Answer: }
+\end{addmargin}
 
 \begin{lstlisting}
 > data = read.table("DATACIGARETTE.txt", header = TRUE)
@@ -133,15 +130,14 @@ The corresponding scatter plot is:
 \begin{center} \makebox[\linewidth]{\includegraphics[width=\textwidth]{HW4.jpg}}
 \end{center}
 
-
-
 \begin{addmargin}[-1.1em]{0em}
-\textbf{(c)}\par\end{addmargin}
-  \textbf{Show that the three inequalities above are incompatible, using the requirements $p \in [0,1]$ and $q \in [0,1]$. What does this tell you about whether $M_2$ is in the set of rationalizable strategies?}\par
-  %by putting the "\par" into the \textbf, error msg will occur...
+  \textbf{(c)}\par
+\end{addmargin}
+\textbf{}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
-\textbf{Answer: }\end{addmargin}
+  \textbf{Answer: }
+\end{addmargin}
 
 \begin{lstlisting}
 > results = lm(Sales ~ Age+HS+Income+Black+Female+Price , data=data)
@@ -156,12 +152,13 @@ The VIF for 6 variables are:
 \end{lstlisting}
 
 \begin{addmargin}[-1.1em]{0em}
-\textbf{(d)}\par\end{addmargin}
-  \textbf{Argue that no pure strategy is strictly dominated in this game.}\par
-  %by putting the "\par" into the \textbf, error msg will occur...
+  \textbf{(d)}\par
+\end{addmargin}
+\textbf{}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
-\textbf{Answer: }\end{addmargin}
+  \textbf{Answer: }
+\end{addmargin}
 
 Yes, there are outlying Sales observations in the regression model relating Sales to the six predictors.\par
 \begin{lstlisting}
@@ -177,15 +174,14 @@ Yes, there are outlying Sales observations in the regression model relating Sale
 
 As we can see from the result, NV and NH are the two states that have outlying Sales observations in the regression model relating Sales to the six predictors.
 
-
 \begin{addmargin}[-1.1em]{0em}
-\textbf{(e)}\par\end{addmargin}
-  \textbf{Combining parts (c) and (d), what has this example proved?}\par
-  %by putting the "\par" into the \textbf, error msg will occur...
+  \textbf{(e)}\par
+\end{addmargin}
+\textbf{}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
-\textbf{Answer: }\end{addmargin}
-
+  \textbf{Answer: }
+\end{addmargin}
 
 \begin{lstlisting}
 > results = lm(Sales ~ Age+HS+Income+Black+Female+Price , data=data)
@@ -213,12 +209,13 @@ AK DC FL UT
 Thus, according to the rule above, we get 4 states who have high leverage: AK, DC, FL, UT.
 
 \begin{addmargin}[-1.1em]{0em}
-\textbf{(f)}\par\end{addmargin}
-  \textbf{Combining parts (c) and (d), what has this example proved?}\par
-  %by putting the "\par" into the \textbf, error msg will occur...
+  \textbf{(f)}\par
+\end{addmargin}
+\textbf{}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
-\textbf{Answer: }\end{addmargin}
+  \textbf{Answer: }
+\end{addmargin}
 
 Typically, points with Cook's distance greater than 1 are classified as being influential, so we calculate Cook's distance for every state's data:
 \begin{lstlisting}
@@ -232,12 +229,13 @@ Then we get the 51 Cook's distance:
 No one is greater than 1, so there's no influential points according to the rule of Cook's distance.
 
 \begin{addmargin}[-1.1em]{0em}
-\textbf{(g)}\par\end{addmargin}
-  \textbf{Combining parts (c) and (d), what has this example proved?}\par
-  %by putting the "\par" into the \textbf, error msg will occur...
+  \textbf{(g)}\par
+\end{addmargin}
+\textbf{}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
-\textbf{Answer: }\end{addmargin}
+  \textbf{Answer: }
+\end{addmargin}
 
 \begin{lstlisting}
 > results = lm(log(Sales) ~ Age+HS+Income+Black+Female+Price, data=data)
@@ -252,9 +250,6 @@ No one is greater than 1, so there's no influential points according to the rule
 \end{lstlisting}
 
 As we can see from the result, NV and NH are the two states that have outlying Sales observations in the regression model relating Sales to the six predictors.
-
-
-
 
 \begin{lstlisting}
 > lev = hat(model.matrix(results))
@@ -280,7 +275,6 @@ AK DC FL UT
 
 Thus, according to the rule above, we get 4 states who have high leverage: AK, DC, FL, UT.
 
-
 Typically, points with Cook's distance greater than 1 are classified as being influential, so we calculate Cook's distance for every state's data:
 \begin{lstlisting}
 > cook = cooks.distance(results)
@@ -292,35 +286,78 @@ Then we get the 51 Cook's distance:
 \end{lstlisting}
 No one is greater than 1, so there's no influential points according to the rule of Cook's distance.
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%   2   %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{addmargin}[-2em]{0em}
+  \large{\textbf{2. }}
+\end{addmargin}
 
-\begin{addmargin}[-2em]{0em} \large{\textbf{2. }}\end{addmargin}
-  \begin{addmargin}[-1.1em]{0em} \textbf{(a) Write down the (mathematical) definition of a pure strategy Nash equilibrium.}\par\end{addmargin}
-    \textbf{}\par
-  \bigbreak
-  \begin{addmargin}[-0.5em]{0em}
-  \textbf{Answer: }\end{addmargin}
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(a)}\par
+\end{addmargin}
+\textbf{}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
 
+In order to test the hypothesis, we have a full model:
 
+$$y_{ijk} = \mu + \alpha_BD_{i,B} + \alpha_CD_{i,C} + \beta_ND_{j,N} + \beta_OD_{j,O} + \beta_PD_{j,P} + \epsilon_{ij,k}$$
 
+and a reduced model:
+$$y_{ijk} = \mu + \beta_ND_{j,N} + \beta_OD_{j,O} + \beta_PD_{j,P} + \epsilon_{ij,k}$$
 
+We will reject the Null Hypothesis if the two models are different:
+\begin{lstlisting}
+> data = read.csv("/Users/lleiou/Google Drive/😳 Courses/4th term/Advanced-Data-Analysis/HW/Question/HW4/Oildata.csv")
+> colnames(data)
+> full = lm(Mileage ~ factor(Rgasoline) + factor(GasolineAd), data = data)
+> reduce1 = lm(Mileage ~ factor(GasolineAd), data = data)
+> anova(reduce1, full)
+\end{lstlisting}
+
+\begin{lstlisting}
+Res.Df	RSS	      Df	Sum of Sq	 F	        Pr(>F)
+37	    3496.295	NA	NA	       NA	        NA
+35	    3466.153	2	  30.14234	 0.1521834	0.859396
+\end{lstlisting}
+
+Since the p-value of the test is $0.859396 > \alpha = 0.05$, we cannot reject the Null Hypothesis that $\alpha_B = \alpha_C = 0$
 
 
 \begin{addmargin}[-1.1em]{0em}
-\textbf{(b)}\par\end{addmargin}
-  \textbf{Is every strategy that is part of a pure strategy Nash equilibrium rationalizable?
-}\par
-   \textbf{}\par
- \bigbreak
- \begin{addmargin}[-0.5em]{0em}
- \textbf{Answer: }\end{addmargin}
+  \textbf{(b)}\par
+\end{addmargin}
+\textbf{}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
 
+ In order to test the hypothesis, we have a full model:
 
+ $$y_{ijk} = \mu + \alpha_BD_{i,B} + \alpha_CD_{i,C} + \beta_ND_{j,N} + \beta_OD_{j,O} + \beta_PD_{j,P} + \epsilon_{ij,k}$$
+
+ and a reduced model:
+ $$y_{ijk} = \mu + \alpha_BD_{i,B} + \alpha_CD_{i,C} + \epsilon_{ij,k}$$
+
+ We will reject the Null Hypothesis if the two models are different:
+\begin{lstlisting}
+ > full = lm(Mileage ~ factor(Rgasoline) + factor(GasolineAd), data = data)
+ > reduce2 = lm(Mileage ~ factor(Rgasoline), data = data)
+ > anova(reduce2, full)
+\end{lstlisting}
+
+\begin{lstlisting}
+Res.Df RSS	     Df	 Sum of Sq	F	         Pr(>F)
+38	   3592.151	 NA	 NA	        NA	       NA
+35	   3466.153	 3	 125.9986	  0.4240966	 0.736912
+\end{lstlisting}
+
+Since the p-value of the test is $0.736912 > \alpha = 0.05$, we cannot reject the Null Hypothesis that $\beta_N = \beta_O =\beta_P = 0$
 
 
 

@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1488462767 "HW4.tex" "HW4.pdf" "HW4" 1488462769
+["pdflatex"] 1488467486 "HW4.tex" "HW4.pdf" "HW4" 1488467554
   "./HW4.jpg" 1488339261 235647 e09953a8e80e6c5f93a45d9e45db0c3e ""
-  "./HW4.out" 1488462768 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "./HW4.out" 1488467486 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -35,10 +35,8 @@
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb" 1248133631 36094 798f80770b3b148ceedd006d487db67c ""
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
-  "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb" 1248133631 33993 9b89b85fd2d9df0482bd47194d1d3bf3 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb" 1248133631 35022 e40946b20bfdcd1099eafb2bcd9f25dd ""
-  "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb" 1248133631 32442 c975af247b6702f7ca0c299af3616b80 ""
   "/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii" 1337017135 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty" 1284331290 1458 43ab4710dc82f3edeabecd0d099626b2 ""
@@ -95,12 +93,12 @@
   "/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1432479641 1764542 91654ba72bdb667e84ea24f076ae16d8 ""
   "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1449107833 3849859 db2c9e103f4a4dba66de81402aba83d2 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "HW4.aux" 1488462769 662 b2b94621371df8d9296b8bf5bec1b851 ""
+  "HW4.aux" 1488467487 662 b2b94621371df8d9296b8bf5bec1b851 ""
   "HW4.jpg" 1488339261 235647 e09953a8e80e6c5f93a45d9e45db0c3e ""
-  "HW4.out" 1488462768 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "HW4.tex" 1488462767 16056 535fb3528f35f51073de6a856af3782c ""
+  "HW4.out" 1488467486 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "HW4.tex" 1488467554 16039 ce5da667024c1b8162909a900d7b4b7e ""
   (generated)
+  "HW4.aux"
   "HW4.log"
   "HW4.pdf"
   "HW4.out"
-  "HW4.aux"
