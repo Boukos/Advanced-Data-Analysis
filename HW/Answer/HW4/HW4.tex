@@ -54,7 +54,14 @@
     tabsize=2}
 \lstset{style=mystyle}
 
-%For inserting codes in LaTeX
+% Adjust margins
+\usepackage[left=0.9in,top=0.7in,right=0.9in,bottom=0.9in]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%   settings end here   %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \begin{document}
 
 \begin{center}
@@ -77,11 +84,26 @@
 \begin{addmargin}[-2em]{0em}
   \large{\textbf{1. }}
 \end{addmargin}
+\textbf{A national insurance organization wanted to study the consumption patter on cigarettes in all 50 states and the District of Columbia. The variables chosen for the study are}\par
+
+\begin{center}
+\begin{tabular}{ p{2cm}p{12cm} }\\
+Variable & Definition\\
+\hline
+Age & Median age of the a person living in a state\\
+HS & Percentage of people over 25 years of age in a state who had completed high school\\
+Income & Per capita personal income for a state in dollars\\
+Black & Percentage of blacks living in a state\\
+Female & Percentage of females living in a state\\
+Price & Weighted average price (in cents) of a pack of cigarettes in a state\\
+Sales & Number of packs of cigarettes sold in a state on a per capita basis\\
+\end{tabular}
+\end{center}
 
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(a)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{What would you expect the relationship between Sales and each of the explanatory variables to be? explain.}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -98,7 +120,7 @@ I expect there's a negative correlation between sales of cigarettes and Price, t
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(b)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Compute the pairwise correlation coefficient matrix and construct the corresponding scatter plot matrix}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -133,7 +155,7 @@ The corresponding scatter plot is:
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(c)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Obtain the six variance inflation factors. What do these results suggest about the effect of multicollinearity?}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -154,7 +176,7 @@ The VIF for 6 variables are:
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(d)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Are the there any outlying Sales observations in the regres- sion model relating Sales to the six predictors?}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -177,7 +199,7 @@ As we can see from the result, NV and NH are the two states that have outlying S
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(e)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Obtain the leverages (the diagonal elements of the hat matrix). Are the there any outlying states in the six predictors?}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -211,7 +233,7 @@ Thus, according to the rule above, we get 4 states who have high leverage: AK, D
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(f)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Are there any influential points?}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -231,7 +253,7 @@ No one is greater than 1, so there's no influential points according to the rule
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(g)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Use log(Sales) instead of Sales and repeat questions d), e) and f).}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -293,11 +315,30 @@ No one is greater than 1, so there's no influential points according to the rule
 \begin{addmargin}[-2em]{0em}
   \large{\textbf{2. }}
 \end{addmargin}
+\textbf{Suppose that North American Oil Company is attempting to develop a regular gasoline that will deliver improved gasoline mileage. As part of its development process, the company would like to study the effect of two qualitative factors on the gasoline mileage obtained by an automobile called the Fire-Hawk. These factors are regular gasoline type (which has levels A, B and C) and gasoline additive type (which has levels M, N, O and P). To carry out the study, the company test drove three Fire-Hawks using each treatment. However upon completion of the experiment the company found that several Fire-Hawks have not been driven under the proper test conditions. Rather than running more tests, the company decided (because of limited time) to analyze the data that had remained after the data for improperly tested Fire-Hawks was dropped from the data set. The remaining data are in Oildata.cvs. Let}
+
+$$yij,k = \textrm{the}\:k\textrm{th gasoline mileage obtained when using regular gasoline type}\: i \:\textrm{and additive type}\: j}$$
+
+\textbf{A reasonable model to use for this data is}\par
+
+$$y_{ijk} = \mu + \alpha_BD_{i,B} + \alpha_CD_{i,C} + \beta_ND_{j,N} + \beta_OD_{j,O} + \beta_PD_{j,P} + \epsilon_{ij,k}$$
+
+\textbf{where}
+
+\begin{center}
+$D_{i,B} = 1$ if $i = B$, that is, if we are using gasoline type B and 0 otherwise\par
+$D_{i,C} = 1$ if $i = C$, that is, if we are using gasoline type C and 0 otherwise\par
+$D_{i,N} = 1$ if $i = N$, that is, if we are using additive type N and 0 otherwise\par
+$D_{i,O} = 1$ if $i = O$, that is, if we are using additive type O and 0 otherwise\par
+$D_{i,P} = 1$ if $i = P$, that is, if we are using additive type P and 0 otherwise\par
+\end{center}
+
 
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(a)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{To compare the effects of the regular gasoline type, we need to test $H_0: \alpha_B =\alpha_C =0$ versus $H_a$: at least one of $\alpha_B$ or $\alpha_C$ does not equal zero.
+}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -312,7 +353,7 @@ $$y_{ijk} = \mu + \beta_ND_{j,N} + \beta_OD_{j,O} + \beta_PD_{j,P} + \epsilon_{i
 
 We will reject the Null Hypothesis if the two models are different:
 \begin{lstlisting}
-> data = read.csv("/Users/lleiou/Google Drive/😳 Courses/4th term/Advanced-Data-Analysis/HW/Question/HW4/Oildata.csv")
+> data = read.csv("Oildata.csv")
 > colnames(data)
 > full = lm(Mileage ~ factor(Rgasoline) + factor(GasolineAd), data = data)
 > reduce1 = lm(Mileage ~ factor(GasolineAd), data = data)
@@ -331,7 +372,7 @@ Since the p-value of the test is $0.859396 > \alpha = 0.05$, we cannot reject th
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(b)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{To compare the effects of the gasoline additive type, we need to test $H_0 :\beta_N =\beta_O =\beta_P =0$ versus $H_a$: at least one of $\beta_N,\beta_O,\beta_P$ does not equal zero.}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
