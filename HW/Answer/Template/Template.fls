@@ -93,6 +93,8 @@ INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT Template.aux
 INPUT Template.aux
 OUTPUT Template.aux
