@@ -57,49 +57,12 @@
 % Adjust margins
 \usepackage[left=0.9in,top=0.7in,right=0.9in,bottom=0.9in]{geometry}
 
+%For centering elements in the tabular form
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%   settings end here   %%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\begin{document}
-
-\begin{center}
-	\textbf{\Huge{Advanced Data Analysis HW\#}}
-\end{center}
-
-\begin{center}
-	\textsl{Ao Liu, al3472}
-\end{center}
-
-\bigbreak
-\bigbreak
-\bigbreak
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%   1   %%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{addmargin}[-2em]{0em}
-  \large{\textbf{1. }}
-\end{addmargin}
-\textbf{}\par
-
-\begin{addmargin}[-1.1em]{0em}
-  \textbf{(a)}\par
-\end{addmargin}
-\textbf{}\par
-\bigbreak
-\begin{addmargin}[-0.5em]{0em}
-  \textbf{Answer: }
-\end{addmargin}
-
-
-\end{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%   #   %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Insert pics:
@@ -111,7 +74,7 @@
 %insert a complicated tab...
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{center}
-%\begin{tabular}{ p{12cm}p{1cm}p{1cm}p{1cm}  }
+%\begin{tabular}{ P{12cm}P{1cm}P{1cm}P{1cm}  }
 %& \multicolumn{3}{c}{Posterior Quantiles} \\
 %\centering{Quantity of Interest} & 25\% & 50\% & 75\% \\
 %\hline
@@ -125,6 +88,20 @@
 %geometric sd of predictions, exp($\sigma$)&2.1 &2.2& 2.4\\
 %\end{tabular}
 %\end{center}
+
+% simple version:
+% The capital P is defined in the header
+% \begin{center}
+% \begin{tabular}{ P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}}
+% {} & 1 & 2 & 3 & 4 & 5 \\
+% \hline
+% 1 &1,1 &0,0 &0,0 &0,0 &0,0\\
+% 2 &0,0 &1,1 &0,0 &0,0 &0,0\\
+% 3 &0,0 &0,0 &1,1 &0,0 &0,0\\
+% 4 &0,0 &0,0 &0,0 &1,1 &0,0\\
+% 5 &0,0 &0,0 &0,0 &0,0 &1,1\\
+% \end{tabular}
+% \end{center}
 
 %%%insert code snippets:
 %%%%%%%%%%%%%%%%%%%%%%%%
