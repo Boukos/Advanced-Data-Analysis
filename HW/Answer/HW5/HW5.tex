@@ -66,6 +66,111 @@
 %%%%%%   settings end here   %%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{document}
+
+\begin{center}
+	\textbf{\Huge{Advanced Data Analysis HW5}}
+\end{center}
+
+\begin{center}
+	\textsl{Ao Liu, al3472}
+\end{center}
+
+\bigbreak
+\bigbreak
+\bigbreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%   1   %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{addmargin}[-2em]{0em}
+  \large{\textbf{1. }}
+\end{addmargin}
+\textbf{}\par
+
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(a)}\par
+\end{addmargin}
+\textbf{}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
+
+\begin{lstlisting}
+data = read.csv("Shuttle.csv", header = TRUE)
+glm(ThermalDistress~Temperature, data = data, family = binomial("logit"))
+\end{lstlisting}
+
+\begin{lstlisting}
+  Call:  glm(formula = ThermalDistress ~ Temperature, family = binomial("logit"),
+      data = data)
+
+  Coefficients:
+  (Intercept)  Temperature
+      15.0429      -0.2322
+
+  Degrees of Freedom: 22 Total (i.e. Null);  21 Residual
+  Null Deviance:	    28.27
+  Residual Deviance: 20.32 	AIC: 24.32
+\end{lstlisting}
+
+
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(b)}\par
+\end{addmargin}
+\textbf{}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
+
+According to the result that we got in (a), our estimation of $\beta_1$, the effect of temperature on the probability of thermal distress is $$-0.2322$$
+This implies that when we increase the temperature by 1 degree, the odds of having Thermal Distress changes by a multiplicative factor of $e^{-0.2322}$
+
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(c)}\par
+\end{addmargin}
+\textbf{}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
+
+
+\begin{lstlisting}
+confint(glm(ThermalDistress~Temperature, data = data, family = binomial("logit")))
+\end{lstlisting}
+
+\begin{lstlisting}
+              2.5\%	      97.5\%
+(Intercept)	3.3305848	  34.34215133
+Temperature	-0.5154718	-0.06082076
+\end{lstlisting}
+According to the results in R, the $95\%$ confidence interval for $\beta_1$ is $$(-0.515718,-0.06082076)$$
+so the the $95\%$ confidence interval for $e^{\beta_1}$ is $$(0.597071743167396,0.940991888047314)$$
+This indicates that we are $95\%$ confident that when we increase the temperature by 1 degree, the odds of having Thermal Distress changes by a multiplicative factor between 0.597071743167396 and 0.940991888047314.
+
+
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(d)}\par
+\end{addmargin}
+\textbf{}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
+
+
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%   #   %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %Insert pics:
 %%%%%%%%%%%%%
 %\begin{center}
