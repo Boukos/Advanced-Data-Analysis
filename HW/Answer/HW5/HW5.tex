@@ -88,12 +88,14 @@
 \begin{addmargin}[-2em]{0em}
   \large{\textbf{1. }}
 \end{addmargin}
-\textbf{}\par
+\textbf{For the 23 space shuttle flights that occurred before the Challenger mission disaster in 1986, the data Shuttle.csv shows the temperature in Fahrenheit at the time of the flight and whether at least one primary O-ring suffered thermal distress.}\par
 
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(a)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Use logistic regression to model the effect of the temperature on the probability of thermal distress. That is, fit the model}\par
+$$logit(\pi(TD\vert Temperature)) = \beta_0 + \beta_1Temperature$$
+$$\pi(TD\vert Temperature) = P(Thermal Distress = 1\vert Temperature)$$
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -105,23 +107,24 @@ glm(ThermalDistress~Temperature, data = data, family = binomial("logit"))
 \end{lstlisting}
 
 \begin{lstlisting}
-  Call:  glm(formula = ThermalDistress ~ Temperature, family = binomial("logit"),
+Call:  glm(formula = ThermalDistress ~ Temperature, family = binomial("logit"),
       data = data)
 
-  Coefficients:
-  (Intercept)  Temperature
-      15.0429      -0.2322
+Coefficients:
+(Intercept)  Temperature
+  15.0429      -0.2322
 
-  Degrees of Freedom: 22 Total (i.e. Null);  21 Residual
-  Null Deviance:	    28.27
-  Residual Deviance: 20.32 	AIC: 24.32
+Degrees of Freedom: 22 Total (i.e. Null);  21 Residual
+Null Deviance:	    28.27
+Residual Deviance:  20.32
+AIC: 24.32
 \end{lstlisting}
 
 
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(b)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Estimate $\beta_1$, the effect of temperature on the probability of thermal distress. Interpret your result.}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -133,7 +136,7 @@ This implies that when we increase the temperature by 1 degree, the odds of havi
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(c)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Construct a 95\% confidence interval to describe the effect of the temperature on the odds of thermal distress (i.e. construct a 95\% interval for $e\beta_1$). Interpret your result}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -145,7 +148,7 @@ confint(glm(ThermalDistress~Temperature, data = data, family = binomial("logit")
 \end{lstlisting}
 
 \begin{lstlisting}
-              2.5\%	      97.5\%
+              2.5%	      97.5%
 (Intercept)	3.3305848	  34.34215133
 Temperature	-0.5154718	-0.06082076
 \end{lstlisting}
@@ -157,7 +160,7 @@ This indicates that we are $95\%$ confident that when we increase the temperatur
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(d)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Predict the probability of thermal distress at 31 degree, the temperature at the time of the Challenger flight.}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -170,7 +173,7 @@ So when Temperature is 31 degree, we use the function above and get a prediction
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(e)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{ At what temperature does the predicted probability equal 0.5?}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -183,95 +186,97 @@ After solving this equation, the Temperature is 64.7842377260982.
 \begin{addmargin}[-2em]{0em}
   \large{\textbf{2. }}
 \end{addmargin}
-\textbf{}\par
+\textbf{The data in the file adolescent.csv appeared in a national study of 15 and 16 year-old adolescents. The event of interest is ever having sexual intercourse. The goal is to study the effect if any of race and gender on having sexual intercourse (Yes, No). Consider the following model}\par
+$$logit(\pi(Intercourse=Yes\vert Gender, Race)) = \beta_0 + \beta_1 Gender + \beta_2 Race$$
 
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(a)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Estimate $\beta_1$ and $\beta_2$ and interpret your result}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
 \end{addmargin}
 
 \begin{lstlisting}
-  data = read.csv("/Users/lleiou/Google Drive/😳 Courses/4th term/Advanced-Data-Analysis/HW/Question/HW5/adolescent.csv")
-  logit = glm(cbind(Yes,No)~factor(Race)+factor(Gender), data = data, family = binomial)
+  data = read.csv("adolescent.csv")
+  logit = glm(cbind(Yes,No)~factor(Gender)+factor(Race), data = data, family = binomial)
   logit
 \end{lstlisting}
 \begin{lstlisting}
-  Call:  glm(formula = cbind(Yes, No) ~ factor(Race) + factor(Gender),
+  Call:  glm(formula = cbind(Yes, No) ~ factor(Gender) + factor(Race),
     family = binomial, data = data)
 
 Coefficients:
-       (Intercept)   factor(Race)White  factor(Gender)Male
-           -0.4555             -1.3135              0.6478
+       (Intercept)  factor(Gender)Male   factor(Race)White
+           -0.4555              0.6478             -1.3135
 
 Degrees of Freedom: 3 Total (i.e. Null);  1 Residual
 Null Deviance:	    37.52
 Residual Deviance: 0.05835 	AIC: 25.19
 \end{lstlisting}
-The estimation for $\beta_1$ is -1.3135, the estimation for $\beta_2$ is 0.6478.\par
-If we hold the gender fixed, then we estimate the odds that 15 or 16 year-old white adolescents have sexual intercourse is $e^{-1.3135}$ times the odds that 15 or 16 year-old black adolescents have sexual intercourse.
-If we hold the race fixed, then we estimate the odds that 15 or 16 year-old male adolescents have sexual intercourse is $e^{0.6478}$ times the odds that 15 or 16 year-old female adolescents have sexual intercourse.
+
+The estimation for $\beta_1$ is 0.6478, the estimation for $\beta_2$ is -1.3135.\par
+If we hold the gender fixed, then we estimate the odds that 15 or 16 year-old white adolescents having sexual intercourse is $e^{-1.3135}$ times the odds that 15 or 16 year-old black adolescents having sexual intercourse.\par
+If we hold the race fixed, then we estimate the odds that 15 or 16 year-old male adolescents having sexual intercourse is $e^{0.6478}$ times the odds that 15 or 16 year-old female adolescents having sexual intercourse.
 
 
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(b)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Construct a 95\% confidence interval to describe the effect of gender on the odds of Intercourse controlling for race (i.e. con- struct a 95\% interval for $e\beta_1$), Interpret your result}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
 \end{addmargin}
 
 \begin{lstlisting}
-  confint  = confint(glm(cbind(Yes,No)~factor(Race)+factor(Gender), data = data, family = binomial))
+  confint  = confint(glm(cbind(Yes,No)~factor(Gender)+factor(Race), data = data, family = binomial))
   exp(confint)
 \end{lstlisting}
 
 \begin{lstlisting}
-  2.5 %	97.5 %
-  (Intercept)	0.4077396	0.9764278
-  factor(Race)White	0.1682294	0.4279908
-  factor(Gender)Male	1.2343904	2.9872843
+                       2.5%	    97.5%
+(Intercept)	        0.4077396	0.9764278
+factor(Gender)Male	1.2343904	2.9872843
+factor(Race)White 	0.1682294	0.4279908
 \end{lstlisting}
 
 The 95\% confidence interval to describe the effect of gender on the odds of Intercourse controlling for race is:
 $$(1.2343904, 2.9872843)$$
 
-We are 95\% confident that, if we hold the gender fixed, then we estimate the odds that 15 or 16 year-old white adolescents have sexual intercourse is between 1.2343904 and 2.9872843 times the odds that 15 or 16 year-old black adolescents have sexual intercourse.
+We are 95\% confident that, if we hold the race fixed, then we estimate the odds that 15 or 16 year-old male adolescents having sexual intercourse is between 1.2343904 and 2.9872843 times the odds that 15 or 16 year-old female adolescents having sexual intercourse.
 
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(c)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Construct a 95\% confidence interval to describe the effect of race on the odds of Intercourse controlling for gender (i.e. con- struct a 95\% interval for $e\beta_2$), Interpret your result}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
 \end{addmargin}
 
-The 95\% confidence interval to describe the effect of gender on the odds of Intercourse controlling for race is:
+The 95\% confidence interval to describe the effect of race on the odds of Intercourse controlling for race is:
 $$(0.1682294, 0.4279908)$$
 
-We are 95\% confident that if we hold the race fixed, then we estimate the odds that 15 or 16 year-old male adolescents have sexual intercourse is between 0.1682294 and 0.4279908 times the odds that 15 or 16 year-old female adolescents have sexual intercourse.
+We are 95\% confident that if we hold the gender fixed, then we estimate the odds that 15 or 16 year-old white adolescents having sexual intercourse is between 0.1682294 and 0.4279908 times the odds that 15 or 16 year-old black adolescents having sexual intercourse.
 
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(d)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Test$H_0:\beta_1 =\beta_2=0$ against $H_a:$ at least one of them is not zero. Use $\alpha = 0.05$.}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
 \end{addmargin}
 
 \begin{lstlisting}
-  summary(logit)
+summary(logit)
 \end{lstlisting}
 
 \begin{lstlisting}
   Call:
-  glm(formula = cbind(Yes, No) ~ factor(Race) + factor(Gender),
+  glm(formula = cbind(Yes, No) ~ factor(Gender) + factor(Race),
       family = binomial, data = data)
 
   Deviance Residuals:
@@ -281,8 +286,8 @@ We are 95\% confident that if we hold the race fixed, then we estimate the odds 
   Coefficients:
                      Estimate Std. Error z value Pr(>|z|)
   (Intercept)         -0.4555     0.2221  -2.050  0.04032 *
-  factor(Race)White   -1.3135     0.2378  -5.524 3.32e-08 ***
   factor(Gender)Male   0.6478     0.2250   2.879  0.00399 **
+  factor(Race)White   -1.3135     0.2378  -5.524 3.32e-08 ***
   ---
   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -295,17 +300,17 @@ We are 95\% confident that if we hold the race fixed, then we estimate the odds 
   Number of Fisher Scoring iterations: 3
 \end{lstlisting}
 
-The test statistics = 37.516984 - 0.058349 = 37.458635. Since p=2 we rehject $H_0$ since $6.9674>\chi_2^2(0.05) = 5.99$.
+The test statistics = 37.516984 - 0.058349 = 37.458635. Since p=2 we reject $H_0$ since $37.458635>\chi_2^2(0.05) = 5.99$.
 
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(e)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Test$H_0: \beta_1 =0$ against $H_a: \beta_1\neq0$. Use $\alpha=0.05$.}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
 \end{addmargin}
-From the result of (d), we see that the p-value for testing that $H_0: \beta_1=0$ against $H_a:\beta_1\new=0$ is 3.32e-08. Therefore, we reject $H_0$.
+From the result of (d), we see that the p-value for testing that $H_0: \beta_1=0$ against $H_a:\beta_1\new=0$ is 3.32e-08<0.05. Therefore, we reject $H_0$.
 
 \end{document}
 

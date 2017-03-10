@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  10 MAR 2017 00:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  10 MAR 2017 09:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -433,17 +433,10 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+lasy on input line 113.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 97.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 148.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 148.
-
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
@@ -458,18 +451,20 @@ Package Fancyhdr Warning: \footskip is too small (0.0pt):
 
 [1
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Missing character: There is no ð in font cmr9!
-Missing character: There is no Ÿ in font cmr9!
-Missing character: There is no ˜ in font cmr9!
-Missing character: There is no ³ in font cmr9!
- [2]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 282.
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 287.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 282.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 287.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 287.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 287.
+ [3]
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no ˜ in font cmr9!
@@ -501,39 +496,39 @@ Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no ™ in font cmr9!
 
-./HW5.tex:308: Undefined control sequence.
-l.308 ...$H_0: \beta_1=0$ against $H_a:\beta_1\new
-                                                  =0$ is 3.32e-08. Therefore...
+./HW5.tex:313: Undefined control sequence.
+l.313 ...$H_0: \beta_1=0$ against $H_a:\beta_1\new
+                                                  =0$ is 3.32e-08<0.05. Ther...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 310.
-[3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 310.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 315.
+[4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 315.
  (./HW5.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 310.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 310.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 315.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 315.
 Package rerunfilecheck Info: File `HW5.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 310.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 315.
  ) 
 Here is how much of TeX's memory you used:
- 8832 strings out of 493089
- 131559 string characters out of 6134842
- 342449 words of memory out of 5000000
- 12131 multiletter control sequences out of 15000+600000
+ 8833 strings out of 493089
+ 131563 string characters out of 6134842
+ 318449 words of memory out of 5000000
+ 12130 multiletter control sequences out of 15000+600000
  10520 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 33i,11n,47p,273b,1155s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 33i,12n,47p,325b,1674s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9
 .pfb>
-Output written on HW5.pdf (3 pages, 150136 bytes).
+Output written on HW5.pdf (4 pages, 163042 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 139 compressed objects within 2 object streams
- 73 named destinations out of 1000 (max. 500000)
+ 164 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
+ 75 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
