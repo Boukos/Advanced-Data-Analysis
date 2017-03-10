@@ -163,7 +163,149 @@ This indicates that we are $95\%$ confident that when we increase the temperatur
   \textbf{Answer: }
 \end{addmargin}
 
+According to the estimation of the parameters, we have the following prediction function:
+$$\hat\pi(TD\vert Temperature) = \frac{e^{15.0429-0.2322Temperature}}{1+e^{15.0429-0.2322Temperature}}$$
+So when Temperature is 31 degree, we use the function above and get a prediction of the probability of Thermal Distress: 0.999608330327805.
 
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(e)}\par
+\end{addmargin}
+\textbf{}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
+If the predicted probability equals to 0.5, then according to the function in (d), we have
+$$2e^{15.0429-0.2322Temperature} = 1 + e^{15.0429-0.2322Temperature}$$
+After solving this equation, the Temperature is 64.7842377260982.
+
+
+\begin{addmargin}[-2em]{0em}
+  \large{\textbf{2. }}
+\end{addmargin}
+\textbf{}\par
+
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(a)}\par
+\end{addmargin}
+\textbf{}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
+
+\begin{lstlisting}
+  data = read.csv("/Users/lleiou/Google Drive/😳 Courses/4th term/Advanced-Data-Analysis/HW/Question/HW5/adolescent.csv")
+  logit = glm(cbind(Yes,No)~factor(Race)+factor(Gender), data = data, family = binomial)
+  logit
+\end{lstlisting}
+\begin{lstlisting}
+  Call:  glm(formula = cbind(Yes, No) ~ factor(Race) + factor(Gender),
+    family = binomial, data = data)
+
+Coefficients:
+       (Intercept)   factor(Race)White  factor(Gender)Male
+           -0.4555             -1.3135              0.6478
+
+Degrees of Freedom: 3 Total (i.e. Null);  1 Residual
+Null Deviance:	    37.52
+Residual Deviance: 0.05835 	AIC: 25.19
+\end{lstlisting}
+The estimation for $\beta_1$ is -1.3135, the estimation for $\beta_2$ is 0.6478.\par
+If we hold the gender fixed, then we estimate the odds that 15 or 16 year-old white adolescents have sexual intercourse is $e^{-1.3135}$ times the odds that 15 or 16 year-old black adolescents have sexual intercourse.
+If we hold the race fixed, then we estimate the odds that 15 or 16 year-old male adolescents have sexual intercourse is $e^{0.6478}$ times the odds that 15 or 16 year-old female adolescents have sexual intercourse.
+
+
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(b)}\par
+\end{addmargin}
+\textbf{}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
+
+\begin{lstlisting}
+  confint  = confint(glm(cbind(Yes,No)~factor(Race)+factor(Gender), data = data, family = binomial))
+  exp(confint)
+\end{lstlisting}
+
+\begin{lstlisting}
+  2.5 %	97.5 %
+  (Intercept)	0.4077396	0.9764278
+  factor(Race)White	0.1682294	0.4279908
+  factor(Gender)Male	1.2343904	2.9872843
+\end{lstlisting}
+
+The 95\% confidence interval to describe the effect of gender on the odds of Intercourse controlling for race is:
+$$(1.2343904, 2.9872843)$$
+
+We are 95\% confident that, if we hold the gender fixed, then we estimate the odds that 15 or 16 year-old white adolescents have sexual intercourse is between 1.2343904 and 2.9872843 times the odds that 15 or 16 year-old black adolescents have sexual intercourse.
+
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(c)}\par
+\end{addmargin}
+\textbf{}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
+
+The 95\% confidence interval to describe the effect of gender on the odds of Intercourse controlling for race is:
+$$(0.1682294, 0.4279908)$$
+
+We are 95\% confident that if we hold the race fixed, then we estimate the odds that 15 or 16 year-old male adolescents have sexual intercourse is between 0.1682294 and 0.4279908 times the odds that 15 or 16 year-old female adolescents have sexual intercourse.
+
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(d)}\par
+\end{addmargin}
+\textbf{}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
+
+\begin{lstlisting}
+  summary(logit)
+\end{lstlisting}
+
+\begin{lstlisting}
+  Call:
+  glm(formula = cbind(Yes, No) ~ factor(Race) + factor(Gender),
+      family = binomial, data = data)
+
+  Deviance Residuals:
+         1         2         3         4
+  -0.08867   0.10840   0.14143  -0.13687
+
+  Coefficients:
+                     Estimate Std. Error z value Pr(>|z|)
+  (Intercept)         -0.4555     0.2221  -2.050  0.04032 *
+  factor(Race)White   -1.3135     0.2378  -5.524 3.32e-08 ***
+  factor(Gender)Male   0.6478     0.2250   2.879  0.00399 **
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+  (Dispersion parameter for binomial family taken to be 1)
+
+      Null deviance: 37.516984  on 3  degrees of freedom
+  Residual deviance:  0.058349  on 1  degrees of freedom
+  AIC: 25.186
+
+  Number of Fisher Scoring iterations: 3
+\end{lstlisting}
+
+The test statistics = 37.516984 - 0.058349 = 37.458635. Since p=2 we rehject $H_0$ since $6.9674>\chi_2^2(0.05) = 5.99$.
+
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(e)}\par
+\end{addmargin}
+\textbf{}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
+From the result of (d), we see that the p-value for testing that $H_0: \beta_1=0$ against $H_a:\beta_1\new=0$ is 3.32e-08. Therefore, we reject $H_0$.
 
 \end{document}
 

@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1489099507 "HW5.tex" "HW5.pdf" "HW5" 1489099508
-  "./HW5.out" 1489099507 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1489124235 "HW5.tex" "HW5.pdf" "HW5" 1489124237
+  "./HW5.out" 1489124237 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -31,6 +31,7 @@
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb" 1248133631 36094 798f80770b3b148ceedd006d487db67c ""
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
@@ -53,6 +54,7 @@
   "/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty" 1362954379 2637 846ebe982d3549c7ede7ce135456f54a ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls" 1428932888 20708 96f8bca6e380179cada1d49716376167 ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/base/latexsym.sty" 1428932888 2854 ddffcda515af28aa9e61fdd101872736 ""
+  "/usr/local/texlive/2015/texmf-dist/tex/latex/base/omlcmr.fd" 1428932888 2257 34d599369bc8c4ea1835d39957e0a35f ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd" 1428932888 2256 09a793cb810c26c97ed035dcd724a0d0 ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/base/size11.clo" 1428932888 9195 b429d9ae04d88356fbd16a7b811e600f ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd" 1428932888 2020 3b0fd77961c09bb31521c65d6da482b9 ""
@@ -96,11 +98,11 @@
   "/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1432479641 1764542 91654ba72bdb667e84ea24f076ae16d8 ""
   "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1449107833 3849859 db2c9e103f4a4dba66de81402aba83d2 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "HW5.aux" 1489099507 662 b2b94621371df8d9296b8bf5bec1b851 ""
-  "HW5.out" 1489099507 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "HW5.tex" 1489099507 6245 540a833ced68e189a01fe7447cd274e9 ""
+  "HW5.aux" 1489124237 662 b2b94621371df8d9296b8bf5bec1b851 ""
+  "HW5.out" 1489124237 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "HW5.tex" 1489124235 11300 6a3f2d4ecb31b76d149ceb5faad41eb9 ""
   (generated)
+  "HW5.log"
+  "HW5.aux"
   "HW5.pdf"
   "HW5.out"
-  "HW5.aux"
-  "HW5.log"
