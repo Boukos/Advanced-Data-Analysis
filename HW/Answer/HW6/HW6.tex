@@ -144,6 +144,143 @@ log(-log(S(t))) & = log((\alpha t)^{\beta})\nonumber\\
 
 
 
+\begin{addmargin}[-2em]{0em}
+  \large{\textbf{2. }}
+\end{addmargin}
+\textbf{}\par
+
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(a)}\par
+\end{addmargin}
+\textbf{}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
+
+For group A, we have:
+\begin{center}
+\begin{tabular}{ P{2cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}}
+$y_A(i)$ &1.25 &1.41 &4.98 &5.25 &5.38 &6.92 &8.89 &10.98 &11.18 &13.11 &13.21 &16.33 &19.77 &21.08 &22.07 &42.92\\
+$d_A(i)$ &1 &1 &1 &1 &1 &1 &1 &1 &1 &1 &1 &1 &1 &1 &1 &1\\
+$N_A(i)$ &20 &19 &18 &17 &16 &15 &14 &13 &12 &11 &10 &9 &8 &7 &5 &1\\
+\end{tabular}
+\end{center}
+
+So the Kaplan-Meier estimator of S(t) is:
+$$\hat{S}_A(t) & = \Pi_{y_A(j)\leq t}(1-\frac{d_A(j)}{N_A(j)})$$
+
+For group B, we have:
+\begin{center}
+\begin{tabular}{ P{2cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}}
+$y_B(i)$ &1.05 &2.92 &3.61 &4.20 &4.49 &6.72 &7.31 &9.08 &9.11 &16.85\\
+$d_B(i)$ &1 &1 &1 &1 &1 &1 &1 &1 &1 &1\\
+$N_B(i)$ &15 &14 &13 &12 &11 &10 &9 &8 &7 &5\\
+\end{tabular}
+\end{center}
+
+So the Kaplan-Meier estimator of S(t) is:
+$$\hat{S}_B(t) & = \Pi_{y_B(j)\leq t}(1-\frac{d_B(j)}{N_B(j)})$$
+
+
+\begin{lstlisting}
+  library(survival)
+  time = c(1.25, 1.41, 4.98, 5.25, 5.38, 6.92, 8.89, 10.98, 11.18, 13.11, 13.21, 16.33, 19.77, 21.08, 21.84, 22.07, 31.38, 32.61, 37.18, 42.92, 1.05, 2.92, 3.61, 4.20, 4.49, 6.72, 7.31, 9.08, 9.11, 14.49, 16.85, 18.82, 26.59, 30.26, 41.34)
+  status = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0)
+  group = c(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2)
+  #data = data.frame(time, status, group)
+  fit <- survfit(Surv(time,status)~group,type = "kaplan-meier")
+  plot(fit, lty=1:2 )
+\end{lstlisting}
+
+
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(b)}\par
+\end{addmargin}
+\textbf{}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
+
+
+\begin{lstlisting}
+> summary(fit)
+\end{lstlisting}
+
+\begin{lstlisting}
+  Call: survfit(formula = Surv(time, status) ~ group, type = "kaplan-meier")
+
+                group=1
+  time n.risk n.event survival std.err lower 95% CI upper 95% CI
+  1.25     20       1     0.95  0.0487        0.859        1.000
+  1.41     19       1     0.90  0.0671        0.778        1.000
+  4.98     18       1     0.85  0.0798        0.707        1.000
+  5.25     17       1     0.80  0.0894        0.643        0.996
+  5.38     16       1     0.75  0.0968        0.582        0.966
+  6.92     15       1     0.70  0.1025        0.525        0.933
+  8.89     14       1     0.65  0.1067        0.471        0.897
+ 10.98     13       1     0.60  0.1095        0.420        0.858
+ 11.18     12       1     0.55  0.1112        0.370        0.818
+ 13.11     11       1     0.50  0.1118        0.323        0.775
+ 13.21     10       1     0.45  0.1112        0.277        0.731
+ 16.33      9       1     0.40  0.1095        0.234        0.684
+ 19.77      8       1     0.35  0.1067        0.193        0.636
+ 21.08      7       1     0.30  0.1025        0.154        0.586
+ 22.07      5       1     0.24  0.0980        0.108        0.534
+ 42.92      1       1     0.00     NaN           NA           NA
+
+                group=2
+  time n.risk n.event survival std.err lower 95% CI upper 95% CI
+  1.05     15       1    0.933  0.0644        0.815        1.000
+  2.92     14       1    0.867  0.0878        0.711        1.000
+  3.61     13       1    0.800  0.1033        0.621        1.000
+  4.20     12       1    0.733  0.1142        0.540        0.995
+  4.49     11       1    0.667  0.1217        0.466        0.953
+  6.72     10       1    0.600  0.1265        0.397        0.907
+  7.31      9       1    0.533  0.1288        0.332        0.856
+  9.08      8       1    0.467  0.1288        0.272        0.802
+  9.11      7       1    0.400  0.1265        0.215        0.743
+ 16.85      5       1    0.320  0.1239        0.150        0.684
+\end{lstlisting}
+
+
+According to the output from above,
+$$\hat{S}_A(10) = \hat{S}_A(8.89) = 0.65$$
+the 95\% CI for $\hat{S}_A(10)$ is:
+$$(0.471, 0.897)$$
+$$\hat{S}_B(10) = \hat{S}_B(9.11) = 0.40$$
+the 95\% CI for $\hat{S}_B(10)$ is:
+$$(0.215,0.743)$$
+
+
+
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(c)}\par
+\end{addmargin}
+\textbf{}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
+To test the hypothesis, we do the following test in R:
+\begin{lstlisting}
+> survdiff(Surv(time,status)~group, rho=0)
+\end{lstlisting}
+
+\begin{lstlisting}
+  Call:
+survdiff(formula = Surv(time, status) ~ group, rho = 0)
+
+         N Observed Expected (O-E)^2/E (O-E)^2/V
+group=1 20       16    16.66    0.0261    0.0749
+group=2 15       10     9.34    0.0466    0.0749
+
+ Chisq= 0.1  on 1 degrees of freedom, p= 0.784
+\end{lstlisting}
+Since the p-value is $0.784 > 0.05$, we cannot reject the Null Hypothesis that $S_A = S_B$.
+
+
 \end{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
