@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1492027732 "HW6.tex" "HW6.pdf" "HW6" 1492027734
+["pdflatex"] 1492027732 "HW6.tex" "HW6.pdf" "HW6" 1492027776
   "./HW6.out" 1492027733 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -89,9 +89,9 @@
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
   "HW6.aux" 1492027733 662 b2b94621371df8d9296b8bf5bec1b851 ""
   "HW6.out" 1492027733 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "HW6.tex" 1492027731 5092 0f3de0da824e2ccb1a734e24c542d8c3 ""
+  "HW6.tex" 1492027775 5092 0f3de0da824e2ccb1a734e24c542d8c3 ""
   (generated)
+  "HW6.aux"
   "HW6.out"
   "HW6.log"
-  "HW6.aux"
   "HW6.pdf"
