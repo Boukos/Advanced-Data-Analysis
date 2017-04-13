@@ -6,18 +6,12 @@ n = length(data)
 for (i in 1:17){
   result[i] = 1-(i-0.5)/n
 }
-
 plot(log(-log(result))~log(data))
 fit = lm(log(-log(result))~log(data))
 abline(fit)
+
 #(e)
 summary(fit)
-
-
-exp(-37.2330/6.8538)
-
-
-result
 
 #2
 #(a)
@@ -30,7 +24,6 @@ fit <- survfit(Surv(time,status)~group,type = "kaplan-meier")
 plot(fit, lty=1:2 )
 
 #(b)
-
 summary(fit)
 
 #(c)
