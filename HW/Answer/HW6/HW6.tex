@@ -55,7 +55,7 @@
 \lstset{style=mystyle}
 
 % Adjust margins
-\usepackage[left=0.9in,top=0.7in,right=0.9in,bottom=0.9in]{geometry}
+\usepackage[left=0.9in,top=0.7in,right=0.9in,bottom=0.7in]{geometry}
 
 % For centering elements in the tabular form
 % http://bit.ly/2mtyAps
@@ -88,12 +88,12 @@
 \begin{addmargin}[-2em]{0em}
   \large{\textbf{1. }}
 \end{addmargin}
-\textbf{}\par
+\textbf{A random variable T is said to have a Weibull distribution is its survival function is give by $S(t) = e−(\alpha t)\beta$ where $\alpha > 0$ and $\beta > 0$.}
 
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(a)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Find the density, $f_T (t)$ of T}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -106,7 +106,7 @@ $$f_T(t) = -\frac{dS(t)}{dt} = (\beta\alpha^{\beta}t^{\beta-1})e^{-(\alpha t)^{\
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(b)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Find the hazard function $\lambda(t)$ of T}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -118,7 +118,10 @@ $$\lambda(t) = \frac{f(t)}{S(t)} = \beta\alpha^{\beta}t^{\beta-1}$$
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(c)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Show that}
+$$log(-log(S(t))) = \beta log(\alpha) + \beta log(t)$$
+\textbf{Based on this, describe a graphical method for checking whether or not the data is
+from a Weibull distribution.}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -130,16 +133,77 @@ log(-log(S(t))) & = log((\alpha t)^{\beta})\nonumber\\
 & = \beta log(\alpha) + \beta log(t) \nonumber
 \end{align}
 
+Here we get a graphical method for checking whether or not the data is from a Weibull distribution: By plotting all the $(log(t), log(-log(S(t))))$, the points from the same Weibull distribution should lie in a straight line.
 
 
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(d)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Consider the following data}
+$$143, 164, 188, 188, 190, 192, 206, 209, 213, 216, 220, 227, 230, 234, 246, 265, 304$$
+\textbf{and use as an estimate of $S(t(i))$}
+$$Sˆ(t(i)) = 1 − (i - 0.5)/n$$
+\textbf{were $t(i)$ is the ith ordered value and n is the sample size. Use the graphical technique
+in the previous question to check if a Weibull distribution is appropriate for these data}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
 \end{addmargin}
+
+Follow the technique in (c), we plot all the $(log(t_i), log(-log(\hat{S}(t_i)))$ in an axis:
+\begin{lstlisting}
+  data = c(143, 164, 188, 188, 190, 192, 206, 209, 213, 216, 220, 227, 230, 234, 246, 265, 304)
+  result = c()
+  n = length(data)
+  for (i in 1:17){
+    result[i] = 1-(i-0.5)/n
+  }
+  plot(log(-log(result))~log(data))
+  abline(lm(log(-log(result))~log(data)))
+\end{lstlisting}
+
+\begin{center} \makebox[\linewidth]{\includegraphics[width=\textwidth]{HW61.jpg}}
+\end{center}
+We can tell from the plot that a Weibull distribution is appropriate for these data.
+
+\begin{addmargin}[-1.1em]{0em}
+  \textbf{(e)}\par
+\end{addmargin}
+\textbf{Assume that the Weibull distribution is a good fit, use least squares approach to estimate its parameters.}\par
+\bigbreak
+\begin{addmargin}[-0.5em]{0em}
+  \textbf{Answer: }
+\end{addmargin}
+
+\begin{lstlisting}
+  fit = lm(log(-log(result))~log(data))
+  abline(fit)
+  summary(fit)
+\end{lstlisting}
+
+\begin{lstlisting}
+  Call:
+lm(formula = log(-log(result)) ~ log(data))
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.68997 -0.12226  0.09174  0.19153  0.30116
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept) -37.2330     2.1806  -17.07 3.08e-11 ***
+log(data)     6.8538     0.4073   16.83 3.80e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.2871 on 15 degrees of freedom
+Multiple R-squared:  0.9497,	Adjusted R-squared:  0.9463
+F-statistic: 283.1 on 1 and 15 DF,  p-value: 3.796e-11
+\end{lstlisting}
+
+Assume that the Weibull distribution is a good fit, by using least squares approach, we have the following estimation for its parameters:
+$$ \beta = 6.8538$$
+$$ \alpha = e^{\frac{-37.2330}{\beta}} = 0.0044$$
 
 
 
@@ -147,12 +211,21 @@ log(-log(S(t))) & = log((\alpha t)^{\beta})\nonumber\\
 \begin{addmargin}[-2em]{0em}
   \large{\textbf{2. }}
 \end{addmargin}
-\textbf{}\par
+\textbf{The data below show survival times in months of patients with Hodgkin’s disease who were treated with nitrogen mustard. Group A patients received little or no prior therapy whereas Group B patients received heavy prior therapy. Starred are observations are censoring times.}\par
+
+\begin{align}
+GroupA : &1.25, 1.41, 4.98, 5.25, 5.38, 6.92, 8.89, 10.98, 11.18, 13.11, 13.21, 16.33, 19.77, \nonumber\\
+  &21.08, 21.84^*, 22.07, 31.38, 32.61^*, 37.18^*, 42.92\nonumber
+\end{align}
+\begin{align}
+GroupB : &1.05, 2.92, 3.61, 4.20, 4.49, 6.72, 7.31, 9.08, 9.11, 14.49^*, \nonumber\\
+&16.85, 18.82^*, 26.59^*, 30.26^*, 41.34^*\nonumber
+\end{align}
 
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(a)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Obtain and plot the Kaplan Meier estimates of $S_A$ and $S_B$, the corresponding survival functions.}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -194,10 +267,13 @@ $$\hat{S}_B(t) & = \Pi_{y_B(j)\leq t}(1-\frac{d_B(j)}{N_B(j)})$$
 \end{lstlisting}
 
 
+\begin{center} \makebox[\linewidth]{\includegraphics[width=\textwidth]{HW62.jpg}}
+\end{center}
+
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(b)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Estimate $S_A(10)$ and $S_B(10)$ using a 95\% confidence interval.}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }
@@ -258,7 +334,7 @@ $$(0.215,0.743)$$
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(c)}\par
 \end{addmargin}
-\textbf{}\par
+\textbf{Test $H_0$ :$S_A$ =$S_B$ against $H_a$ :$S_A \neq S_B$. Use $\alpha=0.05$.}\par
 \bigbreak
 \begin{addmargin}[-0.5em]{0em}
   \textbf{Answer: }

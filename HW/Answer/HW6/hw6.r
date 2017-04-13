@@ -1,5 +1,5 @@
 #1
-
+#(d)
 data = c(143, 164, 188, 188, 190, 192, 206, 209, 213, 216, 220, 227, 230, 234, 246, 265, 304)
 result = c()
 n = length(data)
@@ -7,7 +7,18 @@ for (i in 1:17){
   result[i] = 1-(i-0.5)/n
 }
 
+plot(log(-log(result))~log(data))
+fit = lm(log(-log(result))~log(data))
+abline(fit)
+#(e)
+summary(fit)
+
+
+exp(-37.2330/6.8538)
+
+
 result
+
 #2
 #(a)
 library(survival)
