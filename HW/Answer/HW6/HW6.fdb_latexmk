@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1492119433 "HW6.tex" "HW6.pdf" "HW6" 1492119435
-  "./HW6.out" 1492119434 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1492125908 "HW6.tex" "HW6.pdf" "HW6" 1492125910
+  "./HW6.out" 1492125909 0 d41d8cd98f00b204e9800998ecf8427e ""
   "./HW61.jpg" 1492118384 66203 b8fb7848643ede22f70df9cff25668e6 ""
   "./HW62.jpg" 1492117492 66042 5168c32f6c3fb43f8b58aa80c76b8558 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
@@ -102,13 +102,13 @@
   "/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1432479641 1764542 91654ba72bdb667e84ea24f076ae16d8 ""
   "/usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt" 1449107833 3849859 db2c9e103f4a4dba66de81402aba83d2 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "HW6.aux" 1492119435 662 b2b94621371df8d9296b8bf5bec1b851 ""
-  "HW6.out" 1492119434 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "HW6.tex" 1492119433 13795 de9aa2b25c442728508accbe64f49c88 ""
+  "HW6.aux" 1492125910 662 b2b94621371df8d9296b8bf5bec1b851 ""
+  "HW6.out" 1492125909 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "HW6.tex" 1492125908 13753 abe6426054b5c78090239f80cdc2a25f ""
   "HW61.jpg" 1492118384 66203 b8fb7848643ede22f70df9cff25668e6 ""
   "HW62.jpg" 1492117492 66042 5168c32f6c3fb43f8b58aa80c76b8558 ""
   (generated)
+  "HW6.out"
   "HW6.aux"
   "HW6.pdf"
-  "HW6.out"
   "HW6.log"

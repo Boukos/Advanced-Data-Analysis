@@ -88,7 +88,7 @@
 \begin{addmargin}[-2em]{0em}
   \large{\textbf{1. }}
 \end{addmargin}
-\textbf{A random variable T is said to have a Weibull distribution is its survival function is give by $S(t) = e−(\alpha t)\beta$ where $\alpha > 0$ and $\beta > 0$.}
+\textbf{A random variable T is said to have a Weibull distribution is its survival function is give by $S(t) = e^{-(\alpha t)^\beta}$ where $\alpha > 0$ and $\beta > 0$.}
 
 \begin{addmargin}[-1.1em]{0em}
   \textbf{(a)}\par
@@ -99,7 +99,7 @@
   \textbf{Answer: }
 \end{addmargin}
 
-$$f_T(t) = -\frac{dS(t)}{dt} = (\beta\alpha^{\beta}t^{\beta-1})e^{-(\alpha t)^{\beta}}$$
+$$f_T(t) = -\frac{dS(t)}{dt} = \beta\alpha^{\beta}t^{\beta-1}e^{-(\alpha t)^{\beta}}$$
 
 
 
@@ -152,14 +152,14 @@ in the previous question to check if a Weibull distribution is appropriate for t
 
 Follow the technique in (c), we plot all the $(log(t_i), log(-log(\hat{S}(t_i)))$ in an axis:
 \begin{lstlisting}
-  data = c(143, 164, 188, 188, 190, 192, 206, 209, 213, 216, 220, 227, 230, 234, 246, 265, 304)
-  result = c()
-  n = length(data)
-  for (i in 1:17){
+> data = c(143, 164, 188, 188, 190, 192, 206, 209, 213, 216, 220, 227, 230, 234, 246, 265, 304)
+> result = c()
+> n = length(data)
+> for (i in 1:17){
     result[i] = 1-(i-0.5)/n
   }
-  plot(log(-log(result))~log(data))
-  abline(lm(log(-log(result))~log(data)))
+> plot(log(-log(result))~log(data))
+> abline(lm(log(-log(result))~log(data)))
 \end{lstlisting}
 
 \begin{center} \makebox[\linewidth]{\includegraphics[width=\textwidth]{HW61.jpg}}
@@ -176,9 +176,9 @@ We can tell from the plot that a Weibull distribution is appropriate for these d
 \end{addmargin}
 
 \begin{lstlisting}
-  fit = lm(log(-log(result))~log(data))
-  abline(fit)
-  summary(fit)
+> fit = lm(log(-log(result))~log(data))
+> abline(fit)
+> summary(fit)
 \end{lstlisting}
 
 \begin{lstlisting}
@@ -257,13 +257,12 @@ $$\hat{S}_B(t) & = \Pi_{y_B(j)\leq t}(1-\frac{d_B(j)}{N_B(j)})$$
 
 
 \begin{lstlisting}
-  library(survival)
-  time = c(1.25, 1.41, 4.98, 5.25, 5.38, 6.92, 8.89, 10.98, 11.18, 13.11, 13.21, 16.33, 19.77, 21.08, 21.84, 22.07, 31.38, 32.61, 37.18, 42.92, 1.05, 2.92, 3.61, 4.20, 4.49, 6.72, 7.31, 9.08, 9.11, 14.49, 16.85, 18.82, 26.59, 30.26, 41.34)
-  status = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0)
-  group = c(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2)
-  #data = data.frame(time, status, group)
-  fit <- survfit(Surv(time,status)~group,type = "kaplan-meier")
-  plot(fit, lty=1:2 )
+> library(survival)
+> time = c(1.25, 1.41, 4.98, 5.25, 5.38, 6.92, 8.89, 10.98, 11.18, 13.11, 13.21, 16.33, 19.77, 21.08, 21.84, 22.07, 31.38, 32.61, 37.18, 42.92, 1.05, 2.92, 3.61, 4.20, 4.49, 6.72, 7.31, 9.08, 9.11, 14.49, 16.85, 18.82, 26.59, 30.26, 41.34)
+> status = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0)
+> group = c(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2)
+> fit <- survfit(Surv(time,status)~group,type = "kaplan-meier")
+> plot(fit, lty=1:2 )
 \end{lstlisting}
 
 
