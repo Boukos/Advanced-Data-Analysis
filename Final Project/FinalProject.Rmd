@@ -65,6 +65,30 @@ m2 <- glm( n.crimes/(population/1000)~ perc.young+perc.poor+per.income+factor(re
 summary(m2)
 ```
 
+# Outliers
+```{r}
+outliers <- which(hatvalues(m2)>0.25)
+temp <- data.frame(hat.values=hatvalues(m2),res=residuals(m2))
+ggplot(data=temp,aes(hat.values,res)) +
+  geom_point(alpha=0.8)+
+  geom_text(data=temp[outliers,],aes(hat.values,res, label=my_df$county[outliers]),size=5,hjust=1,alpha=0.8)
+```
+
+# Predict and examine
+```{r}
+newdata <- df[index[301:440],]
+y_hat <- predict(m2, newdata, type="response")
+y <- newdata$crime.rate.per.1000
+t1 <- lm(y~y_hat)
+outliers <- which(abs(residuals(t1))>70)
+temp <- data.frame(hat.values=hatvalues(t1),res=residuals(t1),y=y,y.hat=y_hat)
+ggplot(data=temp,aes(y.hat,y)) +
+  geom_point(alpha=0.8)+
+  geom_text(data=temp[outliers,],aes(y.hat,y, label=newdata$county[outliers]),size=5,hjust=1,alpha=0.8)+
+  geom_abline(slope=1)
+```
+
+
 # Fit Random Forest/XGboost Model
 ```{r}
 
