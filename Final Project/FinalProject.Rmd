@@ -1,0 +1,77 @@
+---
+title: "ADA Final Project"
+author: "Ziwei Meng, zm2245"
+Date: "24 April, 2017"
+output: 
+    html_notebook:
+      theme: journal
+---
+# Read Data
+```{r}
+#setwd('/Users/Zoe/Documents/Spring2017/GR5291/FinalProject/')
+df <- read.table('APPENC02.txt',sep = "", header = FALSE)
+colnames(df) <- c("id","county","state","area","population","perc.young","perc.old","physicians","hospital.beds","n.crimes","perc.hs","perc.bs","perc.poor","unemployment","per.income","tot.income","region")
+head(df)
+#sapply(df, function(x) sum(is.na(x))) no missing value
+```
+
+# Transform variables
+```{r}
+df['pop.density'] = df$population/df$area
+df['physician.per.1000'] = df$physicians/(df$population/1000)
+df['beds.per.1000'] = df$hospital.beds/(df$population/1000)
+df['crime.rate.per.1000'] = df$n.crimes/(df$population/1000)
+```
+
+# Split into train and test
+```{r}
+UNI <- 2245
+set.seed(UNI)
+index <- sample(c(1:440))
+my_df <- df[index[1:300],]
+head(my_df)
+```
+
+# Heatmap for correlation matrix
+```{r}
+numeric_features <- c('area','population','perc.young','perc.old','physicians','hospital.beds','n.crimes','perc.hs','perc.bs','perc.poor','unemployment','per.income','tot.income','pop.density','physician.per.1000','beds.per.1000','crime.rate.per.1000')
+cormat <- round(cor(my_df[numeric_features]),2)
+library(reshape2)
+melted_cormat <- melt(cormat)
+library(ggplot2)
+ggplot(data = melted_cormat, aes(Var2, Var1, fill = value))+
+ geom_tile(color = "white")+
+ scale_fill_gradient2(low = "blue", high = "red", mid = "white", 
+   midpoint = 0, limit = c(-1,1), space = "Lab", 
+   name="Pearson\nCorrelation") +
+  theme_minimal()+ 
+ theme(axis.text.x = element_text(angle = 45, vjust = 1, 
+    size = 12, hjust = 1))+
+ coord_fixed()
+```
+
+
+# Fit Poisson Regression Model with Offset and Quasi-likelihood
+```{r}
+m1 <- glm( n.crimes/(population/1000)~ area+perc.young+perc.old+perc.hs+perc.bs+perc.poor+unemployment+per.income+region+pop.density+physician.per.1000+beds.per.1000 ,
+    family=quasipoisson, data=my_df, weights=(population/1000))
+summary(m1)
+```
+
+# Select most important variables and fit again
+```{r}
+m2 <- glm( n.crimes/(population/1000)~ perc.young+perc.poor+per.income+factor(region)+pop.density+physician.per.1000+beds.per.1000+perc.bs ,
+    family=quasipoisson, data=my_df, weights=(population/1000))
+summary(m2)
+```
+
+# Fit Random Forest/XGboost Model
+```{r}
+
+```
+
+# Plot most important variables and interpret
+```{r}
+
+```
+
