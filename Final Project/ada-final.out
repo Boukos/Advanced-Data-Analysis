@@ -1,7 +1,8 @@
-\BOOKMARK [2][]{Outline0.1}{Introduction}{}% 1
-\BOOKMARK [3][]{Outline0.1.1.4}{The chemistry packages}{Outline0.1}% 2
-\BOOKMARK [2][]{Outline0.2}{Using chemistry packages with LaTeX}{}% 3
-\BOOKMARK [3][]{Outline0.2.1.5}{Chemical equations with mhchem}{Outline0.2}% 4
-\BOOKMARK [3][]{Outline0.2.2.6}{Getting started with some chemfig coffee}{Outline0.2}% 5
-\BOOKMARK [3][]{Outline0.2.3.7}{Experiments with water and rings}{Outline0.2}% 6
-\BOOKMARK [2][]{Outline0.3}{Suggestions\203}{}% 7
+\BOOKMARK [2][]{Outline0.1}{Overview}{}% 1
+\BOOKMARK [3][]{Outline0.1.1.4}{Goal and Procedure}{Outline0.1}% 2
+\BOOKMARK [2][]{Outline0.2}{Model Building}{}% 3
+\BOOKMARK [3][]{Outline0.2.1.5}{Data Overview}{Outline0.2}% 4
+\BOOKMARK [3][]{Outline0.2.2.6}{Data Cleaning}{Outline0.2}% 5
+\BOOKMARK [3][]{Outline0.2.3.7}{Regression Model}{Outline0.2}% 6
+\BOOKMARK [3][]{Outline0.2.4.8}{Interpretation of Parameters and Other Results}{Outline0.2}% 7
+\BOOKMARK [2][]{Outline0.3}{Suggestions and Improvements}{}% 8

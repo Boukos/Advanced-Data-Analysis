@@ -1,9 +1,10 @@
 \beamer@endinputifotherversion {3.36pt}
 \select@language {english}
-\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{The chemistry packages}{4}{0}{1}
-\beamer@sectionintoc {2}{Using chemistry packages with \LaTeX {}}{5}{0}{2}
-\beamer@subsectionintoc {2}{1}{Chemical equations with \texttt {mhchem}}{5}{0}{2}
-\beamer@subsectionintoc {2}{2}{Getting started with some \texttt {chemfig} coffee}{6}{0}{2}
-\beamer@subsectionintoc {2}{3}{Experiments with water and rings}{7}{0}{2}
-\beamer@sectionintoc {3}{Suggestions\dots {}}{8}{0}{3}
+\beamer@sectionintoc {1}{Overview}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Goal and Procedure}{4}{0}{1}
+\beamer@sectionintoc {2}{Model Building}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Data Overview}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Data Cleaning}{6}{0}{2}
+\beamer@subsectionintoc {2}{3}{Regression Model}{7}{0}{2}
+\beamer@subsectionintoc {2}{4}{Interpretation of Parameters and Other Results}{8}{0}{2}
+\beamer@sectionintoc {3}{Suggestions and Improvements}{9}{0}{3}

@@ -7,7 +7,6 @@ output:
       theme: journal
 ---
 
-library(glm)
 
 # Read Data
 
@@ -53,20 +52,20 @@ ggplot(data = melted_cormat, aes(Var2, Var1, fill = value))+
 
 # Fit Poisson Regression Model with Offset and Quasi-likelihood
 
+library(stats)
+# https://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html
 m1 <- glm( n.crimes/(population/1000)~ area+perc.young+perc.old+perc.hs+perc.bs+perc.poor+unemployment+per.income+region+pop.density+physician.per.1000+beds.per.1000 ,
     family=quasipoisson, data=my_df, weights=(population/1000))
 summary(m1)
 
 
 # Select most important variables and fit again
-
 m2 <- glm( n.crimes/(population/1000)~ perc.young+perc.poor+per.income+factor(region)+pop.density+physician.per.1000+beds.per.1000+perc.bs ,
     family=quasipoisson, data=my_df, weights=(population/1000))
 summary(m2)
 
 
 # Outliers
-
 outliers <- which(hatvalues(m2)>0.25)
 temp <- data.frame(hat.values=hatvalues(m2),res=residuals(m2))
 ggplot(data=temp,aes(hat.values,res)) +
@@ -75,7 +74,6 @@ ggplot(data=temp,aes(hat.values,res)) +
 
 
 # Predict and examine
-
 newdata <- df[index[301:440],]
 y_hat <- predict(m2, newdata, type="response")
 y <- newdata$crime.rate.per.1000
@@ -90,8 +88,5 @@ ggplot(data=temp,aes(y.hat,y)) +
 
 
 # Fit Random Forest/XGboost Model
-
-
-
 
 # Plot most important variables and interpret

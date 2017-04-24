@@ -4,6 +4,11 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-Introduction	Final Project/ada-final.tex	/^\\end{frame}$/;"	s
-Experiments with water and rings	Final Project/ada-final.tex	/^\\end{frame}$/;"	b
-Suggestions dots	Final Project/ada-final.tex	/^\\end{frame}$/;"	s
+Overview	Final Project/ada-final.tex	/^\\end{frame}$/;"	s
+Goal and Procedure	Final Project/ada-final.tex	/^\\end{frame}$/;"	b
+Model Building	Final Project/ada-final.tex	/^\\end{frame}$/;"	s
+Data Overview	Final Project/ada-final.tex	/^\\section{Model Building}$/;"	b
+Data Cleaning	Final Project/ada-final.tex	/^\\end{frame}$/;"	b
+Regression Model	Final Project/ada-final.tex	/^\\end{frame}$/;"	b
+Interpretation of Parameters and Other Results	Final Project/ada-final.tex	/^\\end{frame}$/;"	b
+Suggestions and Improvements	Final Project/ada-final.tex	/^\\end{frame}$/;"	s
