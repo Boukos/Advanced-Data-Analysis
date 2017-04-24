@@ -1040,6 +1040,7 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 61.
 LaTeX Info: Redefining \pageref on input line 61.
 LaTeX Info: Redefining \nameref on input line 61.
+ (./ada-final.out) (./ada-final.out)
 \@outlinefile=\write6
 \openout6 = `ada-final.out'.
 
@@ -1049,10 +1050,10 @@ Dictionary: translator-basic-dictionary, Language: English
 Dictionary: translator-bibliography-dictionary, Language: English 
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translator-environment-dictionary/translator-environment-dictionary-English.dict
 Dictionary: translator-environment-dictionary, Language: English 
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translator-months-dictionary/translator-months-dictionary-English.dict
-Dictionary: translator-months-dictionary, Language: English 
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translator-numbers-dictionary/translator-numbers-dictionary-English.dict
+(/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translator-months-dictionary/translator-months-dictionary-English.dict
+Dictionary: translator-months-dictionary, Language: English 
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translator-numbers-dictionary/translator-numbers-dictionary-English.dict
 Dictionary: translator-numbers-dictionary, Language: English 
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translator-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
@@ -1066,7 +1067,82 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 . 
 . Activating mapping `default' on line 61.
 .................................................
+ (./ada-final.nav)
 
-No file ada-final.nav.
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4> not available
+(Font)              size <5> substituted on input line 65.
 
-LaTeX Font Warning: Font shape `OT1/cm
+(./ada-final.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 5.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)) [2
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [3
+
+] [4
+
+]
+\openout4 = `ada-final.vrb'.
+
+ (./ada-final.vrb) [5
+
+]
+\openout4 = `ada-final.vrb'.
+
+ (./ada-final.vrb) [6
+
+]
+\openout4 = `ada-final.vrb'.
+
+ (./ada-final.vrb) [7
+
+] [8
+
+]
+\tf@nav=\write7
+\openout7 = `ada-final.nav'.
+
+\tf@toc=\write8
+\openout8 = `ada-final.toc'.
+
+\tf@snm=\write9
+\openout9 = `ada-final.snm'.
+
+ [9
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 204.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 204.
+ (./ada-final.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 204.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 204.
+Package rerunfilecheck Info: File `ada-final.out' has not changed.
+(rerunfilecheck)             Checksum: 928E61881F633FBEBFE8F8A4ABAA35CF;487.
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.0pt have occurred.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 204.
+ ) 
+Here is how much of TeX's memory you used:
+ 29487 strings out of 493089
+ 593882 string characters out of 6134842
+ 711231 words of memory out of 5000000
+ 32397 multiletter control sequences out of 15000+600000
+ 11562 words of font info for 47 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 58i,16n,102p,10351b,1589s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on ada-final.pdf (8 pages, 110291 bytes).
+PDF statistics:
+ 159 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
+ 135 words of extra memory for PDF output out of 10000 (max. 10000000)
+
