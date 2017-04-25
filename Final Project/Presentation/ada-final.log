@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  25 APR 2017 08:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  25 APR 2017 11:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1077,36 +1077,86 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4> not available
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [3
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 93.
+\openout4 = `ada-final.vrb'.
+
+ (./ada-final.vrb (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)) [4
+
+]
+\openout4 = `ada-final.vrb'.
+
+ (./ada-final.vrb
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 93.
+LaTeX Font Info:    Try loading font information for U+msb on input line 5.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [4
+)) [5
 
 ]
 \openout4 = `ada-final.vrb'.
 
- (./ada-final.vrb) [5
+ (./ada-final.vrb <ada1.jpg, id=112, 1394.20876pt x 842.14626pt>
+File: ada1.jpg Graphic file (type jpg)
+ <use ada1.jpg>
+Package pdftex.def Info: ada1.jpg used on input line 4.
+(pdftex.def)             Requested size: 361.34999pt x 218.25896pt.
+)
+Overfull \vbox (13.04665pt too high) detected at line 115
+ []
 
-]
-\openout4 = `ada-final.vrb'.
-
- (./ada-final.vrb) [6
+[6
 
 ]
 \openout4 = `ada-final.vrb'.
 
  (./ada-final.vrb) [7
 
-]
+ <./ada1.jpg>]
 \openout4 = `ada-final.vrb'.
 
  (./ada-final.vrb) [8
 
-] [9
+]
+\openout4 = `ada-final.vrb'.
+
+ (./ada-final.vrb <ada2.jpg, id=132, 936.49875pt x 844.15375pt>
+File: ada2.jpg Graphic file (type jpg)
+ <use ada2.jpg>
+Package pdftex.def Info: ada2.jpg used on input line 5.
+(pdftex.def)             Requested size: 231.26378pt x 208.46176pt.
+)
+Overfull \vbox (5.12029pt too high) detected at line 146
+ []
+
+[9
+
+]
+\openout4 = `ada-final.vrb'.
+
+ (./ada-final.vrb <ada3.jpg, id=138, 1276.77pt x 848.16875pt>
+File: ada3.jpg Graphic file (type jpg)
+ <use ada3.jpg>
+Package pdftex.def Info: ada3.jpg used on input line 6.
+(pdftex.def)             Requested size: 231.26378pt x 153.62149pt.
+) [10
+
+ <./ada2.jpg>]
+\openout4 = `ada-final.vrb'.
+
+ (./ada-final.vrb) [11
+
+ <./ada3.jpg>]
+\openout4 = `ada-final.vrb'.
+
+ (./ada-final.vrb) [12
+
+] [13
+
+] [14
 
 ]
 \tf@nav=\write7
@@ -1118,36 +1168,36 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@snm=\write9
 \openout9 = `ada-final.snm'.
 
- [10
+ [15
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 150.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 150.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 208.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 208.
  (./ada-final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 150.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 150.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 208.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 208.
 Package rerunfilecheck Info: File `ada-final.out' has not changed.
-(rerunfilecheck)             Checksum: 56D005BF3A781F4769C480B5735C45DA;508.
+(rerunfilecheck)             Checksum: 0E01CA3D4ED0457D1CB0AEB8F64C1A9C;643.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 150.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 208.
  ) 
 Here is how much of TeX's memory you used:
- 28658 strings out of 493089
- 578851 string characters out of 6134842
- 666940 words of memory out of 5000000
- 31568 multiletter control sequences out of 15000+600000
- 7645 words of font info for 31 fonts, out of 8000000 for 9000
+ 28990 strings out of 493089
+ 582647 string characters out of 6134842
+ 668940 words of memory out of 5000000
+ 31865 multiletter control sequences out of 15000+600000
+ 11717 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,16n,63p,10351b,663s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ada-final.pdf (9 pages, 80947 bytes).
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on ada-final.pdf (14 pages, 429071 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 143 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 216 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 174 words of extra memory for PDF output out of 10000 (max. 10000000)
 

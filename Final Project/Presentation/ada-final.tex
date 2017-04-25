@@ -70,75 +70,113 @@
 \end{frame}
 
 \section{Overview}
-
-\begin{frame}{Overview}
-
-\end{frame}
-
 \subsection{Goal and Procedure}
 \begin{frame}{Goal and Procedure}
-
 \begin{itemize}
-\item implement policies that will lead to the reduction of the number serious crimes in their county
-\item compute the regression model based on the training set and test the accuracy of the model using the test data.
+\item Compute the regression model based on the training set and test the accuracy of the model using the test data.
+\item Based on the model, implement policies that will lead to the reduction of the number of serious crimes in their county.
+\item Discuss the future improvements of the model.
 \end{itemize}
-
-\begin{block}{The \texttt{mhchem} package}
-The \texttt{mhchem} package provides simple commands for typesetting chemical molecular formulae and equations. Created by Martin Hensel, a detailed user guide can be found here:\\[0.4cm]
-\small{\url{http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/mhchem/mhchem.pdf}}
-\end{block}
-% The LaTeX wikibook is also a good source of info, e.g.
-% http://en.wikibooks.org/wiki/LaTeX/Chemical_Graphics
-
 \end{frame}
 
-\section{Model Building}
 
+\section{Model Building}
 \subsection{Data Overview}
 \begin{frame}[fragile]
 \frametitle{Data Overview}
-
 \begin{itemize}
-\item Geological Data
-\item Demographic Data
-\item Economics Data
+\item \textbf{Geographic Data:} Land Area, Geographic Region
+\item \textbf{Demographic Data:} Total population, Percent of population aged 18-34, Percent Bachelor’s Degree
+\item \textbf{Economics Data:} Percent Below Poverty Level, Total Personal Income, Per Capita Income
 \end{itemize}
-
 \end{frame}
 
 \subsection{Data Processing}
 \begin{frame}[fragile]
 \frametitle{Data Processing}
-
 \begin{itemize}
-\item
-\item Check invalid values (and remove them)
-\item
+\item Check for missing values (and substitute them with mean values)
+\item Calculate more variables that cater to our needs:\\
+(1) Population Density = $\frac{Population}{Area}$\\
+(2) Physician Per 1000 Population = $\frac{Population}{Area}$\\
+(3) Hospital Beds Per 1000 Population = $\frac{Hospital Beds}{Population/1000}$\\
+(4) Crime Rate Per 1000 Population = $\frac{Crimes}{Population/1000}$
+\item Randomly Select 330 rows of data to train the regression model, and the remaining 110 rows are used for testing the accuracy of our model
 \end{itemize}
-
-
-
 \end{frame}
+
+\subsection{Heatmap}
+\begin{frame}[fragile]
+\frametitle{Heatmap}
+First we explore the correlation of variables:
+\begin{center}
+  \makebox[\linewidth]{\includegraphics[width=5in]{ada1.jpg}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Heatmap}
+\begin{itemize}
+\item Given 16 predictor variables, some of them are strongly correlated with each other, which will cause us to get some potentially false conclusion, thus we remove these variables.
+\item The remaining variables are:\\
+\textsl{Area, Percentage of Young People, Percentage of Old People, Percentage of High School, Percentage of Bachelor, Percentage of Poor, Unemployment, Income,  Region, Population Density, Physician Per 1000 Population, Beds Per 1000 Population}
+\end{itemize}
+\end{frame}
+
 
 \subsection{Regression Model}
 \begin{frame}[fragile]
 \frametitle{Regression Model}
-
-empty page
+\begin{itemize}
+\item Given the fact that crime rate is a value between 0 and 1, using an ordinary linear regression model will affect model's accuracy, in this question we fit \textbf{Poisson Regression Model with Offset and Quasi-likelihood}
+\item Then we do the significant test for each variable, and remove the insignificant variables, then do the regression again.
+\end{itemize}
 
 \end{frame}
 
-\subsection{Interpretation of Parameters and Other Results}
+
 \begin{frame}[fragile]
-\frametitle{Interpretation of Parameters and Other Results}
+\frametitle{Outliers}
+Check outliers
 
-empty page
+\begin{center}
+  \makebox[\linewidth]{\includegraphics[width=3.2in]{ada2.jpg}}
+\end{center}
 
 \end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Prediction on Testing Data}
+\begin{itemize}
+\item Finally we use the testing data to predict the crime rate of the remaining 110 counties and examine the accuracy of the regression model
+\end{itemize}
+\begin{center}
+  \makebox[\linewidth]{\includegraphics[width=3.2in]{ada3.jpg}}
+\end{center}
+\end{frame}
+
+
+\subsection{Random Forest/XGboost Model}
+\begin{frame}[fragile]
+\frametitle{Random Forest/XGboost Model}
+To further explore the data, we fit our data into Random Forest/XGboost Model:
+
+\end{frame}
+
+
+\subsection{Interpretation of Parameters and Visualization}
+\begin{frame}[fragile]
+\frametitle{Interpretation of Parameters and Visualization}
+Here we interpret the meaning of each parameters in our model:
+\end{frame}
+
 
 \section{Suggestions and Improvements}
 \begin{frame}{Suggestions\dots{}}
-
+Based on the value of the parameters, we give the following suggestions to the officials of Kings County:
 \begin{itemize}
 \item 1
 \item 2
@@ -146,6 +184,26 @@ empty page
 \end{itemize}
 
 \end{frame}
+
+\begin{frame}{Improvements\dots{}}
+The Regression Model above may be fit for most counties in America, but it doesn't reveal the hidden reasons for the extremely high crime rate in some counties.
+
+\begin{block}{Social Economic Reasons}
+"Crime rates spiked in the 1980s and early 1990s as \textbf{the crack epidemic} hit the city."\\
+\bigbreak
+\small{Crime in New York City - Wikipedia\\ \url{http://bit.ly/2oYXTQQ}}
+\end{block}
+% The LaTeX wikibook is also a good source of info, e.g.
+% http://en.wikibooks.org/wiki/LaTeX/Chemical_Graphics
+
+\begin{block}{Food For Thought}
+"New York City Crime in the Nineties - The New Yoker"\\
+\bigbreak
+\small{\url{http://bit.ly/2os9ZTQ}}
+\end{block}
+
+\end{frame}
+
 
 \end{document}
 %\url{www.overleaf.com/help}

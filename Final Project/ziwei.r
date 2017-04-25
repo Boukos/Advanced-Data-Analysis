@@ -45,7 +45,7 @@ ggplot(data = melted_cormat, aes(Var2, Var1, fill = value))+
    name="Pearson\nCorrelation") +
   theme_minimal()+
  theme(axis.text.x = element_text(angle = 45, vjust = 1,
-    size = 12, hjust = 1))+
+    size = 12, hjust = 1), axis.title.x=element_blank(), axis.title.y=element_blank())+
  coord_fixed()
 
 
@@ -70,7 +70,7 @@ temp <- data.frame(hat.values=hatvalues(m2),res=residuals(m2))
 ggplot(data=temp,aes(hat.values,res)) +
   geom_point(alpha=0.8)+
   geom_text(data=temp[outliers,],aes(hat.values,res, label=my_df$county[outliers]),size=5,hjust=1,alpha=0.8)
-
+temp
 
 # Predict and examine
 newdata <- df[index[301:440],]
