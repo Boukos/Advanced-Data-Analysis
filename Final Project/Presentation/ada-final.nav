@@ -17,8 +17,8 @@
 \headcommand {\beamer@subsectionentry {0}{2}{1}{5}{Data Overview}}\headcommand {\beamer@subsectionpages {5}{4}}
 \headcommand {\slideentry {2}{1}{1}{5/5}{Data Overview}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{6}{Data Cleaning}}\headcommand {\beamer@subsectionpages {5}{5}}
-\headcommand {\slideentry {2}{2}{1}{6/6}{Data Cleaning}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{6}{Data Processing}}\headcommand {\beamer@subsectionpages {5}{5}}
+\headcommand {\slideentry {2}{2}{1}{6/6}{Data Processing}{0}}
 \headcommand {\beamer@framepages {6}{6}}
 \headcommand {\beamer@subsectionentry {0}{2}{3}{7}{Regression Model}}\headcommand {\beamer@subsectionpages {6}{6}}
 \headcommand {\slideentry {2}{3}{1}{7/7}{Regression Model}{0}}
