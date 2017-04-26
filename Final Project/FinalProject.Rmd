@@ -28,14 +28,14 @@ df['crime.rate.per.1000'] = df$n.crimes/(df$population/1000)
 UNI <- 2245
 set.seed(UNI)
 index <- sample(c(1:440))
-my_df <- df[index[1:300],]
-head(my_df)
+train_df <- df[index[1:300],]
+head(train_df)
 ```
 
 # Heatmap for correlation matrix
 ```{r}
 numeric_features <- c('area','population','perc.young','perc.old','physicians','hospital.beds','n.crimes','perc.hs','perc.bs','perc.poor','unemployment','per.income','tot.income','pop.density','physician.per.1000','beds.per.1000','crime.rate.per.1000')
-cormat <- round(cor(my_df[numeric_features]),2)
+cormat <- round(cor(train_df[numeric_features]),2)
 library(reshape2)
 melted_cormat <- melt(cormat)
 library(ggplot2)
@@ -54,14 +54,14 @@ ggplot(data = melted_cormat, aes(Var2, Var1, fill = value))+
 # Fit Poisson Regression Model with Offset and Quasi-likelihood
 ```{r}
 m1 <- glm( n.crimes/(population/1000)~ area+perc.young+perc.old+perc.hs+perc.bs+perc.poor+unemployment+per.income+region+pop.density+physician.per.1000+beds.per.1000 ,
-    family=quasipoisson, data=my_df, weights=(population/1000))
+    family=quasipoisson, data=train_df, weights=(population/1000))
 summary(m1)
 ```
 
 # Select most important variables and fit again
 ```{r}
-m2 <- glm( n.crimes/(population/1000)~ perc.young+perc.poor+per.income+factor(region)+pop.density+physician.per.1000+beds.per.1000+perc.bs ,
-    family=quasipoisson, data=my_df, weights=(population/1000))
+m2 <- glm( n.crimes/(population/1000)~ perc.young+perc.poor+per.income+factor(region)+log(pop.density)+physician.per.1000+beds.per.1000+perc.bs + unemployment ,
+    family=quasipoisson, data=train_df, weights=(population/1000))
 summary(m2)
 ```
 
@@ -71,31 +71,68 @@ outliers <- which(hatvalues(m2)>0.25)
 temp <- data.frame(hat.values=hatvalues(m2),res=residuals(m2))
 ggplot(data=temp,aes(hat.values,res)) +
   geom_point(alpha=0.8)+
-  geom_text(data=temp[outliers,],aes(hat.values,res, label=my_df$county[outliers]),size=5,hjust=1,alpha=0.8)
+  geom_text(data=temp[outliers,],aes(hat.values,res, label=train_df$county[outliers]),size=5,hjust=1,alpha=0.8)
 ```
 
 # Predict and examine
 ```{r}
-newdata <- df[index[301:440],]
-y_hat <- predict(m2, newdata, type="response")
-y <- newdata$crime.rate.per.1000
+#library("Metrics")
+test_df <- df[index[301:440],]
+y_hat <- predict(m2, test_df, type="response")
+y <- test_df$crime.rate.per.1000
 t1 <- lm(y~y_hat)
-outliers <- which(abs(residuals(t1))>70)
+#print(rmse(y,y_hat))
+outliers <- which(abs(residuals(t1))>50)
 temp <- data.frame(hat.values=hatvalues(t1),res=residuals(t1),y=y,y.hat=y_hat)
 ggplot(data=temp,aes(y.hat,y)) +
   geom_point(alpha=0.8)+
-  geom_text(data=temp[outliers,],aes(y.hat,y, label=newdata$county[outliers]),size=5,hjust=1,alpha=0.8)+
+  geom_text(data=temp[outliers,],aes(y.hat,y, label=test_df$county[outliers]),size=5,hjust=1,alpha=0.8)+
   geom_abline(slope=1)
+```
+
+# Compare Kings in NY and CA
+```{r}
+df[c(6,433),]
 ```
 
 
 # Fit Random Forest/XGboost Model
 ```{r}
+library("xgboost")
+f_to_use <- c('area','perc.young','perc.old','perc.hs','perc.bs','perc.poor','unemployment','per.income','region','pop.density','physician.per.1000','beds.per.1000')
+dtrain <- xgb.DMatrix(data = as.matrix(train_df[f_to_use]),label=train_df$crime.rate.per.1000)
+dtest <- xgb.DMatrix(data = as.matrix(test_df[f_to_use]),label=test_df$crime.rate.per.1000)
 
+cv <- xgb.cv(data = dtrain, nrounds = 300, nfold = 5, metrics = "rmse", max_depth=2, eta=0.03, objective = "reg:linear",early_stopping_rounds = 20)
+#print(cv)
+bst <- xgboost(data = dtrain, max_depth = 2, eta = 0.03, nrounds = 300, objective = "reg:linear")
+
+pred <- predict(bst,dtest)
+#print(rmse(y,pred))
+
+# plot
+t2 <- lm(y~pred)
+#print(rmse(y,y_hat))
+outliers <- which(abs(residuals(t2))>50)
+temp <- data.frame(hat.values=hatvalues(t2),res=residuals(t2),y=y,y.hat=pred)
+ggplot(data=temp,aes(y.hat,y)) +
+  geom_point(alpha=0.8)+
+  geom_text(data=temp[outliers,],aes(y.hat,y, label=test_df$county[outliers]),size=5,hjust=1,alpha=0.8)+
+  geom_abline(slope=1)
 ```
 
 # Plot most important variables and interpret
 ```{r}
+importance_matrix <- xgb.importance(model = bst)
+print(importance_matrix)
+importance_matrix$Feature <- f_to_use[as.integer(importance_matrix$Feature)+1]
+xgb.plot.importance(importance_matrix = importance_matrix)
+```
 
+# Compare RMSE for two models
+```{r}
+library("Metrics")
+met <- data.frame(Poisson=rmse(y,y_hat),GBM=rmse(y,pred))
+met
 ```
 
