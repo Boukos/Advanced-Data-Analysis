@@ -128,7 +128,7 @@ First we explore the correlation of variables:
 \begin{frame}[fragile]
 \frametitle{Regression Model}
 \begin{itemize}
-\item Given the fact that crime rate is a value between 0 and 1, using an ordinary linear regression model will affect model's accuracy, in this question we fit \textbf{Poisson Regression Model with Offset and Quasi-likelihood}
+\item Given the fact that crime rate is a value between 0 and 1, using an ordinary linear regression model will affect model's accuracy, in this question we fit the data to \textbf{Poisson Regression Model with Offset and Quasi-likelihood}
 \item Then we do the significant test for each variable, and remove the insignificant variables, then do the regression again.
 \end{itemize}
 
@@ -146,6 +146,39 @@ Check outliers
 \end{frame}
 
 
+\begin{frame}[fragile]
+\frametitle{Removal of Insignificant Variables}
+
+\begin{itemize}
+\item Through the resulting output table from Poisson Regression, the following variables are insignificant:\\
+\textsl{area, percent of old people, percent of people with high school education.}
+\item After removing the insignificant variables, we build the Poisson Regression Model again using only the most important variables.
+\end{itemize}
+\end{frame}
+
+
+
+\subsection{Interpretation of Parameters and Visualization}
+\begin{frame}[fragile]
+\frametitle{Interpretation of Parameters and Visualization}
+Here we interpret the meaning of each parameters in our model:\\
+\begin{itemize}
+\item percent young:
+If we increase the percent on young people by 1 while holding all other variables the same, the crime rate would increase by a multiplicative factor of 1.017847 on average.\\
+\item percent poor: If we increase the percent on poor people by 1 while holding all other variables the same, the crime rate would increase by a multiplicative factor of 1.024423 on average\\
+\item population density: If we increase the log of the population density by 1 while holding all other variables the same, the crime rate would increase by a multiplicative factor of 1.085662 on average.\\
+\end{itemize}
+\end{frame}
+
+
+\subsection{Interpretation of Parameters and Visualization}
+\begin{frame}[fragile]
+\frametitle{Interpretation of Parameters and Visualization}
+\begin{itemize}
+\item region: Holding all other variables the same, the crime rate in NC is higher than that in NE by a multiplicative factor of 1.347162 on average, the crime rate in S is higher than that in NE by a multiplicative factor of 1.775532 on average, the crime rate in NC is higher than that in W by a multiplicative factor of  on average.\\
+\item beds per 1000 population: If we increase the density of beds per 1000 people by 1 while holding all other variables the same, the crime rate would increase by a multiplicative factor of 1.049475 on average.
+\end{itemize}
+\end{frame}
 
 
 \begin{frame}[fragile]
@@ -163,24 +196,82 @@ Check outliers
 \begin{frame}[fragile]
 \frametitle{Random Forest/XGboost Model}
 To further explore the data, we fit our data into Random Forest/XGboost Model:
+\begin{center}
+  \makebox[\linewidth]{\includegraphics[width=3in]{ada4.jpg}}
+\end{center}
+\end{frame}
+
+
+
+
+\begin{frame}{Discoveries from the Testing Result}
+\begin{itemize}
+\item The two models both fit the data well
+\item Only several points are outliers, which we don't know the exactly reason for their high crime rate
+\item Since our client - Kings County is also among the several outliers in both models, we have to do further analysis to find out the hidden reason for its high crime rate. Otherwise, our suggestions may not be applicable to Kings County.
+\end{itemize}
 
 \end{frame}
 
 
-\subsection{Interpretation of Parameters and Visualization}
 \begin{frame}[fragile]
-\frametitle{Interpretation of Parameters and Visualization}
-Here we interpret the meaning of each parameters in our model:
+\frametitle{Most Important Variables}
+Let's see what are the most important variables:
+\begin{center}
+  \makebox[\linewidth]{\includegraphics[width=5in]{ada5.jpg}}
+\end{center}
 \end{frame}
 
+
+\begin{frame}[fragile]
+\frametitle{Kings County with other counties in US}
+We can see that among the several variables we focus on, Kings county has a significant high population density, which might be one of the reasons why Kings County has a high crime rate.
+\begin{center}
+  \makebox[\linewidth]{\includegraphics[width=3.5in]{ada6.jpg}}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Kings County with other counties in NY}
+Assuming counties that are adjacent to each other might have more similarities, we see the difference between Kings County and other counties in the State of NY.
+\begin{center}
+  \makebox[\linewidth]{\includegraphics[width=3.5in]{ada7.jpg}}
+\end{center}
+We can see that the biggest difference is still population density. Thus, we analyze population density's impact on crime rate.
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Regression on counties including Kings}
+\begin{center}
+  \makebox[\linewidth]{\includegraphics[width=4in]{ada8.jpg}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Important Features}
+\begin{center}
+  \makebox[\linewidth]{\includegraphics[width=5in]{ada9.jpg}}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Population Density}
+\begin{center}
+  \makebox[\linewidth]{\includegraphics[width=5in]{ada10.jpg}}
+\end{center}
+\end{frame}
 
 \section{Suggestions and Improvements}
 \begin{frame}{Suggestions\dots{}}
 Based on the value of the parameters, we give the following suggestions to the officials of Kings County:
 \begin{itemize}
-\item 1
-\item 2
-\item 3
+\item 1. Control the population of King's County
+\item 2. Adopt better policy to raise the level of people's life quality.
+\item 3.
 \end{itemize}
 
 \end{frame}
@@ -207,3 +298,16 @@ The Regression Model above may be fit for most counties in America, but it doesn
 
 \end{document}
 %\url{www.overleaf.com/help}
+
+
+
+
+ggplot(data = melted_cormat, aes(Var2, Var1, fill = value))+
+ geom_tile(color = "white")+
+ scale_fill_gradient2(low = "blue", high = "red", mid = "white",
+   midpoint = 0, limit = c(-1,1), space = "Lab",
+   name="Pearson\nCorrelation") +
+  theme_minimal()+
+ theme(axis.text.x = element_text(angle = 45, vjust = 1,
+    size = 12, hjust = 1), axis.title.x=element_blank(), axis.title.y=element_blank())+
+ coord_fixed()

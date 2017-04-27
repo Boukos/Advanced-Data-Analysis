@@ -163,41 +163,14 @@ row.names(Kings) <- 'Kings'
 NY <- df[df$state=='NY',]
 NY_avg <- colMeans(NY[-6,f_to_use])
 
-diff_country <- data.frame(feature=f_to_use)
-diff_country$diff.value <- t(Kings - NY_avg)
-colnames(diff_country) <- c("feature","diff.value")
+diff_NY <- data.frame(feature=f_to_use)
+diff_NY$diff.value <- t(Kings - NY_avg)
+colnames(diff_NY) <- c("feature","diff.value")
 
-diff_country$colour <- ifelse(diff_country$diff.value < 0, "negative","positive")
-ggplot(diff_country,aes(feature,diff.value))+
+diff_NY$colour <- ifelse(diff_NY$diff.value < 0, "negative","positive")
+ggplot(diff_NY,aes(feature,diff.value))+
   geom_bar(stat="identity",position="identity",aes(fill = colour))+
   scale_fill_manual(values=c(positive="firebrick1",negative="steelblue")) + coord_flip()
-```
-
-# Regress on counties including Kings
-```{r}
-cv <- xgb.cv(data = ex.dtest, nrounds = 150, nfold = 5, metrics = "rmse", max_depth=2, eta=0.03, objective = "reg:linear",early_stopping_rounds = 20)
-#print(cv)
-bst <- xgboost(data = ex.dtest, max_depth = 2, eta = 0.03, nrounds = 150, objective = "reg:linear")
-
-pred <- predict(bst,ex.dtest)
-
-# plot
-t3 <- lm(y[-82]~pred)
-
-outliers <- which(abs(residuals(t3))>40)
-temp <- data.frame(hat.values=hatvalues(t3),res=residuals(t3),y=y[-82],y.hat=pred)
-ggplot(data=temp,aes(y.hat,y)) +
-  geom_point(alpha=0.8)+
-  geom_text(data=temp[outliers,],aes(y.hat,y, label=test_df$county[outliers]),size=5,hjust=1,alpha=0.8)+
-  geom_abline(slope=1)
-```
-
-# Important features
-```{r}
-importance_matrix <- xgb.importance(model = bst)
-print(importance_matrix)
-importance_matrix$Feature <- f_to_use[as.integer(importance_matrix$Feature)+1]
-xgb.plot.importance(importance_matrix = importance_matrix) 
 ```
 
 # Population density
@@ -208,5 +181,7 @@ ggplot(data=df,aes(id,pop.density)) +
   geom_text(data=df[outliers,],aes(id,pop.density, label=df$county[outliers]),size=3.5,hjust=0.1,vjust=3,alpha=0.8,angle=30)+
   geom_abline(slope=1)
 ```
+
+
 
 
