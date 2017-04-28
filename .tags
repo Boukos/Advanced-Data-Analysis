@@ -5,10 +5,18 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 Overview	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	s
+Overview	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	s
 Goal and Procedure	Final Project/Presentation/ada-final.tex	/^\\section{Overview}$/;"	b
 Model Building	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	s
 Data Overview	Final Project/Presentation/ada-final.tex	/^\\section{Model Building}$/;"	b
 Data Processing	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	b
-Heatmap	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	b
 Regression Model	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	b
-Suggestions and Improvements	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	s
+Interpretation of Variables Effect on Crime Rate	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	b
+Prediction	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	b
+Discoveries from the Testing Result	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	b
+Suggestions and Further Thoughts	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	s
+Goal and Procedure	Final Project/Presentation/ada-final.tex	/^ coord_fixed()$/;"	b
+Model Building	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	s
+Data Overview	Final Project/Presentation/ada-final.tex	/^\\section{Model Building}$/;"	b
+Data Processing	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	b
+Regression Model	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	b

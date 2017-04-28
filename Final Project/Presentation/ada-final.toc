@@ -5,9 +5,8 @@
 \beamer@sectionintoc {2}{Model Building}{4}{0}{2}
 \beamer@subsectionintoc {2}{1}{Data Overview}{4}{0}{2}
 \beamer@subsectionintoc {2}{2}{Data Processing}{5}{0}{2}
-\beamer@subsectionintoc {2}{3}{Heatmap}{6}{0}{2}
-\beamer@subsectionintoc {2}{4}{Regression Model}{8}{0}{2}
-\beamer@subsectionintoc {2}{5}{Interpretation of Parameters and Visualization}{11}{0}{2}
-\beamer@subsectionintoc {2}{6}{Interpretation of Parameters and Visualization}{12}{0}{2}
-\beamer@subsectionintoc {2}{7}{Random Forest/XGboost Model}{14}{0}{2}
-\beamer@sectionintoc {3}{Suggestions and Improvements}{22}{0}{3}
+\beamer@subsectionintoc {2}{3}{Regression Model}{8}{0}{2}
+\beamer@subsectionintoc {2}{4}{Interpretation of Variables Effect on Crime Rate}{11}{0}{2}
+\beamer@subsectionintoc {2}{5}{Prediction}{13}{0}{2}
+\beamer@subsectionintoc {2}{6}{Discoveries from the Testing Result}{15}{0}{2}
+\beamer@sectionintoc {3}{Suggestions and Further Thoughts}{21}{0}{3}

@@ -18,52 +18,49 @@
 \headcommand {\beamer@subsectionentry {0}{2}{2}{5}{Data Processing}}\headcommand {\beamer@subsectionpages {4}{4}}
 \headcommand {\slideentry {2}{2}{1}{5/5}{Data Processing}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\beamer@subsectionentry {0}{2}{3}{6}{Heatmap}}\headcommand {\beamer@subsectionpages {5}{5}}
-\headcommand {\slideentry {2}{3}{1}{6/6}{Heatmap}{0}}
+\headcommand {\slideentry {2}{2}{2}{6/6}{Data Processing}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\slideentry {2}{3}{2}{7/7}{Heatmap}{0}}
+\headcommand {\slideentry {2}{2}{3}{7/7}{Data Processing}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\beamer@subsectionentry {0}{2}{4}{8}{Regression Model}}\headcommand {\beamer@subsectionpages {6}{7}}
-\headcommand {\slideentry {2}{4}{1}{8/8}{Regression Model}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{8}{Regression Model}}\headcommand {\beamer@subsectionpages {5}{7}}
+\headcommand {\slideentry {2}{3}{1}{8/8}{Regression Model}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\slideentry {2}{4}{2}{9/9}{Regression Model}{0}}
+\headcommand {\slideentry {2}{3}{2}{9/9}{Regression Model}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\slideentry {2}{4}{3}{10/10}{Regression Model}{0}}
+\headcommand {\slideentry {2}{3}{3}{10/10}{Regression Model}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\beamer@subsectionentry {0}{2}{5}{11}{Interpretation of Parameters and Visualization}}\headcommand {\beamer@subsectionpages {8}{10}}
-\headcommand {\slideentry {2}{5}{1}{11/11}{Interpretation of Parameters and Visualization}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{11}{Interpretation of Variables Effect on Crime Rate}}\headcommand {\beamer@subsectionpages {8}{10}}
+\headcommand {\slideentry {2}{4}{1}{11/11}{Interpretation of Variables Effect on Crime Rate}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\beamer@subsectionentry {0}{2}{6}{12}{Interpretation of Parameters and Visualization}}\headcommand {\beamer@subsectionpages {11}{11}}
-\headcommand {\slideentry {2}{6}{1}{12/12}{Interpretation of Parameters and Visualization}{0}}
+\headcommand {\slideentry {2}{4}{2}{12/12}{Interpretation of Variables Effect on Crime Rate}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {2}{6}{2}{13/13}{Interpretation of Parameters and Visualization}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{5}{13}{Prediction}}\headcommand {\beamer@subsectionpages {11}{12}}
+\headcommand {\slideentry {2}{5}{1}{13/13}{Prediction}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\beamer@subsectionentry {0}{2}{7}{14}{Random Forest/XGboost Model}}\headcommand {\beamer@subsectionpages {12}{13}}
-\headcommand {\slideentry {2}{7}{1}{14/14}{Random Forest/XGboost Model}{0}}
+\headcommand {\slideentry {2}{5}{2}{14/14}{Prediction}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\slideentry {2}{7}{2}{15/15}{Random Forest/XGboost Model}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{6}{15}{Discoveries from the Testing Result}}\headcommand {\beamer@subsectionpages {13}{14}}
+\headcommand {\slideentry {2}{6}{1}{15/15}{Discoveries from the Testing Result}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {2}{7}{3}{16/16}{Random Forest/XGboost Model}{0}}
+\headcommand {\slideentry {2}{6}{2}{16/16}{Discoveries from the Testing Result}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\slideentry {2}{7}{4}{17/17}{Random Forest/XGboost Model}{0}}
+\headcommand {\slideentry {2}{6}{3}{17/17}{Discoveries from the Testing Result}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\slideentry {2}{7}{5}{18/18}{Random Forest/XGboost Model}{0}}
+\headcommand {\slideentry {2}{6}{4}{18/18}{Discoveries from the Testing Result}{0}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\slideentry {2}{7}{6}{19/19}{Random Forest/XGboost Model}{0}}
+\headcommand {\slideentry {2}{6}{5}{19/19}{Discoveries from the Testing Result}{0}}
 \headcommand {\beamer@framepages {19}{19}}
-\headcommand {\slideentry {2}{7}{7}{20/20}{Random Forest/XGboost Model}{0}}
+\headcommand {\slideentry {2}{6}{6}{20/20}{Discoveries from the Testing Result}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\slideentry {2}{7}{8}{21/21}{Random Forest/XGboost Model}{0}}
+\headcommand {\sectionentry {3}{Suggestions and Further Thoughts}{21}{Suggestions and Further Thoughts}{0}}
+\headcommand {\beamer@sectionpages {4}{20}}
+\headcommand {\beamer@subsectionpages {15}{20}}
+\headcommand {\slideentry {3}{0}{1}{21/21}{}{0}}
 \headcommand {\beamer@framepages {21}{21}}
-\headcommand {\sectionentry {3}{Suggestions and Improvements}{22}{Suggestions and Improvements}{0}}
-\headcommand {\beamer@sectionpages {4}{21}}
-\headcommand {\beamer@subsectionpages {14}{21}}
-\headcommand {\slideentry {3}{0}{1}{22/22}{}{0}}
+\headcommand {\beamer@partpages {1}{22}}
+\headcommand {\beamer@subsectionpages {21}{22}}
+\headcommand {\beamer@sectionpages {21}{22}}
+\headcommand {\beamer@documentpages {22}}
+\headcommand {\def \inserttotalframenumber {22}}
+\headcommand {\slideentry {3}{0}{2}{22/22}{}{0}}
 \headcommand {\beamer@framepages {22}{22}}
-\headcommand {\beamer@partpages {1}{23}}
-\headcommand {\beamer@subsectionpages {22}{23}}
-\headcommand {\beamer@sectionpages {22}{23}}
-\headcommand {\beamer@documentpages {23}}
-\headcommand {\def \inserttotalframenumber {23}}
-\headcommand {\slideentry {3}{0}{2}{23/23}{}{0}}
-\headcommand {\beamer@framepages {23}{23}}
