@@ -32,7 +32,7 @@ After doing an overview of the dataset provided and setting our goal and procedu
 ![bam1.jpg](https://raw.githubusercontent.com/lleiou/Advanced-Data-Analysis/master/Final%20Project/Presentation/pics/ada1.jpg)
 
 - Given 16 predictor variables, some of them are strongly correlated with each other, which will cause us to get some potentially false conclusion, thus we remove these variables.
-- The remaining variables are:
+- The remaining variables are: <br/>
 *Area, Percentage of Young People, Percentage of Old People, Percentage of High School, Percentage of Bachelor, Percentage of Poor, Unemployment, Income, Region, Population Density, Physician Per 1000 Population, Beds Per 1000 Population*
 
 ### Regression Model
@@ -45,6 +45,7 @@ After doing an overview of the dataset provided and setting our goal and procedu
 ### Outliers
 Check Outliers
 ![bam1.jpg](https://raw.githubusercontent.com/lleiou/Advanced-Data-Analysis/master/Final%20Project/Presentation/pics/ada2.jpg)
+There are several outliers in our dataset, which corresponds to the reality: Baltimore, San Francisco are known for high crime rate.
 
 ### Interpretation of Variables Effect on Crime Rate
 Here we interpret the meaning of each parameters in our model:
