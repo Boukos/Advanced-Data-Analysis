@@ -16,8 +16,8 @@ After doing an overview of the dataset provided and setting our goal and procedu
 3. **Economics Data**: Percent Below Poverty Level, Total Personal Income, Per Capita Income
 
 ### Data Processing
-1. Check for missing values (and substitute them with mean values)
-2. Calculate more variables that cater to our needs:
+1. Check for missing values, and substitute them with mean values. There is no missing values in this dataset.
+2. Different counties have different populations, to offset the effect of population difference, we calculate the following variables that cater to our needs:
   - **Population Density** = Population/Area
   - **Physician Per 1000 Population** = Physician/(Population/1000)
   - **Hospital Beds Per 1000 Population** = HospitalBeds/(Population/1000)
