@@ -25,7 +25,7 @@ After doing an overview of the dataset provided and setting our goal and procedu
 3. Randomly Select 330 rows of data to train the regression model, and the remaining 110 rows are used for testing the accuracy of our model
 
 ### Heatmap
-- First we explore the correlation of variables:
+- First we explore the correlation between variables:
 <!--or like this
 ![bam1.jpg](../Presentation/pics/ada1.jpg)
 -->
@@ -49,11 +49,11 @@ There are several outliers in our dataset, which corresponds to the reality: Bal
 
 ### Interpretation of Variables Effect on Crime Rate
 Here we interpret the meaning of each parameters in our model:
-- **percent young**: If we decrease the percent of young people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.017847 on average.
-- **percent poor**: If we decrease the percent on poor people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.024423 on average
+- **percent of young people**: If we decrease the percent of young people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.017847 on average.
+- **percent of poor people**: If we decrease the percent on poor people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.024423 on average
 - **population density**: If we decrease the log of the population density by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.085662 on average.
 - **region**: Holding all other variables the same, the crime rate in NC is higher than that in NE by a multiplicative factor of 1.347162 on average, the crime rate in S is higher than that in NE by a multiplicative factor of 1.775532 on average, the crime rate in W is higher than that in NE by a multiplicative factor of 1.673471 on average.
-- **beds per 1000 population**: If we decrease the density of beds per 1000 people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.049475 on average.
+- **beds per 1000 people**: If we decrease the density of beds per 1000 people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.049475 on average.
 
 ### Prediction on Testing Data
 Finally we use the testing data to predict the crime rate of the remaining 110 counties and examine the accuracy of the regression model
