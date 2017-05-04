@@ -84,7 +84,7 @@ We can see that the biggest difference is still population density. Thus, we ana
 
 ### Population Density
 
-[bam.jpg](bam.jpg)
+![bam1.jpg](./bam.jpg)
 
 ## Suggestions and Further Thoughts
 ### Suggestions
