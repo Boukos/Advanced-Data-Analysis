@@ -4,16 +4,16 @@
 ## Abstract:
 After doing an overview of the dataset provided and setting our goal and procedure, we process the data then build two regression models. We also interpret the variables effect on crime rate prediction. Finally , we present the discoveries from the testing result and give suggestions and some further thoughts.
 
-## 1. Goal and Procedure
+## I. Goal and Procedure
 1. Using the data given to create a regression model.
 2. Based on the model, give suggestions on the reduction of the number of serious crimes in their county.
 3. Further thoughts about the findings.
 
-## 2. Model Building
-### data Overview
-1. Geographic Data: Land Area, Geographic Region
-2. Demographic Data: Total population, Percent of population aged 18-34, Percent Bachelor’s Degree
-3. Economics Data: Percent Below Poverty Level, Total Personal Income, Per Capita Income
+## II. Model Building
+### Data Overview
+1. **Geographic Data**: Land Area, Geographic Region
+2. **Demographic Data**: Total population, Percent of population aged 18-34, Percent Bachelor’s Degree
+3. **Economics Data**: Percent Below Poverty Level, Total Personal Income, Per Capita Income
 
 ### Data Processing
 1. Check for missing values (and substitute them with mean values)
@@ -89,7 +89,7 @@ We can see that the biggest difference is still population density. Thus, we ana
 ![bam1.jpg](https://raw.githubusercontent.com/lleiou/Advanced-Data-Analysis/master/Final%20Project/Presentation/pics/ada10.jpg)
 
 
-## 3. Suggestions and Further Thoughts
+## III. Suggestions and Further Thoughts
 ### Suggestions
 Based on the value of the parameters, we give the following suggestions to the officials of Kings County:
 - **General suggestions:**
