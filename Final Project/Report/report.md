@@ -18,10 +18,10 @@ After doing an overview of the dataset provided and setting our goal and procedu
 ### Data Processing
 1. Check for missing values (and substitute them with mean values)
 2. Calculate more variables that cater to our needs:
-  - Population Density = Population/Area
-  - Physician Per 1000 Population = Physician/(Population/1000)
-  - Hospital Beds Per 1000 Population = HospitalBeds/(Population/1000)
-  - Crime Rate Per 1000 Population = Crimes/(Population/1000)
+  - **Population Density** = Population/Area
+  - **Physician Per 1000 Population** = Physician/(Population/1000)
+  - **Hospital Beds Per 1000 Population** = HospitalBeds/(Population/1000)
+  - **Crime Rate Per 1000 Population** = Crimes/(Population/1000)
 3. Randomly Select 330 rows of data to train the regression model, and the remaining 110 rows are used for testing the accuracy of our model
 
 ### Heatmap
