@@ -29,35 +29,35 @@ P opulation/1000
 
 
 ### Heatmap
-First we explore the correlation of variables:
+- First we explore the correlation of variables:
 
-Given 16 predictor variables, some of them are strongly correlated with each other, which will cause us to get some potentially false conclusion, thus we remove these variables.
-The remaining variables are:
+- Given 16 predictor variables, some of them are strongly correlated with each other, which will cause us to get some potentially false conclusion, thus we remove these variables.
+- The remaining variables are:
 *Area, Percentage of Young People, Percentage of Old People, Percentage of High School, Percentage of Bachelor, Percentage of Poor, Unemployment, Income, Region, Population Density, Physician Per 1000 Population, Beds Per 1000 Population*
 
 ### Regression Model
-Given the fact that crime rate is a count value, in this question we fit the data to Poisson Regression Model, to reduce the effect of region size, we add offset to the model, and also use quasi-likelihood in order to prevent over dispersion.
+- Given the fact that crime rate is a count value, in this question we fit the data to Poisson Regression Model, to reduce the effect of region size, we add offset to the model, and also use quasi-likelihood in order to prevent over dispersion.
 
-Then we do the significant test for each variable.
-Through the resulting output table from Poisson Regression, the following variables are insignificant:
-area, percent of old people, percent of people with high school education.
-After removing the insignificant variables, we build the Poisson Regression Model again using only the most important variables.
+- Then we do the significant test for each variable.
+- Through the resulting output table from Poisson Regression, the following variables are insignificant:
+- area, percent of old people, percent of people with high school education.
+- After removing the insignificant variables, we build the Poisson Regression Model again using only the most important variables.
 
 ### Outliers
 Check Outliers
 
 ### Interpretation of Variables Effect on Crime Rate
-Here we interpret the meaning of each parameters in our model:
-percent young: If we decrease the percent of young people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.017847 on average.
-percent poor: If we decrease the percent on poor people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.024423 on average
-population density: If we decrease the log of the population density by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.085662 on average.
-region: Holding all other variables the same, the crime rate in NC is higher than that in NE by a multiplicative factor of 1.347162 on average, the crime rate in S is higher than that in NE by a multiplicative factor of 1.775532 on average, the crime rate in W is higher than that in NE by a multiplicative factor of 1.673471 on average.
-beds per 1000 population: If we decrease the density of beds per 1000 people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.049475 on average.
+- Here we interpret the meaning of each parameters in our model:
+- percent young: If we decrease the percent of young people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.017847 on average.
+- percent poor: If we decrease the percent on poor people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.024423 on average
+- population density: If we decrease the log of the population density by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.085662 on average.
+- region: Holding all other variables the same, the crime rate in NC is higher than that in NE by a multiplicative factor of 1.347162 on average, the crime rate in S is higher than that in NE by a multiplicative factor of 1.775532 on average, the crime rate in W is higher than that in NE by a multiplicative factor of 1.673471 on average.
+- beds per 1000 population: If we decrease the density of beds per 1000 people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.049475 on average.
 
 ### Prediction on Testing Data
 Finally we use the testing data to predict the crime rate of the remaining 110 counties and examine the accuracy of the regression model
 
-XGboost Model
+### XGboost Model
 To further explore the data, we fit our data into XGboost Model:
 
 Discoveries from the Testing Result
@@ -84,7 +84,7 @@ We can see that the biggest difference is still population density. Thus, we ana
 
 ### Population Density
 
-![bam1.jpg](./bam.jpg)
+![bam1.jpg](../cao.jpg)
 
 ## Suggestions and Further Thoughts
 ### Suggestions
