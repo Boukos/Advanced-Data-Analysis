@@ -4,12 +4,12 @@
 ## Abstract:
 After doing an overview of the dataset provided and setting our goal and procedure, we process the data then build two regression models. We also interpret the variables effect on crime rate prediction. Finally , we present the discoveries from the testing result and give suggestions and some further thoughts.
 
-## Goal and Procedure
+## 1. Goal and Procedure
 1. Using the data given to create a regression model.
 2. Based on the model, give suggestions on the reduction of the number of serious crimes in their county.
 3. Further thoughts about the findings.
 
-## Model Building
+## 2. Model Building
 ### data Overview
 1. Geographic Data: Land Area, Geographic Region Demographic Data: Total population, Percent of population
 2. aged 18-34, Percent Bachelor’s Degree
@@ -93,21 +93,18 @@ We can see that the biggest difference is still population density. Thus, we ana
 ![bam1.jpg](https://raw.githubusercontent.com/lleiou/Advanced-Data-Analysis/master/Final%20Project/Presentation/pics/ada10.jpg)
 
 
-## Suggestions and Further Thoughts
+## 3. Suggestions and Further Thoughts
 ### Suggestions
 Based on the value of the parameters, we give the following suggestions to the officials of Kings County:
-**General suggestions:**
-1. Adopt better policy to raise the income of people.
-2. Invest more money on education
-
-**Specific for Kings County:**
-1. Control the population density of King’s County:
-  It is harder to reduce the population, so we increase the land area: land filling.
-
+- **General suggestions:**
+  1. Adopt better policy to raise the income of people.
+  2. Invest more money on education
+- **Specific for Kings County:**
+  1. Control the population density of King’s County:
+    It is harder to reduce the population, so we increase the land area: land filling.
 
 ### Further Thoughts
 Though we have found out the relationship between high population density and high crime rate in King’s County, we want to know why.
-
 **Social Economics reason**
 1. *"Crime rates spiked in the 1980s and early 1990s as the crack epidemic hit the city."*
 Crime in New York City - Wikipedia
