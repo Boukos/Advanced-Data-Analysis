@@ -11,21 +11,18 @@ After doing an overview of the dataset provided and setting our goal and procedu
 
 ## 2. Model Building
 ### data Overview
-1. Geographic Data: Land Area, Geographic Region Demographic Data: Total population, Percent of population
-2. aged 18-34, Percent Bachelor’s Degree
+1. Geographic Data: Land Area, Geographic Region
+2. Demographic Data: Total population, Percent of population aged 18-34, Percent Bachelor’s Degree
 3. Economics Data: Percent Below Poverty Level, Total Personal Income, Per Capita Income
 
 ### Data Processing
 1. Check for missing values (and substitute them with mean values)
 2. Calculate more variables that cater to our needs:
-  - Population Density = Population Area
-  - Physician Per 1000 Population = Physician Population/1000
-  - Hospital Beds Per 1000 Population = HospitalBeds P opulation/1000
-  - Crime Rate Per 1000 Population =
-Crimes
-P opulation/1000
+  - Population Density = Population/Area
+  - Physician Per 1000 Population = Physician/(Population/1000)
+  - Hospital Beds Per 1000 Population = HospitalBeds/(Population/1000)
+  - Crime Rate Per 1000 Population = Crimes/(Population/1000)
 3. Randomly Select 330 rows of data to train the regression model, and the remaining 110 rows are used for testing the accuracy of our model
-
 
 ### Heatmap
 - First we explore the correlation of variables:
@@ -40,7 +37,6 @@ P opulation/1000
 
 ### Regression Model
 - Given the fact that crime rate is a count value, in this question we fit the data to Poisson Regression Model, to reduce the effect of region size, we add offset to the model, and also use quasi-likelihood in order to prevent over dispersion.
-
 - Then we do the significant test for each variable.
 - Through the resulting output table from Poisson Regression, the following variables are insignificant:
 - area, percent of old people, percent of people with high school education.
@@ -66,11 +62,11 @@ Finally we use the testing data to predict the crime rate of the remaining 110 c
 To further explore the data, we fit our data into XGboost Model:
 ![bam1.jpg](https://raw.githubusercontent.com/lleiou/Advanced-Data-Analysis/master/Final%20Project/Presentation/pics/ada4.jpg)
 
-Discoveries from the Testing Result
+### Discoveries from the Testing Result
 
-The two models both fit the data well
-Only several points are outliers, no matter which model we use, so there are some others reasons for their high crime rate that we don’t know the exactly.
-Since our client - Kings County is also among the several outliers in both models, we have to do further analysis to find out the hidden reason for its high crime rate. Otherwise, our suggestions may not be applicable to Kings County.
+- The two models both fit the data well
+- Only several points are outliers, no matter which model we use, so there are some others reasons for their high crime rate that we don’t know the exactly.
+- Since our client - Kings County is also among the several outliers in both models, we have to do further analysis to find out the hidden reason for its high crime rate. Otherwise, our suggestions may not be applicable to Kings County.
 
 ### With and Without Kings County
 Building the two kinds of models with and without taking King’s County into consideration, we can see a big difference in the error, meaning that we have to analyze King’s County and other counties separately.
@@ -106,7 +102,7 @@ Based on the value of the parameters, we give the following suggestions to the o
 ### Further Thoughts
 Though we have found out the relationship between high population density and high crime rate in King’s County, we want to know why.
 **Social Economics reason**
-1. *"Crime rates spiked in the 1980s and early 1990s as the crack epidemic hit the city."*
+1. *"Crime rates spiked in the 1980s and early 1990s as the crack epidemic hit the city."*<br/>
 Crime in New York City - Wikipedia
 http://bit.ly/2oYXTQQ
 2. "New York City Crime in the Nineties - The New Yoker"
