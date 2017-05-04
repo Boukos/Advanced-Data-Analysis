@@ -5,7 +5,6 @@
 ## Abstract:
 After doing an overview of the dataset provided and setting our goal and procedure, we process the data then build two regression models. We also interpret the variables effect on crime rate prediction. Finally , we present the discoveries from the testing result and give suggestions and some further thoughts.
 
-
 ## Goal and Procedure
 1. Using the data given to create a regression model.
 2. Based on the model, give suggestions on the reduction of the number of serious crimes in their county.
@@ -34,7 +33,7 @@ First we explore the correlation of variables:
 
 Given 16 predictor variables, some of them are strongly correlated with each other, which will cause us to get some potentially false conclusion, thus we remove these variables.
 The remaining variables are:
-Area, Percentage of Young People, Percentage of Old People, Percentage of High School, Percentage of Bachelor, Percentage of Poor, Unemployment, Income, Region, Population Density, Physician Per 1000 Population, Beds Per 1000 Population
+*Area, Percentage of Young People, Percentage of Old People, Percentage of High School, Percentage of Bachelor, Percentage of Poor, Unemployment, Income, Region, Population Density, Physician Per 1000 Population, Beds Per 1000 Population*
 
 ### Regression Model
 Given the fact that crime rate is a count value, in this question we fit the data to Poisson Regression Model, to reduce the effect of region size, we add offset to the model, and also use quasi-likelihood in order to prevent over dispersion.
@@ -85,24 +84,26 @@ We can see that the biggest difference is still population density. Thus, we ana
 
 ### Population Density
 
+[bam.jpg](bam.jpg)
 
+## Suggestions and Further Thoughts
 ### Suggestions
-
 Based on the value of the parameters, we give the following suggestions to the officials of Kings County:
-General suggestions:
-1. Adopt better policy to raise the income of people. 2. Invest more money on education
-Specific for Kings County:
-- Control the population density of King’s County:
-It is harder to reduce the population, so we increase the land area: land filling.
+**General suggestions:**
+1. Adopt better policy to raise the income of people.
+2. Invest more money on education
+
+**Specific for Kings County:**
+1. Control the population density of King’s County:
+  It is harder to reduce the population, so we increase the land area: land filling.
 
 
 ### Further Thoughts
 Though we have found out the relationship between high population density and high crime rate in King’s County, we want to know why.
 
-Social Economics reason
-"Crime rates spiked in the 1980s and early 1990s as the crack epidemic hit the city."
+**Social Economics reason**
+1. *"Crime rates spiked in the 1980s and early 1990s as the crack epidemic hit the city."*
 Crime in New York City - Wikipedia
 http://bit.ly/2oYXTQQ
-
-"New York City Crime in the Nineties - The New Yoker"
+2. "New York City Crime in the Nineties - The New Yoker"
 http://bit.ly/2os9ZTQ
