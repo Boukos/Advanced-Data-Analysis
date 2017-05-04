@@ -1,6 +1,5 @@
 # Analysis of U.S. Regional Crime Rates
-### Ziwei Meng, Ao Liu
-#### April 29, 2017
+<p style="text-align: center;">Ziwei Meng, Ao Liu</p>
 
 ## Abstract:
 After doing an overview of the dataset provided and setting our goal and procedure, we process the data then build two regression models. We also interpret the variables effect on crime rate prediction. Finally , we present the discoveries from the testing result and give suggestions and some further thoughts.
