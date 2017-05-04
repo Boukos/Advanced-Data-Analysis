@@ -30,6 +30,10 @@ P opulation/1000
 
 ### Heatmap
 - First we explore the correlation of variables:
+<!--or like this
+![bam1.jpg](../Presentation/pics/ada1.jpg)
+-->
+![bam1.jpg](https://raw.githubusercontent.com/lleiou/Advanced-Data-Analysis/master/Final%20Project/Presentation/pics/ada1.jpg)
 
 - Given 16 predictor variables, some of them are strongly correlated with each other, which will cause us to get some potentially false conclusion, thus we remove these variables.
 - The remaining variables are:
@@ -45,20 +49,23 @@ P opulation/1000
 
 ### Outliers
 Check Outliers
+![bam1.jpg](https://raw.githubusercontent.com/lleiou/Advanced-Data-Analysis/master/Final%20Project/Presentation/pics/ada2.jpg)
 
 ### Interpretation of Variables Effect on Crime Rate
-- Here we interpret the meaning of each parameters in our model:
-- percent young: If we decrease the percent of young people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.017847 on average.
-- percent poor: If we decrease the percent on poor people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.024423 on average
-- population density: If we decrease the log of the population density by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.085662 on average.
-- region: Holding all other variables the same, the crime rate in NC is higher than that in NE by a multiplicative factor of 1.347162 on average, the crime rate in S is higher than that in NE by a multiplicative factor of 1.775532 on average, the crime rate in W is higher than that in NE by a multiplicative factor of 1.673471 on average.
-- beds per 1000 population: If we decrease the density of beds per 1000 people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.049475 on average.
+Here we interpret the meaning of each parameters in our model:
+- **percent young**: If we decrease the percent of young people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.017847 on average.
+- **percent poor**: If we decrease the percent on poor people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.024423 on average
+- **population density**: If we decrease the log of the population density by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.085662 on average.
+- **region**: Holding all other variables the same, the crime rate in NC is higher than that in NE by a multiplicative factor of 1.347162 on average, the crime rate in S is higher than that in NE by a multiplicative factor of 1.775532 on average, the crime rate in W is higher than that in NE by a multiplicative factor of 1.673471 on average.
+- **beds per 1000 population**: If we decrease the density of beds per 1000 people by 1 unit while holding all other variables the same, the crime rate would decrease by a multiplicative factor of 1.049475 on average.
 
 ### Prediction on Testing Data
 Finally we use the testing data to predict the crime rate of the remaining 110 counties and examine the accuracy of the regression model
+![bam1.jpg](https://raw.githubusercontent.com/lleiou/Advanced-Data-Analysis/master/Final%20Project/Presentation/pics/ada3.jpg)
 
 ### XGboost Model
 To further explore the data, we fit our data into XGboost Model:
+![bam1.jpg](https://raw.githubusercontent.com/lleiou/Advanced-Data-Analysis/master/Final%20Project/Presentation/pics/ada4.jpg)
 
 Discoveries from the Testing Result
 
@@ -71,20 +78,21 @@ Building the two kinds of models with and without taking King’s County into co
 
 ### Most Important Variables without Kings County
 Let’s see what are the most important variables using XGBoost without Kings County:
+![bam1.jpg](https://raw.githubusercontent.com/lleiou/Advanced-Data-Analysis/master/Final%20Project/Presentation/pics/ada5.jpg)
 From the chart above we can see that for most of the counties in the U.S., the variables that matter most are percent of poor people, region size, number of physicians per 1000 population and so on.
 
 
 ### Kings County vs other counties in U.S.
 Let’s see what are the variables with which Kings County differs most from the others. We can see that among the several variables we focus on, Kings county has a significant high population density, which might be one of the reasons why Kings County has a high crime rate.
-
+![bam1.jpg](https://raw.githubusercontent.com/lleiou/Advanced-Data-Analysis/master/Final%20Project/Presentation/pics/ada6.jpg)
 ### Kings County vs other counties in NY
 Assuming counties that are adjacent to each other might have more similarities, we see the difference between Kings County and other counties in the State of New York.
-
+![bam1.jpg](https://raw.githubusercontent.com/lleiou/Advanced-Data-Analysis/master/Final%20Project/Presentation/pics/ada7.jpg)
 We can see that the biggest difference is still population density. Thus, we analyze population density’s impact on crime rate.
 
 ### Population Density
+![bam1.jpg](https://raw.githubusercontent.com/lleiou/Advanced-Data-Analysis/master/Final%20Project/Presentation/pics/ada10.jpg)
 
-![bam1.jpg](../cao.jpg)
 
 ## Suggestions and Further Thoughts
 ### Suggestions
