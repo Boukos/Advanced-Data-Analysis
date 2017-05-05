@@ -1,3 +1,4 @@
+<!-- hit Control + Shift + M  to preview -->
 # Analysis of U.S. Regional Crime Rates
 <p style="text-align: center;">Ziwei Meng, Ao Liu</p>
 

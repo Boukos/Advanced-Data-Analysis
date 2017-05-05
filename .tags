@@ -19,3 +19,12 @@ Model Building	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	s
 Data Overview	Final Project/Presentation/ada-final.tex	/^\\section{Model Building}$/;"	b
 Data Processing	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	b
 Regression Model	Final Project/Presentation/ada-final.tex	/^\\end{frame}$/;"	b
+Sample section	Final Project/Report/Elsevier/elsarticle-template.tex	/^\\end{frontmatter}$/;"	s
+Sample subsection	Final Project/Report/Elsevier/elsarticle-template.tex	/^Sample text. Sample text. Citation of Einstein paper~\\cite{Einstein}.$/;"	b
+Section in Appendix	Final Project/Report/Elsevier/elsarticle-template.tex	/^\\appendix$/;"	s
+INTRODUCTION	Final Project/Report/LaTeX Final/report.tex	/^\\end{frontmatter}$/;"	s
+METHODS	Final Project/Report/LaTeX Final/report.tex	/^\\end{center}$/;"	s
+RESULTS	Final Project/Report/LaTeX Final/report.tex	/^These two models give us consistent results, but slightly different in ranking relative importance of predictors. In the conclusion section we will consider both of them to give our suggestions.$/;"	s
+CONCLUSION	Final Project/Report/LaTeX Final/report.tex	/^\\end{center}$/;"	s
+REFERENCE	Final Project/Report/LaTeX Final/report.tex	/^\\end{itemize}}$/;"	s
+Section in Appendix	Final Project/Report/LaTeX Final/report.tex	/^\\appendix$/;"	s
