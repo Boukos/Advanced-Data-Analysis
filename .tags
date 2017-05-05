@@ -26,5 +26,4 @@ INTRODUCTION	Final Project/Report/LaTeX Final/report.tex	/^\\end{frontmatter}$/;
 METHODS	Final Project/Report/LaTeX Final/report.tex	/^\\end{center}$/;"	s
 RESULTS	Final Project/Report/LaTeX Final/report.tex	/^These two models give us consistent results, but slightly different in ranking relative importance of predictors. In the conclusion section we will consider both of them to give our suggestions.$/;"	s
 CONCLUSION	Final Project/Report/LaTeX Final/report.tex	/^\\end{center}$/;"	s
-REFERENCE	Final Project/Report/LaTeX Final/report.tex	/^\\end{itemize}}$/;"	s
-Section in Appendix	Final Project/Report/LaTeX Final/report.tex	/^\\appendix$/;"	s
+REFERENCE	Final Project/Report/LaTeX Final/report.tex	/^\\end{itemize}$/;"	s

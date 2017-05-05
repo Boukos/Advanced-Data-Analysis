@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  5 MAY 2017 01:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.2)  5 MAY 2017 11:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -111,7 +111,10 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen115
 \Gm@layoutvoffset=\dimen116
 \Gm@dimlist=\toks17
-)) (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
+)) (/usr/local/texlive/2015/texmf-dist/tex/latex/lipsum/lipsum.sty
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count98
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
  (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
@@ -157,12 +160,12 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen117
-\Hy@linkcounter=\count98
-\Hy@pagecounter=\count99
+\Hy@linkcounter=\count99
+\Hy@pagecounter=\count100
  (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count100
+\Hy@SavedSpaceFactor=\count101
  (/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
@@ -173,14 +176,14 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count101
+\c@Hy@tempcnt=\count102
  (/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen118
-\Fld@menulength=\count102
+\Fld@menulength=\count103
 \Field@Width=\dimen119
 \Fld@charsize=\dimen120
 Package hyperref Info: Hyper figures OFF on input line 6295.
@@ -192,17 +195,17 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count103
-\c@Item=\count104
-\c@Hfootnote=\count105
+\Hy@abspage=\count104
+\c@Item=\count105
+\c@Hfootnote=\count106
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count106
-\c@bookmark@seq@number=\count107
+\Fld@listcount=\count107
+\c@bookmark@seq@number=\count108
  (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
@@ -272,8 +275,8 @@ Package tocloft Info: The document has section divisions on input line 44.
 \cftbeforefigskip=\skip75
 \cftfigindent=\skip76
 \cftfignumwidth=\skip77
-\c@lofdepth=\count108
-\c@lotdepth=\count109
+\c@lofdepth=\count109
+\c@lotdepth=\count110
 \cftbeforelottitleskip=\skip78
 \cftafterlottitleskip=\skip79
 \cftbeforetabskip=\skip80
@@ -298,13 +301,13 @@ Package: amsbsy 1999/11/29 v1.2d
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count110
+\inf@bad=\count111
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count111
-\leftroot@=\count112
+\uproot@=\count112
+\leftroot@=\count113
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count113
-\DOTSCASE@=\count114
+\classnum@=\count114
+\DOTSCASE@=\count115
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -313,15 +316,15 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen129
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count115
-\c@MaxMatrixCols=\count116
+\macc@depth=\count116
+\c@MaxMatrixCols=\count117
 \dotsspace@=\muskip11
-\c@parentequation=\count117
-\dspbrk@lvl=\count118
+\c@parentequation=\count118
+\dspbrk@lvl=\count119
 \tag@help=\toks22
-\row@=\count119
-\column@=\count120
-\maxfields@=\count121
+\row@=\count120
+\column@=\count121
+\maxfields@=\count122
 \andhelp@=\toks23
 \eqnshift@=\dimen130
 \alignsep@=\dimen131
@@ -354,22 +357,22 @@ LaTeX Warning: Command \@footnotemark  has changed.
 
 LaTeX Info: Redefining \textsubscript on input line 1265.
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count122
+\lst@mode=\count123
 \lst@gtempboxa=\box32
 \lst@token=\toks26
-\lst@length=\count123
+\lst@length=\count124
 \lst@currlwidth=\dimen136
-\lst@column=\count124
-\lst@pos=\count125
+\lst@column=\count125
+\lst@pos=\count126
 \lst@lostspace=\dimen137
 \lst@width=\dimen138
-\lst@newlines=\count126
-\lst@lineno=\count127
+\lst@newlines=\count127
+\lst@lineno=\count128
 \lst@maxwidth=\dimen139
  (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
-\c@lstnumber=\count128
-\lst@skipnumbers=\count129
+\c@lstnumber=\count129
+\lst@skipnumbers=\count130
 \lst@framebox=\box33
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2014/09/06 1.5e listings configuration
@@ -393,35 +396,47 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup6
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (./report.aux)
+))
+
+Package geometry Warning: Over-specification in `v'-direction.
+    `height' (622.0pt) is ignored.
+
+(./report.aux
+
+Package natbib Warning: Citation `latexcompanion' multiply defined.
+
+
+Package natbib Warning: Citation `latexcompanion' multiply defined.
+
+)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
  (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count130
+\scratchcounter=\count131
 \scratchdimen=\dimen140
 \scratchbox=\box34
-\nofMPsegments=\count131
-\nofMParguments=\count132
+\nofMPsegments=\count132
+\nofMParguments=\count133
 \everyMPshowfont=\toks27
-\MPscratchCnt=\count133
+\MPscratchCnt=\count134
 \MPscratchDim=\dimen141
-\MPnumerator=\count134
-\makeMPintoPDFobject=\count135
+\MPnumerator=\count135
+\makeMPintoPDFobject=\count136
 \everyMPtoPDFconversion=\toks28
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -445,18 +460,18 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * vratio: 1:1
 * modes: 
 * h-part:(L,W,R)=(64.75394pt, 468.0pt, 64.75394pt)
-* v-part:(T,H,B)=(111.52342pt, 622.0pt, 111.52342pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=452.9679pt
+* \textwidth=468.0pt
 * \textheight=700.50687pt
-* \oddsidemargin=0.0pt
-* \evensidemargin=0.0pt
-* \topmargin=0.0pt
-* \headheight=0.0pt
-* \headsep=0.0pt
+* \oddsidemargin=-7.51605pt
+* \evensidemargin=-7.51605pt
+* \topmargin=-542.50053pt
+* \headheight=516.66718pt
+* \headsep=25.83336pt
 * \topskip=12.0pt
-* \footskip=0.0pt
+* \footskip=18.0pt
 * \marginparwidth=44.0pt
 * \marginparsep=10.0pt
 * \columnsep=24.0pt
@@ -471,158 +486,291 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box35
-Package hyperref Info: Link coloring OFF on input line 104.
+Package hyperref Info: Link coloring OFF on input line 129.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
  (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count136
+\c@section@level=\count137
 )
-LaTeX Info: Redefining \ref on input line 104.
-LaTeX Info: Redefining \pageref on input line 104.
-LaTeX Info: Redefining \nameref on input line 104.
+LaTeX Info: Redefining \ref on input line 129.
+LaTeX Info: Redefining \pageref on input line 129.
+LaTeX Info: Redefining \nameref on input line 129.
  (./report.out) (./report.out)
 \@outlinefile=\write4
 \openout4 = `report.out'.
 
-\c@lstlisting=\count137
-LaTeX Font Info:    Try loading font information for U+lasy on input line 129.
+\c@lstlisting=\count138
+LaTeX Font Info:    Try loading font information for U+lasy on input line 155.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 129.
+LaTeX Font Info:    Try loading font information for U+msa on input line 155.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 129.
+LaTeX Font Info:    Try loading font information for U+msb on input line 155.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Missing character: There is no ‚ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ¢ in font cmr12!
+Missing character: There is no ¬ in font cmr12!
 Missing character: There is no Ä in font cmr12!
+Missing character: There is no ¬ in font cmr12!
 Missing character: There is no ô in font cmr12!
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 142.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 169.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 142.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 169.
+ <pics/1.png, id=24, 1120.185pt x 732.7375pt>
+File: pics/1.png Graphic file (type png)
+ <use pics/1.png>
+Package pdftex.def Info: pics/1.png used on input line 178.
+(pdftex.def)             Requested size: 468.0pt x 306.12645pt.
 
 
-LaTeX Warning: File `/pics/.jpg' not found on input line 151.
+./report.tex:179: LaTeX Error: \caption outside float.
 
-
-./report.tex:151: Package pdftex.def Error: File `/pics/.jpg' not found.
-
-See the pdftex.def package documentation for explanation.
+See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.151 ...degraphics[width=\textwidth]{/pics/.jpg}}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
+l.179 \caption
+              {Fig.1}
+You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Missing character: There is no ‚ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ¢ in font cmr12!
+Missing character: There is no ¬ in font cmr12!
 Missing character: There is no Ä in font cmr12!
+Missing character: There is no ¬ in font cmr12!
 Missing character: There is no ô in font cmr12!
- [2]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
- [3]
-Overfull \hbox (11.63979pt too wide) in paragraph at lines 239--240
-[]\OT1/cmr/m/n/12 Both mod-els are suc-cess-ful in pre-dict-ing/-ex-plain-ing crime rate in test data[compare.png],
- []
-
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-
-LaTeX Warning: File `/pics/.jpg' not found on input line 274.
+ <pics/table1.png, id=37, 1130.2225pt x 175.65625pt>
+File: pics/table1.png Graphic file (type png)
+ <use pics/table1.png>
+Package pdftex.def Info: pics/table1.png used on input line 185.
+(pdftex.def)             Requested size: 468.0pt x 72.73515pt.
 
 
-./report.tex:274: Package pdftex.def Error: File `/pics/.jpg' not found.
+./report.tex:186: LaTeX Error: \caption outside float.
 
-See the pdftex.def package documentation for explanation.
+See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.274 ...degraphics[width=\textwidth]{/pics/.jpg}}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
+l.186       \caption
+                    {Table 1}
+You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[4]
-./report.tex:291: Too many }'s.
-l.291 \end{itemize}}
-                    
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-./report.tex:299: Missing $ inserted.
-<inserted text> 
-                $
-l.299 ...www.iaca.net/ExploringCA/2Ed/exploringca_
-                                                  chapter8.pdf
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./report.tex:302: Missing $ inserted.
-<inserted text> 
-                $
-l.302 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+<pics/table2.png, id=39, 576.1525pt x 308.15125pt>
+File: pics/table2.png Graphic file (type png)
+ <use pics/table2.png>
+Package pdftex.def Info: pics/table2.png used on input line 191.
+(pdftex.def)             Requested size: 361.34999pt x 193.27113pt.
 
 
-Overfull \hbox (85.81264pt too wide) in paragraph at lines 296--302
-[]\OT1/cmr/m/n/12 [What Sta-tis-ti-cal Con-sul-tants Do: Re-port of a Sur-vey] http://csyue.nccu.edu.tw/ch/What[Interpreting
- []
+./report.tex:192: LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.192     \caption
+                  {Table 2}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[2 <./pics/1.png> <./pics/table1.png>] <pics/table3.png, id=45, 1022.82124pt x 130.4875pt>
+File: pics/table3.png Graphic file (type png)
+ <use pics/table3.png>
+Package pdftex.def Info: pics/table3.png used on input line 199.
+(pdftex.def)             Requested size: 468.0pt x 59.7044pt.
 
 
-Overfull \hbox (172.90761pt too wide) in paragraph at lines 296--302
-\OT1/cmr/m/n/12 Crime Data and Statis-tics] http://www.iaca.net/ExploringCA/2Ed/exploringca$[]\OML/cmm/m/it/12 hapter\OT1/cmr/m/n/12 8\OML/cmm/m/it/12 :pdf\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 AStargazerCheatsheet\OT1/cmr/m/n/12 ]\OML/cmm/m/it/12 http \OT1/cmr/m/n/12 :
- []
+./report.tex:200: LaTeX Error: \caption outside float.
 
-[5] (./report.bbl
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.200       \caption
+                    {Table 3}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ¢ in font cmr12!
+Missing character: There is no ¬ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ¬ in font cmr12!
+Missing character: There is no ô in font cmr12!
+[3 <./pics/table2.png> <./pics/table3.png>] <pics/table4.png, id=53, 1143.27126pt x 128.48pt>
+File: pics/table4.png Graphic file (type png)
+ <use pics/table4.png>
+Package pdftex.def Info: pics/table4.png used on input line 229.
+(pdftex.def)             Requested size: 468.0pt x 52.59283pt.
+
+
+./report.tex:230: LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.230       \caption
+                    {Table 4}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<pics/table5.png, id=54, 931.48pt x 59.22125pt>
+File: pics/table5.png Graphic file (type png)
+ <use pics/table5.png>
+Package pdftex.def Info: pics/table5.png used on input line 235.
+(pdftex.def)             Requested size: 468.0pt x 29.75421pt.
+
+
+./report.tex:236: LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.236       \caption
+                    {Table 5}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<pics/2.png, id=55, 1523.6925pt x 941.5175pt>
+File: pics/2.png Graphic file (type png)
+ <use pics/2.png>
+Package pdftex.def Info: pics/2.png used on input line 242.
+(pdftex.def)             Requested size: 229.32257pt x 141.69562pt.
+ <pics/3.png, id=56, 1523.6925pt x 941.5175pt>
+File: pics/3.png Graphic file (type png)
+ <use pics/3.png>
+Package pdftex.def Info: pics/3.png used on input line 246.
+(pdftex.def)             Requested size: 229.32257pt x 141.69562pt.
+ <pics/table6.png, id=57, 920.43875pt x 57.21375pt>
+File: pics/table6.png Graphic file (type png)
+ <use pics/table6.png>
+Package pdftex.def Info: pics/table6.png used on input line 256.
+(pdftex.def)             Requested size: 468.0pt x 29.09131pt.
+
+
+./report.tex:257: LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257       \caption
+                    {Table 6}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<pics/table7.png, id=58, 920.43875pt x 59.22125pt>
+File: pics/table7.png Graphic file (type png)
+ <use pics/table7.png>
+Package pdftex.def Info: pics/table7.png used on input line 265.
+(pdftex.def)             Requested size: 468.0pt x 30.11206pt.
+
+
+./report.tex:266: LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.266       \caption
+                    {Table 7}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ¢ in font cmr12!
+Missing character: There is no ¬ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ¬ in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ¢ in font cmr12!
+Missing character: There is no ¬ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ¬ in font cmr12!
+Missing character: There is no ù in font cmr12!
+[4 <./pics/table4.png> <./pics/table5.png> <./pics/2.png> <./pics/3.png> <./pics/table6.png>] <pics/4.png, id=68, 1523.6925pt x 941.5175pt>
+File: pics/4.png Graphic file (type png)
+ <use pics/4.png>
+Package pdftex.def Info: pics/4.png used on input line 274.
+(pdftex.def)             Requested size: 468.0pt x 289.1809pt.
+
+
+./report.tex:275: LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.275   \caption
+                {Fig. 4}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[5 <./pics/table7.png> <./pics/4.png>] (./report.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 343.
- [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 343.
- (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 343.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 343.
+
+Package natbib Warning: There were multiply defined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 352.
+[6pdfTeX warning (ext4): destination with the same identifier (name{cite.latexcompanion}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.352 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier (name{cite.latexcompanion}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.352 \end{document}
+                    ]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 352.
+ (./report.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 352.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 352.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: FA7B1544A8154CD96FC997F5E97F6D62;275.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 343.
+(rerunfilecheck)             Checksum: 0EED660921FE5E7D76F04CE2F2F27A47;220.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 352.
  ) 
 Here is how much of TeX's memory you used:
- 9586 strings out of 493089
- 139645 string characters out of 6134842
- 269279 words of memory out of 5000000
- 12903 multiletter control sequences out of 15000+600000
- 11068 words of font info for 43 fonts, out of 8000000 for 9000
+ 9838 strings out of 493089
+ 142946 string characters out of 6134842
+ 359181 words of memory out of 5000000
+ 13140 multiletter control sequences out of 15000+600000
+ 11067 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,8n,47p,698b,385s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on report.pdf (6 pages, 125215 bytes).
+ 34i,11n,47p,701b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on report.pdf (6 pages, 762709 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
+ 120 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  13 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

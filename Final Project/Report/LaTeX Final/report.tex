@@ -27,6 +27,19 @@
 %%
 %%
 \documentclass[preprint,12pt,3p]{elsarticle}
+
+\usepackage{lipsum}
+\makeatletter
+\def\ps@pprintTitle{%
+ \let\@oddhead\@empty
+ \let\@evenhead\@empty
+ \def\@oddfoot{}%
+ \let\@evenfoot\@oddfoot}
+\makeatother
+
+% https://tex.stackexchange.com/a/84551
+
+
 \usepackage{hyperref}
 
 \usepackage{array}
@@ -99,8 +112,20 @@
 % \biboptions{}
 
 
-%\journal{Nuclear Physics B}
+\usepackage{geometry}
+\geometry{
+  top=1in,            % <-- you want to adjust this
+  headheight=100ex,       % <-- and this
+  headsep=5ex,          % <-- and this
+  bottom=1in,
+}
 
+%\journal{Nuclear Physics B}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{Kings County Crime Rate Report}
+\rhead{}
 \begin{document}
 
 \begin{frontmatter}
@@ -109,12 +134,13 @@
 A County Suffering from Extreme High Population Density
 }
 
-\author{Ziwei Meng}
-\author{Ao Liu}
+\author{Ziwei Meng (zm2245)}
+\author{Ao Liu (al3472)}
 
 
 
 \begin{abstract}
+  \indent
   In 1990, Our client Kings county (Brooklyn) suffered from highest crime rate among the US, and asked for our help to determine which factors influenced the number of serious crimes per county. The goal was to implement policies that would lead to the reduction of the number of serious crimes in their county.
   \bigbreak
   This article reports analysis on county demographic information (CDI) data set from Applied Linear Statistical Models, 5th edition, by Kutner, Nachtsheim, Neter, and Li. The results of Poisson Regression Model and Gradient Boosting Model show that poverty rate, region, percentage of youth are key factors associated with high crime rate for most of counties. And for Kings county, extreme population density and per capita income plays an significant role in explaining its abnormal high crime rate.
@@ -137,8 +163,9 @@ Crime Rate\sep Poisson Regression Model\sep Gradient Boosting
 \section{INTRODUCTION}
 \label{sec1}
 
-In CDI data set, demographic information of 440 counties in US was collected, each line of the data set has an identification number, a county name, a state abbreviation for a single county together with another 14 variables, including geographic data of area, region; demographic data of total population(population), percentage of population aged 18-24(perc.young), percentage of population with bachelor’s degree(perc.bs); and economic data of percentage below poverty level(perc.poor), total personal income(tot.income), per capita income(per.income) etc. In order to get most relevant variables with crime rate, we transform the original variables into following new variables:.
+In CDI data set, demographic information of 440 counties in US was collected, each line of the data set has an identification number, a county name, a state abbreviation for a single county together with another 14 variables, including geographic data of area, region; demographic data of total population(population), percentage of population aged 18-24(perc.young), percentage of population with bachelorâs degree(perc.bs); and economic data of percentage below poverty level(perc.poor), total personal income(tot.income), per capita income(per.income) etc. In order to get most relevant variables with crime rate, we transform the original variables into following new variables:.
 \begin{itemize}
+\setlength\itemsep{0em}
 \item population density (pop.density) = $\frac{population}{area}$
 \item physicians per 1000 people (physician.per.1000) = $\frac{physician}{(population/1000)}$
 \item hospital beds per 1000 people (beds.per.1000) = $\frac{hospitalbeds}{(population/1000)}$
@@ -148,56 +175,45 @@ In CDI data set, demographic information of 440 counties in US was collected, ea
 After examining the correlation between each pair of variables (heatmap.png), we select variables which are relatively higher correlated with crime rate and relatively lower correlated with each other.
 
 \begin{center}
-  \makebox[\linewidth]{\includegraphics[width=\textwidth]{/pics/.jpg}}
-\end{center}
-
-The remaining variables are: area, percentage of young people, percentage of old people, percentage of population with high school degree, percentage of population with bachelor’s degree, poverty rate, unemployment, total income, region, population density, physician per 1000 people, beds per 1000 people.
-
-
-\begin{center}
-\begin{tabular}{ P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}}
-{} & 1 & 2 & 3 & 4 & 5 \\
-\hline
-1 &1,1 &0,0 &0,0 &0,0 &0,0\\
-2 &0,0 &1,1 &0,0 &0,0 &0,0\\
-3 &0,0 &0,0 &1,1 &0,0 &0,0\\
-4 &0,0 &0,0 &0,0 &1,1 &0,0\\
-5 &0,0 &0,0 &0,0 &0,0 &1,1\\
-\end{tabular}
+\makebox[\linewidth]{\includegraphics[width=\textwidth]{pics/1.png}}
+\caption{Fig.1}
 \end{center}
 
 
-From [table1] and [table2] we can see that Kings county stands out by showing highest population density and highest crime rate among all counties. In the next section we use Poisson Regression Model and Gradient Boosting Model to verify whether it is a coincident.
-
-
+The remaining variables are: area, percentage of young people, percentage of old people, percentage of population with high school degree, percentage of population with bachelorâs degree, poverty rate, unemployment, total income, region, population density, physician per 1000 people, beds per 1000 people.
 \begin{center}
-\begin{tabular}{ P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}}
-{} & 1 & 2 & 3 & 4 & 5 \\
-\hline
-1 &1,1 &0,0 &0,0 &0,0 &0,0\\
-2 &0,0 &1,1 &0,0 &0,0 &0,0\\
-3 &0,0 &0,0 &1,1 &0,0 &0,0\\
-4 &0,0 &0,0 &0,0 &1,1 &0,0\\
-5 &0,0 &0,0 &0,0 &0,0 &1,1\\
-\end{tabular}
+  \makebox[\linewidth]{\includegraphics[width=\textwidth]{pics/table1.png}}
+      \caption{Table 1}
+\end{center}
+
+From Table 1 and Table 2 we can see that Kings county stands out by showing highest population density and highest crime rate among all counties. In the next section we use Poisson Regression Model and Gradient Boosting Model to verify whether it is a coincident.
+\begin{center}
+  \makebox[\linewidth]{\includegraphics[width=5in]{pics/table2.png}}
+    \caption{Table 2}
 \end{center}
 
 
 \section{METHODS}
 \label{sec2}
+\begin{center}
+  \makebox[\linewidth]{\includegraphics[width=\textwidth]{pics/table3.png}}
+      \caption{Table 3}
+\end{center}
+
+\indent
 We split the data set into training set and test set, then use R to carry out two models, compare their results and use their suggested predictors as complementary to each other.
 In the first model we assume that the number of serious crimes in per 1000 people follows a Poisson distribution with mean parameter as linear combination of selected predictors, and we use quasi-likelihood to deal with over-dispersion. After filtering insignificant predictors, our model is as follows:
 
 \begin{align}
-log(crime.rate.per.1000) &= \beta_{0} + \beta_{1}*perc.young + \beta_{2}*perc.poor +\nonumber\\
-                         &\beta_{3}*per.income + \beta_{42}*region2 + \beta_{43}*region3 +\nonumber\\
-  &\beta_{44}*region4 +\beta_{5}*log(pop.density) +\nonumber\\
-  &\beta_{6}*physician.per.1000 + \beta_{7}*beds.per.1000 +\nonumber\\
-  &\beta_{8}*perc.bs + \beta_{9}*unemployment\nonumber
+log(crime.rate.per.1000) &= \beta_{0} + \beta_{1}\times perc.young + \beta_{2}\times perc.poor\nonumber\\
+                         & +\beta_{3}\times per.income + \beta_{42}\times region2 + \beta_{43}\times region3 \nonumber\\
+  &+ \beta_{44}\times region4 +\beta_{5}\times log(pop.density) \nonumber\\
+  &+ \beta_{6}\times physician.per.1000 + \beta_{7}\times beds.per.1000 \nonumber\\
+  &+ \beta_{8}\times perc.bs + \beta_{9}\times unemployment\nonumber
 \end{align}
 
 
-The result is shown in [table 4].
+The result is shown in Table 4.
 In the second model, we use the same predictors as in first one, but fit a Gradient Boosting Tree Model to the data.
 These two models give us consistent results, but slightly different in ranking relative importance of predictors. In the conclusion section we will consider both of them to give our suggestions.
 
@@ -206,111 +222,104 @@ These two models give us consistent results, but slightly different in ranking r
 \section{RESULTS}
 \label{sec3}
 
-From the result of Poisson Regression Model [table 4], we see that percentage of youth, poverty rate, region, population density and beds per 1000 people are most significant predictors to crime rate. This model suggests that, to obtain 1 unit decrease in crime rate per 1000 people, we should consider (separately) decreasing percentage of youth by exp(0.003) = 1.003, or decreasing poverty rate by exp(0.00003) = 1.00003, or decreasing population density by 0.00003.
-Although region plays a significant role here, since it’s impossible to change the region of a county, we can only change other variables that are implicitly related to region.
+From the result of Poisson Regression Model Table 4, we see that percentage of youth, poverty rate, region, population density and beds per 1000 people are most significant predictors to crime rate. This model suggests that, to obtain 1 unit decrease in crime rate per 1000 people, we should consider (separately) decreasing percentage of youth by exp(0.003) = 1.003, or decreasing poverty rate by exp(0.00003) = 1.00003, or decreasing population density by 0.00003.
+Although region plays a significant role here, since itâs impossible to change the region of a county, we can only change other variables that are implicitly related to region.
 
 \begin{center}
-\begin{tabular}{ P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}}
-{} & 1 & 2 & 3 & 4 & 5 \\
-\hline
-1 &1,1 &0,0 &0,0 &0,0 &0,0\\
-2 &0,0 &1,1 &0,0 &0,0 &0,0\\
-3 &0,0 &0,0 &1,1 &0,0 &0,0\\
-4 &0,0 &0,0 &0,0 &1,1 &0,0\\
-5 &0,0 &0,0 &0,0 &0,0 &1,1\\
-\end{tabular}
+  \makebox[\linewidth]{\includegraphics[width=\textwidth]{pics/table4.png}}
+      \caption{Table 4}
 \end{center}
 
-From the result of Gradient Boosting Model [table 5], we see that most important predictors suggested by this model are: poverty rate, region, physicians per 1000 people, and population density.
-
+From the result of Gradient Boosting Model Table 5, we see that most important predictors suggested by this model are: poverty rate, region, physicians per 1000 people, and population density.
 \begin{center}
-\begin{tabular}{ P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}}
-{} & 1 & 2 & 3 & 4 & 5 \\
-\hline
-1 &1,1 &0,0 &0,0 &0,0 &0,0\\
-2 &0,0 &1,1 &0,0 &0,0 &0,0\\
-3 &0,0 &0,0 &1,1 &0,0 &0,0\\
-4 &0,0 &0,0 &0,0 &1,1 &0,0\\
-5 &0,0 &0,0 &0,0 &0,0 &1,1\\
-\end{tabular}
-\end{center}
-
-%% 并列pics
-Both models are successful in predicting/explaining crime rate in test data[compare.png], but they fail at one county, our client Kings county.
-
-\begin{center}
-\begin{tabular}{ P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}}
-{} & 1 & 2 & 3 & 4 & 5 \\
-\hline
-1 &1,1 &0,0 &0,0 &0,0 &0,0\\
-2 &0,0 &1,1 &0,0 &0,0 &0,0\\
-3 &0,0 &0,0 &1,1 &0,0 &0,0\\
-4 &0,0 &0,0 &0,0 &1,1 &0,0\\
-5 &0,0 &0,0 &0,0 &0,0 &1,1\\
-\end{tabular}
-\end{center}
-
-From [table 6] we see that, in Kings county, poverty rate is of 2.33 standard deviation higher than the average poverty rate in all US counties, and population density is of 19.76 standard deviation higher than the average population density in all US counties.
-
-Since Kings county is located at New York, we also compare Kings county with other counties in New York, and from [table 7] we see that the percentage of population with high school degree in Kings county is of 3.10 standard deviation lower than the average percentage of population with high school degree in all other New York counties, the poverty rate in Kings county is 3.22 standard deviation higher than average other New York counties, and the population density in Kings county is 4.32 standard deviation higher than average other New York counties.
-
-\begin{center}
-\begin{tabular}{ P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}P{1cm}}
-{} & 1 & 2 & 3 & 4 & 5 \\
-\hline
-1 &1,1 &0,0 &0,0 &0,0 &0,0\\
-2 &0,0 &1,1 &0,0 &0,0 &0,0\\
-3 &0,0 &0,0 &1,1 &0,0 &0,0\\
-4 &0,0 &0,0 &0,0 &1,1 &0,0\\
-5 &0,0 &0,0 &0,0 &0,0 &1,1\\
-\end{tabular}
+  \makebox[\linewidth]{\includegraphics[width=\textwidth]{pics/table5.png}}
+      \caption{Table 5}
 \end{center}
 
 
-Now we can give a possible explanation for the failure of our model at Kings county. We suspect that when population density is higher than a threshold, its effect on crime rate would become different from when the population density is lower than that threshold. In other words, as long as population density is not “too high”, the effect of population density on crime rate is restricted, however, once the population density breaks that red line, the crime rate would increase very quickly. Since Kings county is the only county with such high population density (population.png), the parameters obtained from training a model on other counties are actually invalid to it.
+\begin{figure}[!htb]\centering
+   \begin{minipage}{0.49\textwidth}
+     \includegraphics[width=\linewidth]{pics/2.png}
+     \label{Fig:Data1}
+   \end{minipage}
+   \begin {minipage}{0.49\textwidth}
+     \includegraphics[width=\linewidth]{pics/3.png}
+     \label{Fig:Data2}
+   \end{minipage}
+\end{figure}
+
+
+
+Both models are successful in predicting/explaining crime rate in test data, but they fail at one county, our client Kings county.
+
+\begin{center}
+  \makebox[\linewidth]{\includegraphics[width=\textwidth]{pics/table6.png}}
+      \caption{Table 6}
+\end{center}
+
+From Table 6 we see that, in Kings county, poverty rate is of 2.33 standard deviation higher than the average poverty rate in all US counties, and population density is of 19.76 standard deviation higher than the average population density in all US counties.
+
+Since Kings county is located at New York, we also compare Kings county with other counties in New York, and from Table 7 we see that the percentage of population with high school degree in Kings county is of 3.10 standard deviation lower than the average percentage of population with high school degree in all other New York counties, the poverty rate in Kings county is 3.22 standard deviation higher than average other New York counties, and the population density in Kings county is 4.32 standard deviation higher than average other New York counties.
+
+\begin{center}
+  \makebox[\linewidth]{\includegraphics[width=\textwidth]{pics/table7.png}}
+      \caption{Table 7}
+\end{center}
+
+
+Now we can give a possible explanation for the failure of our model at Kings county. We suspect that when population density is higher than a threshold, its effect on crime rate would become different from when the population density is lower than that threshold. In other words, as long as population density is not âtoo highâ, the effect of population density on crime rate is restricted, however, once the population density breaks that red line, the crime rate would increase very quickly. Since Kings county is the only county with such high population density (population.png), the parameters obtained from training a model on other counties are actually invalid to it.
 
 
 \begin{center}
-  \makebox[\linewidth]{\includegraphics[width=\textwidth]{/pics/.jpg}}
+  \makebox[\linewidth]{\includegraphics[width=\textwidth]{pics/4.png}}
+  \caption{Fig. 4}
 \end{center}
 
 
 \section{CONCLUSION}
 \label{sec4}
 Given above analysis, we provide slightly different suggestions to Kings county and to potential clients who are suffering from high crime rate.
-General suggestions:
+\bigbreak
+\textbf{General suggestions}:
 \begin{itemize}
+  \setlength\itemsep{0em}
   \item Reduce poverty rate by providing food, shelter and career training to low-income people.
   \item Educate young people about how to resolve disputes and conflicts through law process.
 \item Equip hospitals with more physicians and beds.
 \end{itemize}
-
-Specific suggestion for Kings county:
+\bigbreak
+%\noindent
+\textbf{Specific suggestion for Kings county}:
 \begin{itemize}
 \item Increase effective land area, provide assistance to people who are willing to relocate.
-\end{itemize}}
+\end{itemize}
 
 
 \section{REFERENCE}
 \label{sec5}
-[What Statistical Consultants Do: Report of a Survey]
-http://csyue.nccu.edu.tw/ch/What%20Statistical%20Consultants%20Do%20Report%20of%20a%20Survey.pdf
-[Interpreting Crime Data and Statistics]
-http://www.iaca.net/ExploringCA/2Ed/exploringca_chapter8.pdf
-[A Stargazer Cheatsheet]
-http://jakeruss.com/cheatsheets/stargazer.html
 
 
+\begin{thebibliography}{25}
+\bibitem{latexcompanion}
+What Statistical Consultants Do: Report of a Survey\\
+\texttt{http://csyue.nccu.edu.tw/ch/What Statistical Consultants Do Report of a Survey.pdf}
 
+\bibitem{latexcompanion}
+Interpreting Crime Data and Statistics\\
+\texttt{http://www.iaca.net/ExploringCA/2Ed/exploringca\_chapter8.pdf}
+
+\bibitem{latexcompanion}
+A Stargazer Cheatsheet\\
+\texttt{http://jakeruss.com/cheatsheets/stargazer.html}
+
+\end{thebibliography}
+% https://www.sharelatex.com/learn/Bibliography_management_with_bibtex
 
 
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
-\appendix
 
-\section{Section in Appendix}
-\label{appendix-sec1}
 
 
 %% References
